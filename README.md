@@ -45,6 +45,15 @@ TBD
 
 As mermaid is rendered first it makes sense to render your mermaid first so you can then see it inline if you're using an editor that renders your markdown for you like Typora or ghostwriter.
 
+## Preview on local computer
+
+```
+cd <repo root>
+python3 -m http.server --directory docs
+```
+
+Open browser, goto `https://localhost:8000`
+
 ## License
 
 This repository is licensed under the MIT License.

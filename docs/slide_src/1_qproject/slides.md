@@ -24,10 +24,7 @@ Tips for project organization outside of the Quartus Prime Pro software
 
 ## FPGA design flow
 
-<figure>
-  <img src="../../images/flow.png" style="max-height:80vh; max-width:100%">
-  <figcaption>FPGA design flow</figcaption>
-</figure>
+![FPGA flow](../../images/flow.png){width=30%}
 
 
 
