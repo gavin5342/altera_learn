@@ -1,3 +1,3 @@
 # Training slides
 
-[Quartus project](../dist/1_qproject/slides.html)
+[Quartus project](../docs/1_qproject/slides.html)
