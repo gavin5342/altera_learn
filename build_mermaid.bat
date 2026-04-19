@@ -1,7 +1,7 @@
 
 @echo off
-set INPUT_DIR=mermaid_graphs
-set OUTPUT_DIR=images
+set INPUT_DIR=docs\mermaid_graphs
+set OUTPUT_DIR=docs\images
 
 if not exist "%OUTPUT_DIR%" mkdir "%OUTPUT_DIR%"
 
