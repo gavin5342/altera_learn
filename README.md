@@ -18,6 +18,33 @@ Each section is organized into presentation material for introduction and a lab.
   - A 30 day evaluation license is available from first installation of the software, as shown in the [installation and licensing guide]( https://docs.altera.com/r/docs/683472/25.3/altera-fpga-software-installation-and-licensing/evaluating-the-quartus-prime-software)
   - A 90 day evaluation license may be generated through the [self service license centre](https://www.altera.com/SSLC)
 
+## Viewing
+
+View the slides through [pages](https://gavin5342.github.io/altera_learn/)
+
+## Updating
+
+The slides are authored in markdown and exported as reveal.js.
+
+### Windows
+
+run:
+
+```
+build_mermaid.bat
+build_slides.bat
+```
+
+Then commit all changes and push.  Github pages will automatically update from main branch.
+
+Requires node, mermaid, pandoc.
+
+### Linux
+
+TBD
+
+As mermaid is rendered first it makes sense to render your mermaid first so you can then see it inline if you're using an editor that renders your markdown for you like Typora or ghostwriter.
+
 ## License
 
 This repository is licensed under the MIT License.
