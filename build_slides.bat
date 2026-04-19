@@ -1,1 +1,2 @@
-pandoc slides.md -t revealjs -s --standalone -V revealjs-url=https://unpkg.com/reveal.js@5 -V theme=white --css=../slides.css -o slides.html
+pandoc ./slide_src/1_qproject/slides.md -t revealjs -s --standalone -V revealjs-url=https://unpkg.com/reveal.js@5 -V theme=white --css=../../slides.css -o ./dist/1_qproject/slides.html
+pandoc ./slide_src/index.md -t revealjs -s --standalone -V revealjs-url=https://unpkg.com/reveal.js@5 -V theme=white --css=../../slides.css -o ./dist/index.html
