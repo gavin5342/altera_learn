@@ -1,0 +1,32 @@
+graph TB
+	subgraph Concept
+		direction LR
+		requirements <--> device_hw
+	end
+	subgraph module_hdl_coding
+		direction LR
+		code[SV text files] <--> lint
+		code[SV text files] <--> synthesis_impl_check
+		code[SV text files] <--> behavioral_sim		
+		hld[High level tools: Platform designer, SYCL compiler, DSP Builder, IP blocks] <--> behavioral_sim
+	end
+	subgraph code_integration
+		direction LR
+		pins[pin constraints] --> project
+		timing[timing constraints] --> project
+		device[device constraints] --> project
+		files[source files] --> project
+		project <--> sta[static timing analysis]
+		project <--> post_fit_sim[OPTIONAL post fit simulation]
+		project <--> rpt[compilation report check]
+	end
+	subgraph hardware
+		direction LR
+		project_fin --> rbf[Programming file .sof, .rbf, .jic, .pof]
+		project_fin --> stp[SignalTap logic analyser: design-entry / post-fit]
+		project_fin --> jtag[JTAG programming tools - FPGA configure / flash program]
+	end
+	
+	Concept --> module_hdl_coding
+	module_hdl_coding --> code_integration
+	code_integration --> hardware

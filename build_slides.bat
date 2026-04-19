@@ -1,0 +1,1 @@
+pandoc slides.md -t revealjs -s --standalone -V revealjs-url=https://unpkg.com/reveal.js@5 -V theme=white --css=../slides.css -o slides.html

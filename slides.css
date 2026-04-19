@@ -1,0 +1,27 @@
+/* Logo in bottom-right corner */
+.reveal .slides::after {
+  content: "";
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  width: 120px;
+  height: 40px;
+  background-image: url("assets/altera-icon-alterablue-rgb.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.85;
+}
+
+/* Optional: shrink slide text a touch */
+.reveal {
+  font-size: 95%;
+}
+
+
+.reveal figure.stretch {
+  height: 100%;
+}
+.reveal figure.stretch img {
+  max-height: 85vh;
+}
+
