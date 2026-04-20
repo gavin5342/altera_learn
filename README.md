@@ -41,7 +41,14 @@ Requires node, mermaid, pandoc.
 
 ### Linux
 
-TBD
+Require:
+npm: `apt install npm`
+set up node to use node version manager: [install guide](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/)
+mermaid: `npm install -g @mermaid-js/mermaid-cli`
+pupetteer: `npm install -g puppeteer`
+chrome (that mermaid wants)
+headless chromium: npx puppeteer browsers install chrome-headless-shell
+pandoc
 
 As mermaid is rendered first it makes sense to render your mermaid first so you can then see it inline if you're using an editor that renders your markdown for you like Typora or ghostwriter.
 
