@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pandoc ./docs/slide_src/1_qproject/slides.md -t revealjs -s --standalone -V revealjs-url=https://unpkg.com/reveal.js@5 -V theme=white --css=../../slides.css -o ./docs/dist/1_qproject/slides.html
+pandoc ./docs/slide_src/index.md -t revealjs -s --standalone -V revealjs-url=https://unpkg.com/reveal.js@5 -V theme=white --css=./slides.css -o ./docs/index.html
