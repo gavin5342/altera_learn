@@ -1,0 +1,8 @@
+*.bak
+**/output_files/**
+**/qdb/**
+**/dni/**
+**/tmp*
+**/simulation/**
+*.history
+**/.qsys_edit/**
