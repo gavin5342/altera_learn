@@ -29,3 +29,14 @@
 .notes {
   display: none;
 }
+
+/* Increase base font size */
+.reveal {
+  font-size: 22px;
+}
+
+/* Optional: make bullet text slightly larger */
+.reveal ul,
+.reveal ol {
+  font-size: 1.1em;
+}

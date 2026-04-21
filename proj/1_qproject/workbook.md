@@ -84,6 +84,7 @@ graph LR
 	serial_in -- [1 bit] --> shift_reg
 	shift_reg -- [8 bit] --> conditional_recorder
 	conditional_recorder --[8 bit] --> memory
+	conditional_recorder --[1 bit]--> state_indicator
 ```
 
 write rtl to implement the diagram above
@@ -91,6 +92,7 @@ write rtl to implement the diagram above
 - shift_reg is most significant bit received first
 - conditional recorder must receive `0xBA` then `0xBE` to start recording
 - memory records 512 values
+- state_indicator indicates if the recorder is recording or not.
 
 You can choose to use the Quartus editor by choosing **File -> New** or to use your own favourite text editor.
 
@@ -172,4 +174,37 @@ _You can start this section either with the project you have created above or us
   - **Processing -> Start Compilation**
   - Select **Compile Design** from **Compilation Dashboard**
 - Inspect warnings
-  - Pins are included without 
+  - top level ports do not have location, voltage and drive strength assignments
+  - No timing constraints
+
+### IO constraints
+
+- Open the Pin Planner ![pin planner](../../docs/images/pin_plan_but.png)
+  ![pin plan](../../docs/images/pin_plan_view.png)
+- View the locations that the fitter has chosen ![fitter assignment](../../docs/images/pin_plan_fitter.png)
+- assign locations for 
+  - clock signal assign to connector D0 = FPGA AE25
+  - reset input assign to connector D1 = FPGA AF21
+  - serial input assign to connector D2 = FPGA AH20
+  - state output assign to connector D3 = FPGA AG19
+- Assign all pins with locations
+  - I/O Standard 3.3-V LVCMOS
+  - output Current Strength 12ma
+- Signals added to preserve the RAM would be connected to another internal module.  To preserve these connections but not use an IO pin, use a Virtual Pin assignment
+  - Open Assignments editor ![Assignment button](../../docs/images/assignment_but.png) in main Quartus Prime Pro window
+    ![assignment editor](../../docs/images/assignment_editor.png)
+  - In the To column, click `<<new>>`  to start creating a new assignment
+  - Type the name of the signals used to preserve the RAM - use `*` for wildcard.  You can also use the node finder
+    - press tab or click away from the cell for validation
+  - double click the yellow cell that appears in the Assignment Name column
+    - scroll to Virtual Pin
+    - Read the Information window for details on the assignment
+  - Set the Value column to On
+  - Save by choosing **File -> Save**
+  - Run Analysis & Synthesis again
+- Return to Pin Planner, press the Start I/O Analysis button to check the assignments that have been made ![IO Analysis button](../../docs/images/io_ana_but.png)
+- Confirm there are no IO Assignment warnings in the Compilation Report
+
+## Timing constraints
+
+A further session is dedicated to timing constraints

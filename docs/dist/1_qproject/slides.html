@@ -60,6 +60,23 @@ software</p>
 <li>Artifact organization and naming</li>
 <li>Settings files and settings editors</li>
 </ol>
+<aside class="notes">
+<p>Quartus Prime Pro is the EDA software for targeting current Altera
+devices</p>
+<ul>
+<li>Arria 10</li>
+<li>Cyclone 10 GX</li>
+<li>Stratix 10</li>
+<li>All Agilex families</li>
+</ul>
+<p>Quartus Prime Standard is used for older families including:</p>
+<ul>
+<li>Cyclone / Arria / Stratix / MAX families other than those above</li>
+</ul>
+<p>This training will only cover Quartus Prime Pro software.</p>
+<p>This training also assumes that Quartus Prime Pro software is already
+installed on your computer.</p>
+</aside>
 </section>
 <section class="slide level1">
 
@@ -70,17 +87,203 @@ alt="FPGA flow" />
 <figcaption aria-hidden="true">FPGA flow</figcaption>
 </figure>
 <aside class="notes">
-<p>Test text</p>
+<p>These are the high level activities in designing and deploying an
+FPGA. Depending on the size of the project, you might choose to design
+some modules in isolation first and integrate later.</p>
+<p>Quartus Prime Pro software provides</p>
 </aside>
 </section>
 <section class="slide level1">
 
-<h2 id="before-quartus">Before Quartus</h2>
-<p>Extra</p>
-<pre class="mermaid"><code></code></pre>
+<h2 id="outside-quartus-prime-pro-software">Outside Quartus Prime Pro
+software</h2>
+<ul>
+<li>Version control <img
+data-src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.svg"
+alt="git" /></li>
+<li>CI/CD services (cloud or on-prem)
+<ul>
+<li><a href="https://github.com/">github</a> <img
+data-src="../../images/GitHub_Invertocat_Black.svg" alt="github" /></li>
+<li><a href="https://gitlab.com/">gitlab</a> <img
+data-src="../../images/gitlab-logo-500-rgb.svg" alt="gitlab" /></li>
+</ul></li>
+<li>CI/CD
+<ul>
+<li><a href="https://www.jenkins.io/">jenkins</a> <img
+data-src="https://ftp.halifax.rwth-aachen.de/jenkins/art/jenkins-logo/96x96/logo.png"
+alt="jenkins" /></li>
+</ul></li>
+<li>Others
+<ul>
+<li><a
+href="https://fusesoc.readthedocs.io/en/stable/index.html">FuseSoc</a></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>The Software does not provide any integration with version control or
+CI/CD functions, though does not preclude their use. I will cover some
+good ways to work to make separation of source and artifacts easier for
+CI/CD / .gitignore files</p>
+</aside>
 </section>
 <section class="slide level1">
 
+<h2 id="installation">Installation</h2>
+<ul>
+<li>Check <a
+href="https://www.altera.com/design/guidance/software/os-support">operating
+system and hardware requirements</a></li>
+<li>Download installer from <a
+href="https://www.altera.com/downloads/fpga-development-tools/quartus-prime-pro-edition-design-software-version-26-1-windows">download
+page</a>
+<ul>
+<li>Version and operating system can be selcted using drop down menus:
+<img
+data-src="C:\Users\gavin.lofts\AppData\Roaming\Typora\typora-user-images\image-20260421125756433.png"
+alt="select" /></li>
+<li>Quartus Prime Installer allow the files required to be configured
+prior to download and installation</li>
+</ul></li>
+<li>Installation
+<ul>
+<li>cmd line only available - especially suitable for headless and
+Dockerfile. An example that builds a docker image is provided <a
+href="https://github.com/gavin5342/altera_example/blob/main/questa_docker/README.md">here</a></li>
+<li>GUI shows you which components are available. It’s easy to update
+your installation later if you need to add families or features <img
+data-src="../../images/installer_gui.png" style="width:40.0%"
+alt="installer" /></li>
+</ul></li>
+</ul>
+</section>
+<section id="exploring-the-software-through-the-gui"
+class="slide level1">
+<h1>Exploring the software through the GUI</h1>
+<ul>
+<li>Demo</li>
+</ul>
+<aside class="notes">
+<p>This section is intended to be live demo in the session.</p>
+<p>Cover each part of <img data-src="../../images/quartus_window.png"
+alt="window" /></p>
+<ul>
+<li>toolbar</li>
+<li>menus</li>
+<li>tools -&gt; Customize…</li>
+<li>right lick tools for large icons</li>
+<li>unpin / pin</li>
+<li>dock / undock</li>
+<li>Go through the menus</li>
+<li>Look in Settings and Device menus</li>
+<li>Add an assignment and see the effect in the tcl console</li>
+</ul>
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="comparison-to-other-tools">Comparison to other tools</h2>
+<h4 id="file-names">File names</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 48%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Quartus file extension</th>
+<th>usage</th>
+<th>other tools equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.qpf</td>
+<td>Project file</td>
+<td>.ldf .xpr</td>
+</tr>
+<tr>
+<td>.qsf</td>
+<td>Settings file</td>
+<td>.lpf .xdc</td>
+</tr>
+<tr>
+<td>.qip</td>
+<td>Quartus IP file - a group of source files</td>
+<td></td>
+</tr>
+<tr>
+<td>.ip</td>
+<td>Quartus IP file (IP-XACT)</td>
+<td>.xml</td>
+</tr>
+<tr>
+<td>.stp</td>
+<td>SignalTap (logic analyser) file</td>
+<td>.rvl .ltx</td>
+</tr>
+<tr>
+<td>.qsys</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="setting-names">Setting names</h3>
+<ul>
+<li><p><strong>Assignments -&gt; Settings</strong></p>
+<p><strong>Compiler Settings -&gt; Advanced Settings</strong></p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 41%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Quartus setting</th>
+<th>usage</th>
+<th>other tools equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fitter Initial Placement Seed</td>
+<td>Affects randomized initial placement</td>
+<td>cost table</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<h2 id="scripted-flow">Scripted flow</h2>
+<ul>
+<li>The GUI is good for getting started and exploring what’s
+possible.</li>
+<li>It’s more reliable to compile from a script for production</li>
+<li>Recompiling a design with unchanged sources on the same compute
+architecture will produce the same artifacts
+<ul>
+<li>Changing any source file will change (even non-functional changes
+like port list order)</li>
+<li>Change Fitter Initial Placement seed to deliberately change initial
+placement and change artifact</li>
+<li>Change in operating system (eg Windows -&gt; Ubuntu) could change
+result</li>
+</ul></li>
+<li><strong>Recommendation</strong> as your design gets ready for
+integration, define a CI job and use docker to ensure software versions
+and OS/OS settings can be used. Altera builds docker images for the
+Quartus software available from <a
+href="https://hub.docker.com/u/alterafpga">docker hub</a>
+<ul>
+<li>You may also want to build your own. A starter guide is provided <a
+href="https://github.com/gavin5342/altera_example/tree/main/questa_docker">here</a></li>
+</ul></li>
+</ul>
 </section>
     </div>
   </div>

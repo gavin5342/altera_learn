@@ -83,4 +83,69 @@ The Software does not provide any integration with version control or CI/CD func
 - Installation
   - cmd line only available - especially suitable for headless and Dockerfile.  An example that builds a docker image is provided [here](https://github.com/gavin5342/altera_example/blob/main/questa_docker/README.md)
   - GUI shows you which components are available.  It's easy to update your installation later if you need to add families or features
-    ![installer](../../images/installer_gui.png)
+    ![installer](../../images/installer_gui.png){width=40%}
+
+---
+
+# Exploring the software through the GUI
+
+- Demo
+
+::: notes
+
+This section is intended to be live demo in the session.
+
+Cover each part of ![window](../../images/quartus_window.png)
+
+- toolbar
+- menus
+- tools -> Customize...
+- right lick tools for large icons
+- unpin / pin
+- dock / undock
+- Go through the menus
+- Look in Settings and Device menus
+- Add an assignment and see the effect in the tcl console
+
+:::
+
+---
+
+## Comparison to other tools
+
+#### File names
+
+| Quartus file extension | usage                                     | other tools equivalent |
+| ---------------------- | ----------------------------------------- | ---------------------- |
+| .qpf                   | Project file                              | .ldf .xpr              |
+| .qsf                   | Settings file                             | .lpf .xdc              |
+| .qip                   | Quartus IP file - a group of source files |                        |
+| .ip                    | Quartus IP file (IP-XACT)                 | .xml                   |
+| .stp                   | SignalTap (logic analyser) file           | .rvl .ltx              |
+| .qsys                  |                                           |                        |
+
+### Setting names
+
+- **Assignments -> Settings**
+
+  **Compiler Settings -> Advanced Settings**
+
+| Quartus setting               | usage                                | other tools equivalent |
+| ----------------------------- | ------------------------------------ | ---------------------- |
+| Fitter Initial Placement Seed | Affects randomized initial placement | cost table             |
+
+
+
+---
+
+## Scripted flow
+
+- The GUI is good for getting started and exploring what's possible.
+- It's more reliable to compile from a script for production
+- Recompiling a design with unchanged sources on the same compute architecture will produce the same artifacts
+  - Changing any source file will change (even non-functional changes like port list order)
+  - Change Fitter Initial Placement seed to deliberately change initial placement and change artifact
+  - Change in operating system (eg Windows -> Ubuntu) could change result
+- **Recommendation** as your design gets ready for integration, define a CI job and use docker to ensure software versions and OS/OS settings can be used.  Altera builds docker images for the Quartus software available from [docker hub](https://hub.docker.com/u/alterafpga)
+  - You may also want to build your own.  A starter guide is provided [here](https://github.com/gavin5342/altera_example/tree/main/questa_docker)
+
