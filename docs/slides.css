@@ -25,3 +25,7 @@
   max-height: 85vh;
 }
 
+/* hide notes from presentation */
+.notes {
+  display: none;
+}
