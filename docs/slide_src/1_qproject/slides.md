@@ -149,3 +149,38 @@ Cover each part of ![window](../../images/quartus_window.png)
 - **Recommendation** as your design gets ready for integration, define a CI job and use docker to ensure software versions and OS/OS settings can be used.  Altera builds docker images for the Quartus software available from [docker hub](https://hub.docker.com/u/alterafpga)
   - You may also want to build your own.  A starter guide is provided [here](https://github.com/gavin5342/altera_example/tree/main/questa_docker)
 
+---
+
+## Scripted flow pt 2
+
+- Consider .qsys and .ip files source files.  The generated hdl does _not_ need to be checked in.
+- `ip-generate` used to generate `.ip` files
+  - Not required if Quartus compile flow is run first. Required if you want to run simulation first or in parallel with Quartus compilation
+- `qsys-generate` used to generate `.qsys` files
+  - Not required if Quartus compile flow is run first. Required if you want to run simulation first or in parallel with Quartus compilation
+- Both hdl generation tools like to generate in-place which is awkward for version control.  My suggestion is to use a generated folder with symbolic links
+- When all hdl is generated, compile using `quartus_sh --flow compile <project>`
+
+---
+
+## Levels of preservation
+
+- Design Partitions allow you to freeze part of your design by the hierarchy that you define in your design entry.
+- Design Partitions may be constrained to an area of the FPGA using LogicLock regions
+- The Signal Tap Logic Analyzer may use Design Partitions to preserve all fitter results and then add the Signal Tap analyzer
+- Design Partitions and LogicLock regions are the foundation of Partial Reconfiguration where part of a design may be reconfigured (eg change protocol for attached HSSI transceiver)
+- Design partitions may be exported as `.qdb` files.  A `.qdb` can be included in a project as a source file
+- Initial content of RAM may be modified without changing fitter placement and routing by using **Update Memory Initialization File** option
+- 
+
+## Programming files
+
+The assembler produces a `.sof` (Software object file) - this file can be used with the Altera programmer to program the FPGA through the JTAG interface.
+
+The **File -> Programming File Generator** or `quartus_pfg` can be used to make files in other formats:
+
+- `.rbf` (raw binary file) is a flat binary file intended for use with an external master to send configuration data to the FPGA.
+- `.rpd` (raw programming data) is a flat binary file used to program a QSPI flash for Active Serial configuration using an external programmer
+- `.jic` (JTAG indirect configuration) is a file used with Quartus programmer to program a QSPI flash using JTAG and a JTAG-QSPI bridge in the FPGA
+- `.pof` (Programmer object file) is used to program a flash when the pins are directly connected to the Altera programming file
+- `.hexout`[Intel HEX](https://developer.arm.com/documentation/101655/0961/OHX51-User-s-Guide/Intel-HEX-File-Format) format text file

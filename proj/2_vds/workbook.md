@@ -8,201 +8,126 @@ For device specific settings, I have matched the Arrow/Trenz [AXC3000](https://w
 
 ## New project creation
 
-Start the New project wizard by selecting **File -> New Project Wizard**
+Device settings from introduction lab are the starting point, available here:  [cmpl_proj_step1](./cmpl_proj_step1).
 
-![new project](../../docs/images/new_project.png)
 
-- Click **Next**
 
-- Choose project location and name
+## Visual Designer Studio
 
-  - Empty project
-  - Working directory = `./work/` or alternate directory you choose
-  - name of project? = `top`
-  - name of top-level entity = `top`
-  - when information is complete click **Next**
+- Start Visual Designer Studio ![VDS button](../../docs/images/vds_button.png)
+  ![vds start](../../docs/images/vds_start.png)
+- Enter System Name: `top`
+- Click **OK**
+- IP Catalog is in an awkward place by default so move it across.
 
-- Choose device
 
-  - Choose Family = Agilex 3 (C series)
-  - in the **Filter: Name** box type `A3CY100BM16AE7S` _Note that as you type, the list length reduces_
-    - _Note_ we filter on Name here, but can filter on other columns.
-  - Click Next
 
-  ![device picker](../../docs/images/new_project_device.png)
+---
 
-- Add Files
+## System entry
 
-  - No files have been created yet, so click **Next**
+- In IP Catalog tab
 
-- EDA Tool Settings
+  - type nios, double click Nios V/c
+  - In parameterization leave all settings except **Cell name** unchanged.  **Cell name** = niosv
+  - Click **Finish**
+    - A block appears on the canvas
+  - Use ctrl+mouse wheel to zoom in or Fit in window / Fit selection in window ![zoom](../../docs/images/vds_size.png)
+    - or mouse strokes with left mouse button held down
+      - up,left = zoom in
+      - up,right = zoom out
+      - down,right = zoom selection
+      - down,left = zoom fit
+  - 4 _interfaces_ are shown
+    - clk
+    - reset
+    - data_manager - an axi4lite master
+    - instruction_manager - an axi4lite master
+  - Click the **+** next to data_manager and instruction_manager to see the signals in each interface
+    - each interface is 32 bit
+  - We will use a single memory for .text and .data: type `on chip mem` in the **Filter** and choose **On-Chip Memory II**
+    - Interface = AXI-4
+    - Type = RAM
+    - Number of AXI interfaces = 1
+    - Block type = AUTO
+    - Disable Clock... = Disabled
+    - Data width = 32
+    - AXI Transaction ID Width = 2
+    - Total memory size = 8192 bytes
+    - Cell name = ram
+    - All other boxes unchanged
+  - type JTAG in **Filter** text box, then choose JTAG UART IP
+    - cell name = juart
+    - all other settings unchanged
+  - type clock in **Filter** and choose Clock Source
+    - cell name = clk
+    - all other settings unchanged
+  - The canvas should now have 4 blocks ready to connect up
+    ![sys](../../docs/images/vds_nc_nios.png)
 
-  - We won't use the Quartus software to generate simulation scripts so leave unchanged and select **Next**
+- Drag the blocks to a convenient location
 
-- Summary
+- Click the clk signal of the clk Clock Source - the possible connections are displayed in green
+  ![](../../docs/images/vds_click_clk.png)
 
-  - Inspect the summary information and then click **Finish**
+- In the Connections box, click Connect all
+  ![connect clk](../../docs/images/vds_clk_conn.png)
 
-## Device configuration settings
+- Follow the same procedure for clk_reset and data_manager
 
-- Choose **Assignments -> Device** menu option
-- Click **Device and Pin Options...**
-- Select **Configuration** from **Category** panel
+- For instruction manager, tick the ram but not juart box (we don't want to fetch instructions from the uart)
 
-​	![device and pin options](../../docs/images/device_pin_options_configuration.png)
+- The finished system should look like:
+  ![this](../../docs/images/vds_finished_system.png)
 
-- Retain **Active Serial x4** for use with QSPI configuration flash.
+- Now assign addresses: ![address map](../../docs/images/vds_address_map.png)
 
-- Click **Configuration Pin Options** to configure the status pins for configuration.
+  - subordinates connected to the niosv.data_manager clash
 
-  - tick **USE CONF_DONE output** then change the dropdown to **SDM_IO16**
-  - tick **USE INIT_DONE output** and leave dropdown as **SDM_IO0**
+  - Press **Auto Assign System** button
 
-  ![conf pin sel](../../docs/images/conf_pin_sel.png)
+  - Addresses assigned so that they do not clash:
+    ![vds address assignmemt](../../docs/images/vds_address_assign.png)
 
-  - You can check these pins against the schematics for the AXC3000 available from the [github page](https://github.com/ArrowElectronics/Agilex-3/wiki/Agilex-3-AXC3000-Development-Platform).  You should see that these are unconnected pins. 
-    ![sch](../../docs/images/axc3000_conf_sch.png)
+  - Check that ram.axi_s1 is 0x0, this is the reset vector that we chose when configuring the niosv block
 
-  
+  - Click Connectivity Designer ![connectivity designer](../../docs/images/vds_conn_design.png) for Platform Designer / Qsys / SOPC Designer style connection view
 
-  - Press **OK** on each window to accept the change to configuration options.
+  - Click Validate System ![validate system](../../docs/images/vds_validate.png)
 
-- Open the `top.qsf` file (either using **File -> Open ** or a text editor directly from your operating system).  Check that assignments have been added for the configuration pin usage.
-  ```
-  set_global_assignment -name USE_CONF_DONE SDM_IO16
-  set_global_assignment -name USE_INIT_DONE SDM_IO0
-  ```
+  - Click Generate System
 
-  
+    - Tick Generate IP simulation models
 
-## Create a new design
+    - Tick Generate Testbench System
 
-```mermaid
-graph LR
-	serial_in -- [1 bit] --> shift_reg
-	shift_reg -- [8 bit] --> conditional_recorder
-	conditional_recorder --[8 bit] --> memory
-	conditional_recorder --[1 bit]--> state_indicator
-```
+      ![generate](../../docs/images/vds_generate_window.png)
 
-write rtl to implement the diagram above
+  - Click **OK**
 
-- shift_reg is most significant bit received first
-- conditional recorder must receive `0xBA` then `0xBE` to start recording
-- memory records 512 values
-- state_indicator indicates if the recorder is recording or not.
+## Software BSP generation
 
-You can choose to use the Quartus editor by choosing **File -> New** or to use your own favourite text editor.
+The Nios V BSP generator can be run from VDS.  Go to **Tools -> BSP Eitor**
+![BSP editor](../../docs/images/bsp_editor.png)
 
-There should be a module that matches the project name that you specified earlier ie `top`.
+- BSP Settings file - choose to create new: ![new BSP](../../docs/images/bsp_create_new.png)
+  - Name = top.bsp
+  - Leave Operating system as Altera HAL (ie baremetal), note you could have FreeRTOS too
+  - Press **Create**
+- The BSP editor allows you to select which Altera source files should be included 
+  - Press **Generate BSP** without making modifications
+- Start Ashling RiscFree IDE
+- Choose **File -> New -> C/C++ Project**
+- Choose **CMake Project**
 
-### Add design file(s) to project
+## Simulation
 
-If you use the Quartus editor to create your file, you may need to add the file to your project.  The Quartus software will read files that meet one of these criteria:
+- Start Questa Altera FPGA Edition  **NB latest version of Ubuntu supported = 20.04**
+  - Later versions have incompatible gcc
+- Navigate to `gen/vds/top_tb/sim/mentor` in your Quartus project directory
+- `do msim_setup.tcl`
+- `ld_debug`
+- 
 
-- Explicitly added to project using **Project -> Add/Remove Files in Project...**
-- Included in the project directory
-- Included in a library path specified at the beginning or using **Assignments -> Settings** and using the **Libraries** category
 
-## Set compilation settings
 
-- Open settings dialog **Assignments -> Settings** browse to **Compiler settings -> Verilog HDL input**
-- Change from default Verilog-2001 to SystemVerilog-2012
-
-### Synthesize
-
-Run synthesis on your design
-
-- tool ![analysis & synthesis](../../docs/images/analysis_synth.png)
-- **Processing -> Start -> Start Analysis and Synthesis**
-- Using **Compilation Dashboard** select **Processing -> Compilation Dashboard** if not already visible.
-
-### Analyse results
-
-You should already see compilation messages from the operation above.
-
-Use the filters to identify errors, warnings and info messages:
-![message filter](../../docs/images/message_filter.png)
-
-Open the compilation report to read information on each stage:
-
-- tool ![compilation report](../../docs/images/comp_report.png)
-- **Processing -> Compilation Report**
-- Look through each section of the report
-- Use netlist viewers from **Compilation dashboard** or **Processing -> Netlist viewers** to check functionality has been inferred as you expect
-- You will need to include read signals to prevent the RAM being optimised away
-
-## Include Reset Release IP
-
-_You can start this section either with the project you have created above or use [cmpl_proj_step1](./cmpl_proj_step1)_
-
-The _Critical Warning_ says we need a Reset Release IP.  We need to use the IP Catalog to get this and all other Altera defined blocks:
-
-- All primitives
-- Signal processing IP (eg video, filter, transform)
-- Interface (eg PCI Express, Ethernet)
-
-The IP Catalog window is included by default.  If it has been switched off, it can be re-enabled using **Tools -> IP Catalog**
-
-![IP catalog](../../docs/images/ip_catalog.png)
-
-- Start typing `Reset Release IP` into the IP Filter box
-- Double click Reset Release IP when the icon is visible
-- Decide a name for the IP variant when the dialog box opens.  I use `rst_rel`
-- click **Create**
-- Choose **Reset Interface** _Note this selection doesn't matter for the rtl only project, the interface definition is used by Visual Designer Studio_
-- Click **Block Symbol** to see the interface
-- Click **Generate HDL...** to generate the HDL file
-- Do not change from defaults and click **Generate**
-- If prompted to save before generation choose **Yes**
-- A window appears with the generation process.  Filters work in a similar way to the message window
-- click **Close**
-- click the x in the top right corner of the Reset Release IP window
-- look in the working directory of your project to find `rst_rel.ip` and a directory called `rst_rel`
-- Connect the `ninit_done` output of the reset release IP to the reset inputs of the logic you have designed.
-- Run **Analysis & Synthesis** again
-- Check that there are no warnings or errors in the Processing tab of the Message window
-
-## Fitter flow
-
-_You can start this section either with the project you have created above or use [cmpl_proj_step2](./cmpl_proj_step2)_
-
-- Run the full compilation flow
-  - Press the triangle tool ![compile](../../docs/images/compile_but.png)
-  - **Processing -> Start Compilation**
-  - Select **Compile Design** from **Compilation Dashboard**
-- Inspect warnings
-  - top level ports do not have location, voltage and drive strength assignments
-  - No timing constraints
-
-### IO constraints
-
-- Open the Pin Planner ![pin planner](../../docs/images/pin_plan_but.png)
-  ![pin plan](../../docs/images/pin_plan_view.png)
-- View the locations that the fitter has chosen ![fitter assignment](../../docs/images/pin_plan_fitter.png)
-- assign locations for 
-  - clock signal assign to connector D0 = FPGA AE25
-  - reset input assign to connector D1 = FPGA AF21
-  - serial input assign to connector D2 = FPGA AH20
-  - state output assign to connector D3 = FPGA AG19
-- Assign all pins with locations
-  - I/O Standard 3.3-V LVCMOS
-  - output Current Strength 12ma
-- Signals added to preserve the RAM would be connected to another internal module.  To preserve these connections but not use an IO pin, use a Virtual Pin assignment
-  - Open Assignments editor ![Assignment button](../../docs/images/assignment_but.png) in main Quartus Prime Pro window
-    ![assignment editor](../../docs/images/assignment_editor.png)
-  - In the To column, click `<<new>>`  to start creating a new assignment
-  - Type the name of the signals used to preserve the RAM - use `*` for wildcard.  You can also use the node finder
-    - press tab or click away from the cell for validation
-  - double click the yellow cell that appears in the Assignment Name column
-    - scroll to Virtual Pin
-    - Read the Information window for details on the assignment
-  - Set the Value column to On
-  - Save by choosing **File -> Save**
-  - Run Analysis & Synthesis again
-- Return to Pin Planner, press the Start I/O Analysis button to check the assignments that have been made ![IO Analysis button](../../docs/images/io_ana_but.png)
-- Confirm there are no IO Assignment warnings in the Compilation Report
-
-## Timing constraints
-
-A further session is dedicated to timing constraints
