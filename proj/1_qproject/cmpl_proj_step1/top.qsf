@@ -36,4 +36,4 @@ set_global_assignment -name USE_CONF_DONE SDM_IO16
 set_global_assignment -name USE_INIT_DONE SDM_IO0
 set_instance_assignment -name PARTITION_COLOUR 4294180719 -to top -entity top
 set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2012
-set_global_assignment -name SYSTEMVERILOG_FILE top_step2.sv
+set_global_assignment -name SYSTEMVERILOG_FILE top.sv
