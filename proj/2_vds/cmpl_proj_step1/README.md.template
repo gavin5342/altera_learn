@@ -1,0 +1,25 @@
+# < design example title >
+
+< you can specify your short description here >
+
+## Description
+
+< you can describe your design example in details here>
+
+## Project Details
+
+- **Family**: < supported family >
+- **Quartus Version**: < supported Quartus version#1, supported Quartus version#2 >
+- **Patch Number**: < supported patch number >
+- **Development Kit**: < supported development kit >
+- **Device Part**: < supported device part >
+- **Category**: < category#1, category#2 >
+- **URL**: < url of the design example >
+- **Design Package**: < design package filename >
+
+## Documentations
+
+- **Title**: < your first documentation title >
+**URL**: < your first documentation link >
+- **Title**: < your second documentation title if any >
+**URL**: < your second documentation link >
