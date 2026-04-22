@@ -1,0 +1,19 @@
+# system info top_tb on 2026.04.22.02:07:59
+system_info:
+name,value
+DEVICE,A3CY100BM16AE7S
+DEVICE_FAMILY,Agilex 3
+GENERATION_ID,0
+#
+#
+# Files generated for top_tb on 2026.04.22.02:07:59
+files:
+filepath,kind,attributes,module,is_top
+sim/top_tb.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,top_tb,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+top_tb.top_inst_clk_bfm,top_inst_clk_bfm_ip
+top_tb.top_inst_reset_bfm,top_inst_reset_bfm_ip
+top_tb.top_inst,top

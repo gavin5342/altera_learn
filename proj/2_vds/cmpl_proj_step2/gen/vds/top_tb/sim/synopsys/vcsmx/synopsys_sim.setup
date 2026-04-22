@@ -1,0 +1,8 @@
+
+WORK > DEFAULT
+DEFAULT:                           ./libraries/work/  
+work:                              ./libraries/work/  
+top_tb:                            ./libraries/top_tb/
+OTHERS=_device_synopsys_sim.setup                     
+OTHERS=_default_synopsys_sim.setup                    
+LIBRARY_SCAN = TRUE

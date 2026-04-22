@@ -1,0 +1,7 @@
+
+WORK > DEFAULT
+DEFAULT:                          ./libraries/work/                    
+work:                             ./libraries/work/                    
+intel_onchip_memory_1411:         ./libraries/intel_onchip_memory_1411/
+top_ram:                          ./libraries/top_ram/                 
+OTHERS=_device_synopsys_sim.setup                                      

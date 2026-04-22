@@ -1,0 +1,3 @@
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/build/Default/CMakeFiles/hal2_bsp.dir
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/build/Default/CMakeFiles/edit_cache.dir
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/build/Default/CMakeFiles/rebuild_cache.dir

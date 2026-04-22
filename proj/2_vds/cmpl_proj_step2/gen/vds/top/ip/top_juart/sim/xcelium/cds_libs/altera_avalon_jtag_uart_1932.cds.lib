@@ -1,0 +1,5 @@
+
+DEFINE                     work                         ./../libraries/work/                        
+DEFINE                     altera_avalon_jtag_uart_1932 ./../libraries/altera_avalon_jtag_uart_1932/
+INCLUDE simulator.cds.lib                                                                           
+SOFTINCLUDE device.cds.lib                                                                          

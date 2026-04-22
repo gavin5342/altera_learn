@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2026.04.22.02:07:44"
+ outputDirectory="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex 3"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="A3CY100BM16AE7S"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_BOARD"
+     type="String"
+     defaultValue="default"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_INSTRUCTION_MANAGER_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_INSTRUCTION_MANAGER_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DATA_MANAGER_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DATA_MANAGER_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="reset_reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="instruction_manager" kind="axi4lite" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="optionalAssociatedReset" value="false" />
+   <property name="trustzoneAware" value="true" />
+   <property name="wakeupSignals" value="false" />
+   <property name="uniqueIdSupport" value="false" />
+   <property name="poison" value="false" />
+   <property name="traceSignals" value="false" />
+   <property name="isTranslator" value="false" />
+   <property name="maximumOutstandingReads" value="1" />
+   <property name="maximumOutstandingWrites" value="1" />
+   <property name="maximumOutstandingTransactions" value="1" />
+   <property name="dataCheck" value="false" />
+   <property name="addressCheck" value="false" />
+   <property name="securityAttribute" value="false" />
+   <property name="userData" value="false" />
+   <property name="readIssuingCapability" value="8" />
+   <property name="writeIssuingCapability" value="1" />
+   <property name="combinedIssuingCapability" value="8" />
+   <property name="enableConcurrentSubordinateAccess" value="0" />
+   <property name="noRepeatedIdsBetweenSubordinates" value="0" />
+   <port
+       name="instruction_manager_awaddr"
+       direction="output"
+       role="awaddr"
+       width="32" />
+   <port
+       name="instruction_manager_awprot"
+       direction="output"
+       role="awprot"
+       width="3" />
+   <port
+       name="instruction_manager_awvalid"
+       direction="output"
+       role="awvalid"
+       width="1" />
+   <port
+       name="instruction_manager_awready"
+       direction="input"
+       role="awready"
+       width="1" />
+   <port
+       name="instruction_manager_wdata"
+       direction="output"
+       role="wdata"
+       width="32" />
+   <port
+       name="instruction_manager_wstrb"
+       direction="output"
+       role="wstrb"
+       width="4" />
+   <port
+       name="instruction_manager_wvalid"
+       direction="output"
+       role="wvalid"
+       width="1" />
+   <port
+       name="instruction_manager_wready"
+       direction="input"
+       role="wready"
+       width="1" />
+   <port
+       name="instruction_manager_bresp"
+       direction="input"
+       role="bresp"
+       width="2" />
+   <port
+       name="instruction_manager_bvalid"
+       direction="input"
+       role="bvalid"
+       width="1" />
+   <port
+       name="instruction_manager_bready"
+       direction="output"
+       role="bready"
+       width="1" />
+   <port
+       name="instruction_manager_araddr"
+       direction="output"
+       role="araddr"
+       width="32" />
+   <port
+       name="instruction_manager_arprot"
+       direction="output"
+       role="arprot"
+       width="3" />
+   <port
+       name="instruction_manager_arvalid"
+       direction="output"
+       role="arvalid"
+       width="1" />
+   <port
+       name="instruction_manager_arready"
+       direction="input"
+       role="arready"
+       width="1" />
+   <port
+       name="instruction_manager_rdata"
+       direction="input"
+       role="rdata"
+       width="32" />
+   <port
+       name="instruction_manager_rresp"
+       direction="input"
+       role="rresp"
+       width="2" />
+   <port
+       name="instruction_manager_rvalid"
+       direction="input"
+       role="rvalid"
+       width="1" />
+   <port
+       name="instruction_manager_rready"
+       direction="output"
+       role="rready"
+       width="1" />
+  </interface>
+  <interface name="data_manager" kind="axi4lite" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="optionalAssociatedReset" value="false" />
+   <property name="trustzoneAware" value="true" />
+   <property name="wakeupSignals" value="false" />
+   <property name="uniqueIdSupport" value="false" />
+   <property name="poison" value="false" />
+   <property name="traceSignals" value="false" />
+   <property name="isTranslator" value="false" />
+   <property name="maximumOutstandingReads" value="1" />
+   <property name="maximumOutstandingWrites" value="1" />
+   <property name="maximumOutstandingTransactions" value="1" />
+   <property name="dataCheck" value="false" />
+   <property name="addressCheck" value="false" />
+   <property name="securityAttribute" value="false" />
+   <property name="userData" value="false" />
+   <property name="readIssuingCapability" value="1" />
+   <property name="writeIssuingCapability" value="1" />
+   <property name="combinedIssuingCapability" value="1" />
+   <property name="enableConcurrentSubordinateAccess" value="0" />
+   <property name="noRepeatedIdsBetweenSubordinates" value="0" />
+   <port
+       name="data_manager_awaddr"
+       direction="output"
+       role="awaddr"
+       width="32" />
+   <port name="data_manager_awprot" direction="output" role="awprot" width="3" />
+   <port
+       name="data_manager_awvalid"
+       direction="output"
+       role="awvalid"
+       width="1" />
+   <port
+       name="data_manager_awready"
+       direction="input"
+       role="awready"
+       width="1" />
+   <port name="data_manager_wdata" direction="output" role="wdata" width="32" />
+   <port name="data_manager_wstrb" direction="output" role="wstrb" width="4" />
+   <port name="data_manager_wvalid" direction="output" role="wvalid" width="1" />
+   <port name="data_manager_wready" direction="input" role="wready" width="1" />
+   <port name="data_manager_bresp" direction="input" role="bresp" width="2" />
+   <port name="data_manager_bvalid" direction="input" role="bvalid" width="1" />
+   <port name="data_manager_bready" direction="output" role="bready" width="1" />
+   <port
+       name="data_manager_araddr"
+       direction="output"
+       role="araddr"
+       width="32" />
+   <port name="data_manager_arprot" direction="output" role="arprot" width="3" />
+   <port
+       name="data_manager_arvalid"
+       direction="output"
+       role="arvalid"
+       width="1" />
+   <port
+       name="data_manager_arready"
+       direction="input"
+       role="arready"
+       width="1" />
+   <port name="data_manager_rdata" direction="input" role="rdata" width="32" />
+   <port name="data_manager_rresp" direction="input" role="rresp" width="2" />
+   <port name="data_manager_rvalid" direction="input" role="rvalid" width="1" />
+   <port name="data_manager_rready" direction="output" role="rready" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="top_niosv" version="1.0" name="top_niosv">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_DATA_MANAGER_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 3" />
+  <parameter name="AUTO_BOARD" value="default" />
+  <parameter name="AUTO_DATA_MANAGER_ADDRESS_WIDTH" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="AUTO_INSTRUCTION_MANAGER_ADDRESS_WIDTH" value="-1" />
+  <parameter name="AUTO_DEVICE" value="A3CY100BM16AE7S" />
+  <parameter name="AUTO_INSTRUCTION_MANAGER_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <generatedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/synth/top_niosv.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/synth/top_niosv.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/src/vds/top/ip/top_niosv.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/soft_processor/intel_niosv_c/intel_niosv_c_hw.tcl" />
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/soft_processor/intel_niosv_c/intel_niosv_c_unit_hw.tcl" />
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="top_niosv">"Generating: top_niosv"</message>
+   <message level="Info" culprit="top_niosv">"Generating: top_niosv_intel_niosv_c_420_qiadggq"</message>
+   <message level="Info" culprit="top_niosv">"Generating: top_niosv_intel_niosv_c_unit_420_i5xhjda"</message>
+   <message level="Info" culprit="niosv_reset_controller">"Generating: niosv_reset_controller"</message>
+   <message level="Info" culprit="top_niosv">"Generating: niosv_reset_controller"</message>
+   <message level="Info" culprit="top_niosv">"Generating: altera_reset_controller"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="intel_niosv_c"
+   version="4.2.0"
+   name="top_niosv_intel_niosv_c_420_qiadggq">
+  <parameter name="AUTO_BOARD" value="default" />
+  <parameter name="enableZca" value="false" />
+  <parameter name="useResetReq" value="false" />
+  <parameter name="enableZcb" value="false" />
+  <parameter
+     name="dataSlaveMapParam"
+     value="&lt;address-map&gt;&lt;slave name=&apos;ram.axi_s1&apos; start=&apos;0x0&apos; end=&apos;0x2000&apos; datawidth=&apos;32&apos; /&gt;&lt;slave name=&apos;juart.avalon_jtag_slave&apos; start=&apos;0x2000&apos; end=&apos;0x2008&apos; datawidth=&apos;32&apos; /&gt;&lt;/address-map&gt;" />
+  <parameter name="enableZbs" value="false" />
+  <parameter name="hartID" value="0" />
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="resetOffset" value="0" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
+  <parameter name="numGpr" value="32" />
+  <parameter name="archSize" value="32" />
+  <parameter name="enableAvalonInterface" value="false" />
+  <parameter
+     name="instSlaveMapParam"
+     value="&lt;address-map&gt;&lt;slave name=&apos;ram.axi_s1&apos; start=&apos;0x0&apos; end=&apos;0x2000&apos; datawidth=&apos;32&apos; /&gt;&lt;/address-map&gt;" />
+  <parameter name="enableZmmul" value="false" />
+  <parameter name="enableECCLite" value="false" />
+  <parameter name="deviceFamily" value="Agilex 3" />
+  <parameter name="interruptMode" value="0" />
+  <parameter name="enableZbb" value="false" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="enableZba" value="false" />
+  <parameter name="enableResetReq" value="false" />
+  <parameter name="resetSlave" value="Absolute" />
+  <parameter name="AUTO_DEVICE" value="A3CY100BM16AE7S" />
+  <parameter name="enableZicsr" value="false" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
+  <parameter name="enableZicntr" value="false" />
+  <generatedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_420/synth/top_niosv_intel_niosv_c_420_qiadggq.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_420/synth/top_niosv_intel_niosv_c_420_qiadggq.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/soft_processor/intel_niosv_c/intel_niosv_c_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/soft_processor/intel_niosv_c/intel_niosv_c_unit_hw.tcl" />
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <instantiator instantiator="top_niosv" as="niosv" />
+  <messages>
+   <message level="Info" culprit="top_niosv">"Generating: top_niosv_intel_niosv_c_420_qiadggq"</message>
+   <message level="Info" culprit="top_niosv">"Generating: top_niosv_intel_niosv_c_unit_420_i5xhjda"</message>
+   <message level="Info" culprit="niosv_reset_controller">"Generating: niosv_reset_controller"</message>
+   <message level="Info" culprit="top_niosv">"Generating: niosv_reset_controller"</message>
+   <message level="Info" culprit="top_niosv">"Generating: altera_reset_controller"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="intel_niosv_c_unit"
+   version="4.2.0"
+   name="top_niosv_intel_niosv_c_unit_420_i5xhjda">
+  <parameter name="HARTID" value="0" />
+  <parameter name="ECC_ENA" value="0" />
+  <parameter name="Zcb_ENA" value="0" />
+  <parameter name="sharedInstructionDataInterface" value="false" />
+  <parameter name="DEVICE_FAMILY" value="Agilex 3" />
+  <parameter name="Zbs_ENA" value="0" />
+  <parameter name="ALULEN" value="32" />
+  <parameter name="MXLEN" value="32" />
+  <parameter name="FAST_SHIFT" value="0" />
+  <parameter name="Zicsr_ENA" value="0" />
+  <parameter name="Zbb_ENA" value="0" />
+  <parameter name="enableResetReq" value="false" />
+  <parameter name="Zmmul_ENA" value="0" />
+  <parameter name="Zca_ENA" value="0" />
+  <parameter name="TARGET_AREA" value="1" />
+  <parameter name="Zicntr_ENA" value="0" />
+  <parameter name="Zba_ENA" value="0" />
+  <parameter name="RESET_VECTOR" value="0" />
+  <parameter name="enableAvalonInterface" value="false" />
+  <generatedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/ecc_enc.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/ecc_dec.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/altecc_enc.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/altecc_dec.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/riscv.pkg.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv.pkg.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_ram.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp.pkg.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_alu.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_mult.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_shift.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_shift_fast.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_zbb.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_rf.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_csr.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_cdec.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_fsm.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_axi_channel_fsm.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_axi4lite_if.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_avalon_if.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_core.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/top_niosv_intel_niosv_c_unit_420_i5xhjda.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/ecc_enc.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/ecc_dec.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/altecc_enc.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/altecc_dec.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/riscv.pkg.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv.pkg.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_ram.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp.pkg.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_alu.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_mult.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_shift.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_shift_fast.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_zbb.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_rf.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_csr.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_cdec.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_fsm.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_axi_channel_fsm.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_axi4lite_if.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_avalon_if.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_cpp_core.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/top_niosv_intel_niosv_c_unit_420_i5xhjda.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/soft_processor/intel_niosv_c/intel_niosv_c_unit_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <instantiator instantiator="top_niosv_intel_niosv_c_420_qiadggq" as="core" />
+  <messages>
+   <message level="Info" culprit="top_niosv">"Generating: top_niosv_intel_niosv_c_unit_420_i5xhjda"</message>
+   <message level="Info" culprit="niosv_reset_controller">"Generating: niosv_reset_controller"</message>
+   <message level="Info" culprit="top_niosv">"Generating: niosv_reset_controller"</message>
+   <message level="Info" culprit="top_niosv">"Generating: altera_reset_controller"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="intel_niosv_c_unit_altera_reset_controller"
+   version="4.2.0"
+   name="niosv_reset_controller">
+  <generatedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_reset_controller.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/intel_niosv_c_unit_420/synth/niosv_reset_controller.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles/>
+  <childSourceFiles>
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <instantiator
+     instantiator="top_niosv_intel_niosv_c_unit_420_i5xhjda"
+     as="niosv_reset_controller" />
+  <messages>
+   <message level="Info" culprit="top_niosv">"Generating: niosv_reset_controller"</message>
+   <message level="Info" culprit="top_niosv">"Generating: altera_reset_controller"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_reset_controller"
+   version="19.2.4"
+   name="altera_reset_controller">
+  <generatedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/altera_reset_controller_1924/synth/altera_reset_controller.v"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/altera_reset_controller_1924/synth/altera_reset_synchronizer.v"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/altera_reset_controller_1924/synth/altera_reset_controller.sdc"
+       attributes="NO_SDC_PROMOTION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/altera_reset_controller_1924/synth/altera_reset_controller.v"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/altera_reset_controller_1924/synth/altera_reset_synchronizer.v"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_niosv/altera_reset_controller_1924/synth/altera_reset_controller.sdc"
+       attributes="NO_SDC_PROMOTION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="niosv_reset_controller" as="niosv_reset_controller" />
+  <messages>
+   <message level="Info" culprit="top_niosv">"Generating: altera_reset_controller"</message>
+  </messages>
+ </entity>
+</deploy>

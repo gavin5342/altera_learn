@@ -1,0 +1,29 @@
+CMakeFiles/hal2_bsp.dir/HAL/src/alt_usleep.c.obj: \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/src/alt_usleep.c \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/unistd.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/unistd.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/_ansi.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/newlib.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/_newlib_version.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/config.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/ieeefp.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/features.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/cdefs.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/_default_types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stddef.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/_types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_stdint.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/endian.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/_endian.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/select.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_sigset.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_timeval.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/timespec.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_timespec.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_pthreadtypes.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/sched.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/types.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/priv/alt_busy_sleep.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/os/alt_syscall.h

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_reset_controller_1924/sim/altera_reset_controller.v"
+   type="VERILOG"
+   library="altera_reset_controller_1924" />
+ <file
+   path="altera_reset_controller_1924/sim/altera_reset_synchronizer.v"
+   type="VERILOG"
+   library="altera_reset_controller_1924" />
+ <file
+   path="altera_reset_controller_1924/sim/altera_reset_controller.sdc"
+   type="SDC_ENTITY"
+   library="altera_reset_controller_1924" />
+ <file
+   path="intel_niosv_c_unit_420/sim/niosv_reset_controller.v"
+   type="VERILOG"
+   library="intel_niosv_c_unit_420"
+   hasInlineConfiguration="true" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/ecc_enc.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/ecc_dec.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/altecc_enc.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/altecc_dec.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/riscv.pkg.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv.pkg.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_ram.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp.pkg.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_alu.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_mult.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_shift.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_shift_fast.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_zbb.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_rf.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_csr.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_cdec.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_fsm.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_axi_channel_fsm.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_axi4lite_if.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_avalon_if.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_core.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_unit_420/sim/intelfpga/top_niosv_intel_niosv_c_unit_420_i5xhjda.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_niosv_c_unit_420" />
+ <file
+   path="intel_niosv_c_420/sim/top_niosv_intel_niosv_c_420_qiadggq.v"
+   type="VERILOG"
+   library="intel_niosv_c_420"
+   hasInlineConfiguration="true" />
+ <file
+   path="sim/top_niosv.v"
+   type="VERILOG"
+   library="top_niosv"
+   hasInlineConfiguration="true" />
+ <topLevel name="top_niosv.top_niosv" />
+ <deviceFamily name="agilex3" />
+ <device name="A3CY100BM16AE7S" />
+</simPackage>

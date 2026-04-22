@@ -1,0 +1,5 @@
+
+DEFINE                     work                   ./../libraries/work/                  
+DEFINE                     intel_niosv_c_unit_420 ./../libraries/intel_niosv_c_unit_420/
+INCLUDE simulator.cds.lib                                                               
+SOFTINCLUDE device.cds.lib                                                              

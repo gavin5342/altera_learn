@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2026.04.22.02:07:59"
+ outputDirectory="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top_tb/ip/top_inst_reset_bfm_ip/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex 3"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="A3CY100BM16AE7S"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_BOARD"
+     type="String"
+     defaultValue="default"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="reset" kind="reset" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedDirectReset" value="" />
+   <property name="associatedResetSinks" value="none" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="reset" direction="output" role="reset_n" width="1" />
+  </interface>
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="top_inst_reset_bfm_ip"
+   version="1.0"
+   name="top_inst_reset_bfm_ip">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="A3CY100BM16AE7S" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 3" />
+  <parameter name="AUTO_BOARD" value="default" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <generatedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top_tb/ip/top_inst_reset_bfm_ip/synth/top_inst_reset_bfm_ip.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top_tb/ip/top_inst_reset_bfm_ip/synth/top_inst_reset_bfm_ip.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top_tb/ip/top_inst_reset_bfm_ip.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/sopc_builder_ip/verification/altera_avalon_reset_source/altera_avalon_reset_source_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="top_inst_reset_bfm_ip">"Generating: top_inst_reset_bfm_ip"</message>
+   <message level="Info" culprit="top_inst_reset_bfm_ip">"Generating: altera_avalon_reset_source"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_avalon_reset_source"
+   version="19.1"
+   name="altera_avalon_reset_source">
+  <generatedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top_tb/ip/top_inst_reset_bfm_ip/altera_avalon_reset_source_191/synth/verbosity_pkg.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top_tb/ip/top_inst_reset_bfm_ip/altera_avalon_reset_source_191/synth/altera_avalon_reset_source.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top_tb/ip/top_inst_reset_bfm_ip/altera_avalon_reset_source_191/synth/verbosity_pkg.sv"
+       attributes="" />
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top_tb/ip/top_inst_reset_bfm_ip/altera_avalon_reset_source_191/synth/altera_avalon_reset_source.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/opt/altera/qpro_26_1/ip/altera/sopc_builder_ip/verification/altera_avalon_reset_source/altera_avalon_reset_source_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="top_inst_reset_bfm_ip" as="top_inst_reset_bfm" />
+  <messages>
+   <message level="Info" culprit="top_inst_reset_bfm_ip">"Generating: altera_avalon_reset_source"</message>
+  </messages>
+ </entity>
+</deploy>

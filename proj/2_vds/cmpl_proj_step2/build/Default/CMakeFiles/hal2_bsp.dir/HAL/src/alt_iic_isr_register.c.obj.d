@@ -1,0 +1,26 @@
+CMakeFiles/hal2_bsp.dir/HAL/src/alt_iic_isr_register.c.obj: \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/src/alt_iic_isr_register.c \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/errno.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/errno.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/reent.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/_ansi.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/newlib.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/_newlib_version.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/config.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/ieeefp.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/features.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stddef.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/cdefs.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/_default_types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/_types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/machine/_types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/riscv32-unknown-elf/include/sys/lock.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/./system.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/./linker.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/alt_types.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/sys/alt_irq.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/intel_niosv.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/alt_types.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/io.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/priv/alt_iic_isr_register.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/sys/alt_warning.h

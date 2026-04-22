@@ -1,0 +1,19 @@
+CMakeFiles/hal2_bsp.dir/drivers/src/altera_avalon_jtag_uart_fd.c.obj: \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/drivers/src/altera_avalon_jtag_uart_fd.c \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/alt_types.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/sys/alt_dev.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/./system.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/./linker.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/sys/alt_llist.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/priv/alt_dev_llist.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/drivers/inc/altera_avalon_jtag_uart.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stddef.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/sys/alt_alarm.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/sys/alt_llist.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/priv/alt_alarm.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/sys/alt_warning.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/os/alt_hooks.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/os/alt_sem.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/priv/alt_no_error.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/HAL/inc/os/alt_flag.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/drivers/inc/altera_avalon_jtag_uart_fd.h

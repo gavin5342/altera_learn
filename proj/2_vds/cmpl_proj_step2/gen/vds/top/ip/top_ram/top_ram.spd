@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="intel_onchip_memory_1411/sim/top_ram_intel_onchip_memory_1411_csm74aq.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_onchip_memory_1411" />
+ <file
+   path="intel_onchip_memory_1411/sim/top_ram_ram.hex"
+   type="HEX"
+   library="intel_onchip_memory_1411" />
+ <file
+   path="intel_onchip_memory_1411/sim/top_ram_intel_onchip_memory_1411_csm74aq_axi_bursting_adapter.sv"
+   type="SYSTEM_VERILOG"
+   library="intel_onchip_memory_1411" />
+ <file
+   path="sim/top_ram.v"
+   type="VERILOG"
+   library="top_ram"
+   hasInlineConfiguration="true" />
+ <topLevel name="top_ram.top_ram" />
+ <deviceFamily name="agilex3" />
+ <device name="A3CY100BM16AE7S" />
+ <modelMap controllerPath="top_ram.ram" modelPath="top_ram.ram" />
+</simPackage>
