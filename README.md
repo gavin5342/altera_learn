@@ -17,6 +17,7 @@ Each section is organized into presentation material for introduction and a lab.
 - License for Quartus Prime Pro Software
   - A 30 day evaluation license is available from first installation of the software, as shown in the [installation and licensing guide]( https://docs.altera.com/r/docs/683472/25.3/altera-fpga-software-installation-and-licensing/evaluating-the-quartus-prime-software)
   - A 90 day evaluation license may be generated through the [self service license centre](https://www.altera.com/SSLC)
+  - Free licenses for Agilex 3 and Agilex 5 E support within the Quartus Prime Pro software are available.  For more information, see [acquiring free no cost licenses](https://docs.altera.com/r/docs/683472/26.1/altera-fpga-software-installation-and-licensing/acquiring-free-no-cost-licenses)
 
 ## Viewing
 
