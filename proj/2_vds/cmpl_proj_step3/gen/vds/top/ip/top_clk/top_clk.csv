@@ -1,0 +1,16 @@
+# system info top_clk on 2026.04.22.02:01:52
+system_info:
+name,value
+DEVICE,A3CY100BM16AE7S
+DEVICE_FAMILY,Agilex 3
+GENERATION_ID,0
+#
+#
+# Files generated for top_clk on 2026.04.22.02:01:52
+files:
+filepath,kind,attributes,module,is_top
+sim/top_clk.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,top_clk,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module

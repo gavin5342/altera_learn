@@ -1,0 +1,15 @@
+- Entry: 1
+  Time: Wed Apr 22 01:39:50 2026
+  Command: /opt/questa/questa_fe/linux_x86_64/qrun -compile -noautoorder -parallel -outdir ./libraries -vlog.options -end -vcom.options -end -vlog.ext=+.vo -vlog.ext=+.vt -vcom.ext=+.vho -sv -suppress 13338 -makelib work /opt/altera/qpro_26_1/quartus//eda/sim_lib//simsf_dpi.cpp -end 
+- Entry: 2
+  Time: Wed Apr 22 01:43:12 2026
+  Command: /opt/questa/questa_fe/linux_x86_64/qrun -compile -noautoorder -parallel -outdir ./libraries -vlog.options -end -vcom.options -end -vlog.ext=+.vo -vlog.ext=+.vt -vcom.ext=+.vho -sv -suppress 13338 -makelib work /opt/altera/qpro_26_1/quartus/eda/sim_lib/simsf_dpi.cpp -end 
+- Entry: 3
+  Time: Wed Apr 22 01:43:14 2026
+  Command: /opt/questa/questa_fe/linux_x86_64/qrun -compile -noautoorder -parallel -outdir ./libraries -vlog.options -end -vcom.options -end -vlog.ext=+.vo -vlog.ext=+.vt -vcom.ext=+.vho -sv -suppress 13338 -f modelsim_com.f 
+- Entry: 4
+  Time: Mon Apr 27 16:03:22 2026
+  Command: /opt/questa/questa_fe/linux_x86_64/qrun -compile -noautoorder -parallel -outdir ./libraries -vlog.options -end -vcom.options -end -vlog.ext=+.vo -vlog.ext=+.vt -vcom.ext=+.vho -sv -suppress 13338 -makelib work /opt/altera/qpro_26_1/quartus/eda/sim_lib/simsf_dpi.cpp -end 
+- Entry: 5
+  Time: Mon Apr 27 16:03:22 2026
+  Command: /opt/questa/questa_fe/linux_x86_64/qrun -compile -noautoorder -parallel -outdir ./libraries -vlog.options -end -vcom.options -end -vlog.ext=+.vo -vlog.ext=+.vt -vcom.ext=+.vho -sv -suppress 13338 -f modelsim_com.f 

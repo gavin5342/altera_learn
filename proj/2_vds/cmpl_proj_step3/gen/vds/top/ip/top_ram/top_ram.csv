@@ -1,0 +1,20 @@
+# system info top_ram on 2026.04.22.02:07:45
+system_info:
+name,value
+DEVICE,A3CY100BM16AE7S
+DEVICE_FAMILY,Agilex 3
+GENERATION_ID,0
+#
+#
+# Files generated for top_ram on 2026.04.22.02:07:45
+files:
+filepath,kind,attributes,module,is_top
+sim/top_ram.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,top_ram,true
+intel_onchip_memory_1411/sim/top_ram_intel_onchip_memory_1411_csm74aq.sv,SYSTEM_VERILOG,,top_ram_intel_onchip_memory_1411_csm74aq,false
+intel_onchip_memory_1411/sim/top_ram_ram.hex,HEX,,top_ram_intel_onchip_memory_1411_csm74aq,false
+intel_onchip_memory_1411/sim/top_ram_intel_onchip_memory_1411_csm74aq_axi_bursting_adapter.sv,SYSTEM_VERILOG,,top_ram_intel_onchip_memory_1411_csm74aq,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+top_ram.ram,top_ram_intel_onchip_memory_1411_csm74aq

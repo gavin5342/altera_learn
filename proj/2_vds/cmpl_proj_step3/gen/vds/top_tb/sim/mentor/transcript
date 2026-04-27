@@ -1,0 +1,1120 @@
+# top_tb.top_tb
+# ./../
+# /opt/altera/qpro_26_1/quartus/
+# /opt/altera/qpro_26_1/quartus//eda/sim_lib/
+# /opt/altera/qpro_26_1/quartus//../devices/sim_lib/
+# false
+# false
+# false
+# bit_64
+# work work_lib lpm_ver sgate_ver altera_ver altera_mf_ver altera_lnsim_ver tennm_ver tennm_sm_hps_ver tennm_sm4_hssi_ver tennm_revb_hvio_ver tennm_revb_io96_ver lpm sgate altera altera_mf altera_lnsim tennm tennm_sm_hps tennm_sm4_hssi tennm_revb_hvio tennm_revb_io96
+# Questa Altera FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work ./libraries/work/ 
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Modifying /opt/questa/questa_fe/linux_x86_64/../modelsim.ini
+# Questa Altera FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work_lib ./libraries/work/ 
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Modifying /opt/questa/questa_fe/linux_x86_64/../modelsim.ini
+# altera_avalon_jtag_uart_1932 1 top_juart 1 altera_reset_controller_1924 1 intel_niosv_c_unit_420 1 intel_niosv_c_420 1 top_niosv 1 intel_onchip_memory_1411 1 top_ram 1 top_clk 1 altera_merlin_axi_translator_1987 1 altera_merlin_slave_translator_191 1 altera_merlin_axi_master_ni_19117 1 altera_merlin_slave_agent_1930 1 altera_avalon_sc_fifo_1932 1 altera_merlin_axi_slave_ni_19129 1 altera_avalon_st_pipeline_stage_1930 1 altera_merlin_router_1921 1 altera_merlin_demultiplexer_1921 1 altera_merlin_multiplexer_1922 1 altera_mm_interconnect_1920 1 top 1 altera_common_sv_packages 1 altera_avalon_clock_source_191 1 top_inst_clk_bfm_ip 1 altera_avalon_reset_source_191 1 top_inst_reset_bfm_ip 1 top_tb 1
+# altera_avalon_jtag_uart_1932 top_juart altera_reset_controller_1924 intel_niosv_c_unit_420 intel_niosv_c_420 top_niosv intel_onchip_memory_1411 top_ram top_clk altera_merlin_axi_translator_1987 altera_merlin_slave_translator_191 altera_merlin_axi_master_ni_19117 altera_merlin_slave_agent_1930 altera_avalon_sc_fifo_1932 altera_merlin_axi_slave_ni_19129 altera_avalon_st_pipeline_stage_1930 altera_merlin_router_1921 altera_merlin_demultiplexer_1921 altera_merlin_multiplexer_1922 altera_mm_interconnect_1920 top altera_common_sv_packages altera_avalon_clock_source_191 top_inst_clk_bfm_ip altera_avalon_reset_source_191 top_inst_reset_bfm_ip top_tb
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with  -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Qsys base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# SILENCE                                           -- Set to true to suppress all informational and/or warning messages in the generated simulation script. 
+# 
+# PRECOMP_DEVICE_LIB_FILE                           -- Precompiled device library file.
+#                                                     Use this variable to provide modelsim.ini or tcl containing device library mapping and dev_com will be skipped
+#                                                     If value is empty, device libraries will be compiled local
+# 
+# FORCE_MODELSIM_AE_SELECTION                       -- Set to true to force to select Modelsim AE always.
+# 
+# ENABLE_QE_LIBRARY_COMPILATION                     -- Set to true to enable device library compilation for Questa FE.
+# [exec] dev_com
+# Questa Altera FPGA Edition-64 qrun 2025.2 Utility 2025.05 May 31 2025
+# Start time: 01:43:12 on Apr 22,2026
+# qrun -compile -noautoorder -parallel -outdir ./libraries -vlog.options -end -vcom.options -end -vlog.ext=+.vo -vlog.ext=+.vt -vcom.ext=+.vho -sv -suppress 13338 -makelib work /opt/altera/qpro_26_1/quartus/eda/sim_lib/simsf_dpi.cpp -end 
+# ** Note: (qrun-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:12 on Apr 22,2026
+# vlog -sv -suppress 13338 /opt/altera/qpro_26_1/quartus/eda/sim_lib/simsf_dpi.cpp -work ./libraries/work -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling DPI/PLI C++ file /opt/altera/qpro_26_1/quartus/eda/sim_lib/simsf_dpi.cpp
+# End time: 01:43:14 on Apr 22,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# End time: 01:43:14 on Apr 22,2026, Elapsed time: 0:00:02
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#   Totals: Errors:   0, Warnings:   0
+# [exec] com
+# Questa Altera FPGA Edition-64 qrun 2025.2 Utility 2025.05 May 31 2025
+# Start time: 01:43:14 on Apr 22,2026
+# qrun -compile -noautoorder -parallel -outdir ./libraries -vlog.options -end -vcom.options -end -vlog.ext=+.vo -vlog.ext=+.vt -vcom.ext=+.vho -sv -suppress 13338 -f modelsim_com.f 
+# ** Note: (qrun-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_common_sv_packages' to './libraries/altera_common_sv_packages'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_avalon_jtag_uart_1932' to './libraries/altera_avalon_jtag_uart_1932'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'top_juart' to './libraries/top_juart'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_reset_controller_1924' to './libraries/altera_reset_controller_1924'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'intel_niosv_c_unit_420' to './libraries/intel_niosv_c_unit_420'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'intel_niosv_c_420' to './libraries/intel_niosv_c_420'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'top_niosv' to './libraries/top_niosv'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'intel_onchip_memory_1411' to './libraries/intel_onchip_memory_1411'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'top_ram' to './libraries/top_ram'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'top_clk' to './libraries/top_clk'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_merlin_axi_translator_1987' to './libraries/altera_merlin_axi_translator_1987'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_merlin_slave_translator_191' to './libraries/altera_merlin_slave_translator_191'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_merlin_axi_master_ni_19117' to './libraries/altera_merlin_axi_master_ni_19117'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_merlin_slave_agent_1930' to './libraries/altera_merlin_slave_agent_1930'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_avalon_sc_fifo_1932' to './libraries/altera_avalon_sc_fifo_1932'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_merlin_axi_slave_ni_19129' to './libraries/altera_merlin_axi_slave_ni_19129'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_avalon_st_pipeline_stage_1930' to './libraries/altera_avalon_st_pipeline_stage_1930'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_merlin_router_1921' to './libraries/altera_merlin_router_1921'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_merlin_demultiplexer_1921' to './libraries/altera_merlin_demultiplexer_1921'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_merlin_multiplexer_1922' to './libraries/altera_merlin_multiplexer_1922'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_mm_interconnect_1920' to './libraries/altera_mm_interconnect_1920'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'top' to './libraries/top'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_avalon_clock_source_191' to './libraries/altera_avalon_clock_source_191'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'top_inst_clk_bfm_ip' to './libraries/top_inst_clk_bfm_ip'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'altera_avalon_reset_source_191' to './libraries/altera_avalon_reset_source_191'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'top_inst_reset_bfm_ip' to './libraries/top_inst_reset_bfm_ip'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Mapping library 'top_tb' to './libraries/top_tb'.
+# ** Note: (vmap-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../ip/top_inst_reset_bfm_ip/altera_avalon_reset_source_191/sim/verbosity_pkg.sv -work ./libraries/altera_common_sv_packages -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling package verbosity_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../top_tb.v -work ./libraries/top_tb -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart.sv -work ./libraries/altera_avalon_jtag_uart_1932 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_avalon_jtag_uart
+# 
+# Top level modules:
+# 	altera_avalon_jtag_uart
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_juart/sim/top_juart.v -work ./libraries/top_juart -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_juart
+# 
+# Top level modules:
+# 	top_juart
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/altera_reset_controller_1924/sim/altera_reset_controller.v -work ./libraries/altera_reset_controller_1924 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_reset_controller
+# 
+# Top level modules:
+# 	altera_reset_controller
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../ip/top_inst_reset_bfm_ip/sim/top_inst_reset_bfm_ip.v -work ./libraries/top_inst_reset_bfm_ip -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_inst_reset_bfm_ip
+# 
+# Top level modules:
+# 	top_inst_reset_bfm_ip
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/niosv_reset_controller.v -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module niosv_reset_controller
+# 
+# Top level modules:
+# 	niosv_reset_controller
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../ip/top_inst_clk_bfm_ip/sim/top_inst_clk_bfm_ip.v -work ./libraries/top_inst_clk_bfm_ip -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_inst_clk_bfm_ip
+# 
+# Top level modules:
+# 	top_inst_clk_bfm_ip
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_420/sim/top_niosv_intel_niosv_c_420_qiadggq.v -work ./libraries/intel_niosv_c_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_niosv_intel_niosv_c_420_qiadggq
+# 
+# Top level modules:
+# 	top_niosv_intel_niosv_c_420_qiadggq
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/sim/top.v -work ./libraries/top -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_mm_interconnect_1920/sim/top_altera_mm_interconnect_1920_wwna2kq.v -work ./libraries/altera_mm_interconnect_1920 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_mm_interconnect_1920_wwna2kq
+# 
+# Top level modules:
+# 	top_altera_mm_interconnect_1920_wwna2kq
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_multiplexer_1922/sim/top_altera_merlin_multiplexer_1922_w4guyuy.sv -work ./libraries/altera_merlin_multiplexer_1922 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_multiplexer_1922_w4guyuy
+# 
+# Top level modules:
+# 	top_altera_merlin_multiplexer_1922_w4guyuy
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_demultiplexer_1921/sim/top_altera_merlin_demultiplexer_1921_jd7cwai.sv -work ./libraries/altera_merlin_demultiplexer_1921 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_demultiplexer_1921_jd7cwai
+# 
+# Top level modules:
+# 	top_altera_merlin_demultiplexer_1921_jd7cwai
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/sim/top_niosv.v -work ./libraries/top_niosv -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_niosv
+# 
+# Top level modules:
+# 	top_niosv
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_ram/intel_onchip_memory_1411/sim/top_ram_intel_onchip_memory_1411_csm74aq.sv -work ./libraries/intel_onchip_memory_1411 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_ram_intel_onchip_memory_1411_csm74aq
+# 
+# Top level modules:
+# 	top_ram_intel_onchip_memory_1411_csm74aq
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_router_1921/sim/top_altera_merlin_router_1921_v5rfyli.sv -work ./libraries/altera_merlin_router_1921 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_router_1921_v5rfyli_default_decode
+# -- Compiling module top_altera_merlin_router_1921_v5rfyli
+# 
+# Top level modules:
+# 	top_altera_merlin_router_1921_v5rfyli
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_ram/sim/top_ram.v -work ./libraries/top_ram -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_ram
+# 
+# Top level modules:
+# 	top_ram
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_clk/sim/top_clk.v -work ./libraries/top_clk -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_clk
+# 
+# Top level modules:
+# 	top_clk
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_avalon_st_pipeline_stage_1930/sim/top_altera_avalon_st_pipeline_stage_1930_oiupeiq.sv -work ./libraries/altera_avalon_st_pipeline_stage_1930 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_avalon_st_pipeline_stage_1930_oiupeiq
+# 
+# Top level modules:
+# 	top_altera_avalon_st_pipeline_stage_1930_oiupeiq
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/top_altera_merlin_axi_slave_ni_altera_avalon_sc_fifo_19129_fs67l3a.v -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_axi_slave_ni_altera_avalon_sc_fifo_19129_fs67l3a
+# 
+# Top level modules:
+# 	top_altera_merlin_axi_slave_ni_altera_avalon_sc_fifo_19129_fs67l3a
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_translator_1987/sim/top_altera_merlin_axi_translator_1987_jmx322a.sv -work ./libraries/altera_merlin_axi_translator_1987 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_axi_translator_1987_jmx322a
+# 
+# Top level modules:
+# 	top_altera_merlin_axi_translator_1987_jmx322a
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_slave_translator_191/sim/top_altera_merlin_slave_translator_191_xg7rzxi.sv -work ./libraries/altera_merlin_slave_translator_191 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_slave_translator_191_xg7rzxi
+# 
+# Top level modules:
+# 	top_altera_merlin_slave_translator_191_xg7rzxi
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_master_ni_19117/sim/altera_merlin_address_alignment.sv -work ./libraries/altera_merlin_axi_master_ni_19117 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_merlin_address_alignment
+# 
+# Top level modules:
+# 	altera_merlin_address_alignment
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_avalon_sc_fifo_1932/sim/top_altera_avalon_sc_fifo_1932_22gxxgi.v -work ./libraries/altera_avalon_sc_fifo_1932 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_avalon_sc_fifo_1932_22gxxgi
+# 
+# Top level modules:
+# 	top_altera_avalon_sc_fifo_1932_22gxxgi
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_slave_agent_1930/sim/top_altera_merlin_slave_agent_1930_jxauz3i.sv -work ./libraries/altera_merlin_slave_agent_1930 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_slave_agent_1930_jxauz3i
+# 
+# Top level modules:
+# 	top_altera_merlin_slave_agent_1930_jxauz3i
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 -L altera_common_sv_packages ../../ip/top_inst_reset_bfm_ip/altera_avalon_reset_source_191/sim/altera_avalon_reset_source.sv -work ./libraries/altera_avalon_reset_source_191 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_avalon_reset_source
+# -- Importing package altera_common_sv_packages.verbosity_pkg
+# 
+# Top level modules:
+# 	altera_avalon_reset_source
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_slave_agent_1930/sim/altera_merlin_burst_uncompressor.sv -work ./libraries/altera_merlin_slave_agent_1930 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_merlin_burst_uncompressor
+# 
+# Top level modules:
+# 	altera_merlin_burst_uncompressor
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_master_ni_19117/sim/top_altera_merlin_axi_master_ni_19117_a33l7ua.sv -work ./libraries/altera_merlin_axi_master_ni_19117 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_axi_master_ni_19117_a33l7ua
+# 
+# Top level modules:
+# 	top_altera_merlin_axi_master_ni_19117_a33l7ua
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_translator_1987/sim/top_altera_merlin_axi_translator_1987_lty7xoq.sv -work ./libraries/altera_merlin_axi_translator_1987 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_axi_translator_1987_lty7xoq
+# 
+# Top level modules:
+# 	top_altera_merlin_axi_translator_1987_lty7xoq
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/top_altera_merlin_axi_slave_ni_altera_avalon_st_pipeline_stage_19129_a5cmeay.v -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_axi_slave_ni_altera_avalon_st_pipeline_stage_19129_a5cmeay
+# 
+# Top level modules:
+# 	top_altera_merlin_axi_slave_ni_altera_avalon_st_pipeline_stage_19129_a5cmeay
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_avalon_st_pipeline_stage_1930/sim/altera_avalon_st_pipeline_base.v -work ./libraries/altera_avalon_st_pipeline_stage_1930 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_avalon_st_pipeline_base
+# 
+# Top level modules:
+# 	altera_avalon_st_pipeline_base
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 -L altera_common_sv_packages ../../ip/top_inst_clk_bfm_ip/altera_avalon_clock_source_191/sim/altera_avalon_clock_source.sv -work ./libraries/altera_avalon_clock_source_191 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_avalon_clock_source
+# -- Importing package altera_common_sv_packages.verbosity_pkg
+# 
+# Top level modules:
+# 	altera_avalon_clock_source
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_router_1921/sim/top_altera_merlin_router_1921_jbra4kq.sv -work ./libraries/altera_merlin_router_1921 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_router_1921_jbra4kq_default_decode
+# -- Compiling module top_altera_merlin_router_1921_jbra4kq
+# 
+# Top level modules:
+# 	top_altera_merlin_router_1921_jbra4kq
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_ram/intel_onchip_memory_1411/sim/top_ram_intel_onchip_memory_1411_csm74aq_axi_bursting_adapter.sv -work ./libraries/intel_onchip_memory_1411 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_ram_intel_onchip_memory_1411_csm74aq_axi_bursting_adapter
+# 
+# Top level modules:
+# 	top_ram_intel_onchip_memory_1411_csm74aq_axi_bursting_adapter
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_log_module.sv -work ./libraries/altera_avalon_jtag_uart_1932 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_avalon_jtag_uart_log_module
+# 
+# Top level modules:
+# 	altera_avalon_jtag_uart_log_module
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_demultiplexer_1921/sim/top_altera_merlin_demultiplexer_1921_donqkmi.sv -work ./libraries/altera_merlin_demultiplexer_1921 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_demultiplexer_1921_donqkmi
+# 
+# Top level modules:
+# 	top_altera_merlin_demultiplexer_1921_donqkmi
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/altera_reset_controller_1924/sim/altera_reset_synchronizer.v -work ./libraries/altera_reset_controller_1924 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_reset_synchronizer
+# 
+# Top level modules:
+# 	altera_reset_synchronizer
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_multiplexer_1922/sim/altera_merlin_arbitrator.sv -work ./libraries/altera_merlin_multiplexer_1922 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/ecc_enc.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/top_altera_merlin_axi_slave_ni_altera_avalon_st_pipeline_stage_19129_zyff54i.v -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_axi_slave_ni_altera_avalon_st_pipeline_stage_19129_zyff54i
+# 
+# Top level modules:
+# 	top_altera_merlin_axi_slave_ni_altera_avalon_st_pipeline_stage_19129_zyff54i
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/ecc_dec.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_router_1921/sim/top_altera_merlin_router_1921_et7blli.sv -work ./libraries/altera_merlin_router_1921 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_router_1921_et7blli_default_decode
+# -- Compiling module top_altera_merlin_router_1921_et7blli
+# 
+# Top level modules:
+# 	top_altera_merlin_router_1921_et7blli
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_r.sv -work ./libraries/altera_avalon_jtag_uart_1932 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_avalon_jtag_uart_scfifo_r
+# 
+# Top level modules:
+# 	altera_avalon_jtag_uart_scfifo_r
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_reset_controller_1924/sim/altera_reset_controller.v -work ./libraries/altera_reset_controller_1924 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_reset_controller
+# 
+# Top level modules:
+# 	altera_reset_controller
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_multiplexer_1922/sim/top_altera_merlin_multiplexer_1922_4zg7kyq.sv -work ./libraries/altera_merlin_multiplexer_1922 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_multiplexer_1922_4zg7kyq
+# 
+# Top level modules:
+# 	top_altera_merlin_multiplexer_1922_4zg7kyq
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# -- Skipping 'vlog -sv -suppress 13338 ../../../top/altera_merlin_multiple...'
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/top_altera_merlin_axi_slave_ni_altera_avalon_st_pipeline_stage_19129_6ngu5fy.v -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_axi_slave_ni_altera_avalon_st_pipeline_stage_19129_6ngu5fy
+# 
+# Top level modules:
+# 	top_altera_merlin_axi_slave_ni_altera_avalon_st_pipeline_stage_19129_6ngu5fy
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_multiplexer_1922/sim/top_altera_merlin_multiplexer_1922_ql6jrba.sv -work ./libraries/altera_merlin_multiplexer_1922 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_multiplexer_1922_ql6jrba
+# 
+# Top level modules:
+# 	top_altera_merlin_multiplexer_1922_ql6jrba
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# -- Skipping 'vlog -sv -suppress 13338 ../../../top/altera_merlin_multiple...'
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/altecc_enc.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_reset_controller_1924/sim/altera_reset_synchronizer.v -work ./libraries/altera_reset_controller_1924 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_reset_synchronizer
+# 
+# Top level modules:
+# 	altera_reset_synchronizer
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_router_1921/sim/top_altera_merlin_router_1921_rw2a5pi.sv -work ./libraries/altera_merlin_router_1921 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_router_1921_rw2a5pi_default_decode
+# -- Compiling module top_altera_merlin_router_1921_rw2a5pi
+# 
+# Top level modules:
+# 	top_altera_merlin_router_1921_rw2a5pi
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_w.sv -work ./libraries/altera_avalon_jtag_uart_1932 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_avalon_jtag_uart_scfifo_w
+# 
+# Top level modules:
+# 	altera_avalon_jtag_uart_scfifo_w
+# End time: 01:43:16 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/altera_merlin_burst_uncompressor.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_merlin_burst_uncompressor
+# 
+# Top level modules:
+# 	altera_merlin_burst_uncompressor
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_r.sv -work ./libraries/altera_avalon_jtag_uart_1932 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_avalon_jtag_uart_sim_scfifo_r
+# 
+# Top level modules:
+# 	altera_avalon_jtag_uart_sim_scfifo_r
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/altecc_dec.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:16 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_router_1921/sim/top_altera_merlin_router_1921_wud6yfi.sv -work ./libraries/altera_merlin_router_1921 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_router_1921_wud6yfi_default_decode
+# -- Compiling module top_altera_merlin_router_1921_wud6yfi
+# 
+# Top level modules:
+# 	top_altera_merlin_router_1921_wud6yfi
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/altera_merlin_address_alignment.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_merlin_address_alignment
+# 
+# Top level modules:
+# 	altera_merlin_address_alignment
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_router_1921/sim/top_altera_merlin_router_1921_23fta3q.sv -work ./libraries/altera_merlin_router_1921 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_router_1921_23fta3q_default_decode
+# -- Compiling module top_altera_merlin_router_1921_23fta3q
+# 
+# Top level modules:
+# 	top_altera_merlin_router_1921_23fta3q
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_w.sv -work ./libraries/altera_avalon_jtag_uart_1932 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module altera_avalon_jtag_uart_sim_scfifo_w
+# 
+# Top level modules:
+# 	altera_avalon_jtag_uart_sim_scfifo_w
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/riscv.pkg.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# 	--none--
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/compare_eq.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module compare_eq
+# 
+# Top level modules:
+# 	compare_eq
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv.pkg.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# 	--none--
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_router_1921/sim/top_altera_merlin_router_1921_dkyrmhq.sv -work ./libraries/altera_merlin_router_1921 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_router_1921_dkyrmhq_default_decode
+# -- Compiling module top_altera_merlin_router_1921_dkyrmhq
+# 
+# Top level modules:
+# 	top_altera_merlin_router_1921_dkyrmhq
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/rd_response_mem_jimy6za.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module rd_response_mem_jimy6za
+# -- Compiling module rd_demux_jimy6za
+# -- Compiling module rd_mux_jimy6za
+# 
+# Top level modules:
+# 	rd_response_mem_jimy6za
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_ram.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/rd_comp_sel_jimy6za.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module rd_comp_sel_jimy6za
+# 
+# Top level modules:
+# 	rd_comp_sel_jimy6za
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp.pkg.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# 	--none--
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/rd_pri_mux_jimy6za.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module rd_pri_mux_jimy6za
+# 
+# Top level modules:
+# 	rd_pri_mux_jimy6za
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_alu.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/rd_sipo_plus_jimy6za.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module rd_sipo_plus_jimy6za
+# 
+# Top level modules:
+# 	rd_sipo_plus_jimy6za
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_mult.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/wr_response_mem_jimy6za.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module wr_response_mem_jimy6za
+# -- Compiling module wr_demux_jimy6za
+# -- Compiling module wr_mux_jimy6za
+# 
+# Top level modules:
+# 	wr_response_mem_jimy6za
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_shift.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/wr_comp_sel_jimy6za.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module wr_comp_sel_jimy6za
+# 
+# Top level modules:
+# 	wr_comp_sel_jimy6za
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_shift_fast.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/wr_pri_mux_jimy6za.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module wr_pri_mux_jimy6za
+# 
+# Top level modules:
+# 	wr_pri_mux_jimy6za
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_zbb.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/wr_sipo_plus_jimy6za.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module wr_sipo_plus_jimy6za
+# 
+# Top level modules:
+# 	wr_sipo_plus_jimy6za
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_rf.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/altera_merlin_axi_slave_ni_19129/sim/top_altera_merlin_axi_slave_ni_19129_jimy6za.sv -work ./libraries/altera_merlin_axi_slave_ni_19129 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_altera_merlin_axi_slave_ni_19129_jimy6za
+# -- Compiling module burst_split_4k
+# -- Compiling module wr_burst_split_4k
+# 
+# Top level modules:
+# 	top_altera_merlin_axi_slave_ni_19129_jimy6za
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_csr.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_cdec.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:17 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_fsm.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:17 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:18 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_axi_channel_fsm.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:18 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:18 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_axi4lite_if.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:18 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:18 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_avalon_if.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:18 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:18 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/niosv_cpp_core.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# 
+# Top level modules:
+# End time: 01:43:18 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 01:43:18 on Apr 22,2026
+# vlog -sv -suppress 13338 ../../../top/ip/top_niosv/intel_niosv_c_unit_420/sim/intelfpga/top_niosv_intel_niosv_c_unit_420_i5xhjda.sv -work ./libraries/intel_niosv_c_unit_420 -statslog ./libraries/stats_log -csession=incr -csessiondir ./libraries/sessions 
+# ** Note: (vlog-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module top_niosv_intel_niosv_c_unit_420_i5xhjda
+# 
+# Top level modules:
+# 	top_niosv_intel_niosv_c_unit_420_i5xhjda
+# End time: 01:43:18 on Apr 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 01:43:18 on Apr 22,2026, Elapsed time: 0:00:04
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#   Totals: Errors:   0, Warnings:   0
+# [exec] elab_debug
+# ** Note: (vsim-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" -L work -L work_lib -L lpm_ver -L sgate_ver -L altera_ver -L altera_mf_ver -L altera_lnsim_ver -L tennm_ver -L tennm_sm_hps_ver -L tennm_sm4_hssi_ver -L tennm_revb_hvio_ver -L tennm_revb_io96_ver -L lpm -L sgate -L altera -L altera_mf -L altera_lnsim -L tennm -L tennm_sm_hps -L tennm_sm4_hssi -L tennm_revb_hvio -L tennm_revb_io96 -L altera_avalon_jtag_uart_1932 -L top_juart -L altera_reset_controller_1924 -L intel_niosv_c_unit_420 -L intel_niosv_c_420 -L top_niosv -L intel_onchip_memory_1411 -L top_ram -L top_clk -L altera_merlin_axi_translator_1987 -L altera_merlin_slave_translator_191 -L altera_merlin_axi_master_ni_19117 -L altera_merlin_slave_agent_1930 -L altera_avalon_sc_fifo_1932 -L altera_merlin_axi_slave_ni_19129 -L altera_avalon_st_pipeline_stage_1930 -L altera_merlin_router_1921 -L altera_merlin_demultiplexer_1921 -L altera_merlin_multiplexer_1922 -L altera_mm_interconnect_1920 -L top -L altera_common_sv_packages -L altera_avalon_clock_source_191 -L top_inst_clk_bfm_ip -L altera_avalon_reset_source_191 -L top_inst_reset_bfm_ip -L top_tb top_tb.top_tb 
+# Start time: 01:43:18 on Apr 22,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) '/opt/questa/questa_fe/linux_x86_64/../modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Altera FPGA Edition-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading top_inst_clk_bfm_ip.top_inst_clk_bfm_ip(fast)
+# Loading altera_common_sv_packages.verbosity_pkg(fast)
+# Loading altera_avalon_clock_source_191.altera_avalon_clock_source(fast)
+# Loading top_inst_reset_bfm_ip.top_inst_reset_bfm_ip(fast)
+# Loading altera_avalon_reset_source_191.altera_avalon_reset_source(fast)
+# Loading top.top(fast)
+# Loading top_clk.top_clk(fast)
+# Loading top_juart.top_juart(fast)
+# Loading altera_avalon_jtag_uart_1932.altera_avalon_jtag_uart(fast)
+# Loading altera_avalon_jtag_uart_1932.altera_avalon_jtag_uart_scfifo_w(fast)
+# Loading altera_avalon_jtag_uart_1932.altera_avalon_jtag_uart_sim_scfifo_w(fast)
+# Loading altera_avalon_jtag_uart_1932.altera_avalon_jtag_uart_log_module(fast)
+# Loading altera_avalon_jtag_uart_1932.altera_avalon_jtag_uart_scfifo_r(fast)
+# Loading altera_avalon_jtag_uart_1932.altera_avalon_jtag_uart_sim_scfifo_r(fast)
+# Loading top_niosv.top_niosv(fast)
+# Loading intel_niosv_c_420.top_niosv_intel_niosv_c_420_qiadggq(fast)
+# Loading intel_niosv_c_unit_420.top_niosv_intel_niosv_c_unit_420_i5xhjda(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altera_syncram_derived(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading top_ram.top_ram(fast)
+# Loading intel_onchip_memory_1411.top_ram_intel_onchip_memory_1411_csm74aq(fast)
+# Loading intel_onchip_memory_1411.top_ram_intel_onchip_memory_1411_csm74aq_axi_bursting_adapter(fast)
+# Loading altera_lnsim_ver.ace5_lite_bfm_types_pkg(fast)
+# Loading altera_lnsim_ver.ace5_lite_operations_class_pkg(fast)
+# Loading altera_lnsim_ver.altera_lnsim_sv_unit(fast)
+# Loading altera_lnsim_ver.altera_syncram(fast)
+# Loading altera_lnsim_ver.ALTERA_LNSIM_MEMORY_INITIALIZATION(fast)
+# Loading altera_mm_interconnect_1920.top_altera_mm_interconnect_1920_wwna2kq(fast)
+# Loading altera_merlin_axi_translator_1987.top_altera_merlin_axi_translator_1987_jmx322a(fast)
+# Loading altera_merlin_slave_translator_191.top_altera_merlin_slave_translator_191_xg7rzxi(fast)
+# Loading altera_merlin_axi_translator_1987.top_altera_merlin_axi_translator_1987_lty7xoq(fast)
+# Loading altera_merlin_axi_master_ni_19117.top_altera_merlin_axi_master_ni_19117_a33l7ua(fast)
+# Loading altera_merlin_axi_master_ni_19117.top_altera_merlin_axi_master_ni_19117_a33l7ua(fast__1)
+# Loading altera_merlin_slave_agent_1930.top_altera_merlin_slave_agent_1930_jxauz3i(fast)
+# Loading altera_merlin_slave_agent_1930.altera_merlin_burst_uncompressor(fast)
+# Loading altera_avalon_sc_fifo_1932.top_altera_avalon_sc_fifo_1932_22gxxgi(fast)
+# Loading altera_avalon_sc_fifo_1932.top_altera_avalon_sc_fifo_1932_22gxxgi(fast__1)
+# Loading altera_merlin_axi_slave_ni_19129.top_altera_merlin_axi_slave_ni_19129_jimy6za(fast)
+# Loading altera_merlin_axi_slave_ni_19129.top_altera_merlin_axi_slave_ni_altera_avalon_sc_fifo_19129_fs67l3a(fast)
+# Loading altera_avalon_sc_fifo_1932.top_altera_avalon_sc_fifo_1932_22gxxgi(fast__2)
+# Loading altera_merlin_axi_slave_ni_19129.altera_merlin_address_alignment(fast)
+# Loading altera_merlin_axi_slave_ni_19129.altera_merlin_burst_uncompressor(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_v5rfyli(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_v5rfyli_default_decode(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_jbra4kq(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_jbra4kq_default_decode(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_et7blli(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_et7blli_default_decode(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_rw2a5pi(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_rw2a5pi_default_decode(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_wud6yfi(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_wud6yfi_default_decode(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_23fta3q(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_23fta3q_default_decode(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_dkyrmhq(fast)
+# Loading altera_merlin_router_1921.top_altera_merlin_router_1921_dkyrmhq_default_decode(fast)
+# Loading altera_merlin_demultiplexer_1921.top_altera_merlin_demultiplexer_1921_jd7cwai(fast)
+# Loading altera_merlin_demultiplexer_1921.top_altera_merlin_demultiplexer_1921_donqkmi(fast)
+# Loading altera_merlin_multiplexer_1922.top_altera_merlin_multiplexer_1922_w4guyuy(fast)
+# Loading altera_merlin_multiplexer_1922.altera_merlin_arbitrator(fast)
+# Loading altera_merlin_multiplexer_1922.altera_merlin_arb_adder(fast)
+# Loading altera_merlin_multiplexer_1922.top_altera_merlin_multiplexer_1922_4zg7kyq(fast)
+# Loading altera_merlin_multiplexer_1922.altera_merlin_arbitrator(fast__1)
+# Loading altera_merlin_multiplexer_1922.top_altera_merlin_multiplexer_1922_ql6jrba(fast)
+# Loading altera_reset_controller_1924.altera_reset_controller(fast)
+# Loading altera_reset_controller_1924.altera_reset_synchronizer(fast)
+# Loading altera_reset_controller_1924.altera_reset_synchronizer(fast__1)
+# Loading altera_reset_controller_1924.altera_reset_controller(fast__1)
+# Loading altera_reset_controller_1924.altera_reset_synchronizer(fast__2)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'in_valid'. The port definition is at: ../../../top/altera_merlin_axi_slave_ni_19129/sim/altera_merlin_address_alignment.sv(44).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/top_inst/mm_interconnect_0/ram_axi_s1_agent/check_and_align_address_to_size File: ../../../top/altera_merlin_axi_slave_ni_19129/sim/top_altera_merlin_axi_slave_ni_19129_jimy6za.sv Line: 1276
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'in_sop'. The port definition is at: ../../../top/altera_merlin_axi_slave_ni_19129/sim/altera_merlin_address_alignment.sv(46).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/top_inst/mm_interconnect_0/ram_axi_s1_agent/check_and_align_address_to_size File: ../../../top/altera_merlin_axi_slave_ni_19129/sim/top_altera_merlin_axi_slave_ni_19129_jimy6za.sv Line: 1276
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'in_eop'. The port definition is at: ../../../top/altera_merlin_axi_slave_ni_19129/sim/altera_merlin_address_alignment.sv(47).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/top_inst/mm_interconnect_0/ram_axi_s1_agent/check_and_align_address_to_size File: ../../../top/altera_merlin_axi_slave_ni_19129/sim/top_altera_merlin_axi_slave_ni_19129_jimy6za.sv Line: 1276
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'out_ready'. The port definition is at: ../../../top/altera_merlin_axi_slave_ni_19129/sim/altera_merlin_address_alignment.sv(50).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/top_inst/mm_interconnect_0/ram_axi_s1_agent/check_and_align_address_to_size File: ../../../top/altera_merlin_axi_slave_ni_19129/sim/top_altera_merlin_axi_slave_ni_19129_jimy6za.sv Line: 1276
+# Loading /tmp/unknown@000a76961a1b_dpi_460/linux_x86_64_gcc-10.3.0/vsim_auto_compile.so
+#                    0: INFO: top_tb.top_inst_clk_bfm.top_inst_clk_bfm.__hello: - Hello from altera_clock_source.
+#                    0: INFO: top_tb.top_inst_clk_bfm.top_inst_clk_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: top_tb.top_inst_clk_bfm.top_inst_clk_bfm.__hello: -   $Date: 2026/02/05 $
+#                    0: INFO: top_tb.top_inst_clk_bfm.top_inst_clk_bfm.__hello: -   CLOCK_RATE = 50000000 Hz
+#                    0: INFO: ------------------------------------------------------------
+#                    0: INFO: top_tb.top_inst_reset_bfm.top_inst_reset_bfm.__hello: - Hello from altera_reset_source
+#                    0: INFO: top_tb.top_inst_reset_bfm.top_inst_reset_bfm.__hello: -   $Revision: #1 $
+#                    0: INFO: top_tb.top_inst_reset_bfm.top_inst_reset_bfm.__hello: -   $Date: 2026/02/05 $
+#                    0: INFO: top_tb.top_inst_reset_bfm.top_inst_reset_bfm.__hello: -   ASSERT_HIGH_RESET = 0
+#                    0: INFO: top_tb.top_inst_reset_bfm.top_inst_reset_bfm.__hello: -   INITIAL_RESET_CYCLES = 50
+#                    0: INFO: ------------------------------------------------------------
+#                    0: INFO: top_tb.top_inst_reset_bfm.top_inst_reset_bfm.reset_assert: Reset asserted
+# Initializing memory contents for top_tb.top_inst.ram.ram.altera_syncram_component.initialize_mem_contents with                                                                                                                                                                                                                                                  top_ram_ram.ver
+#               990000: INFO: top_tb.top_inst_reset_bfm.top_inst_reset_bfm.reset_deassert: Reset deasserted
+# Break key hit
+# Break in Module top_altera_merlin_router_1921_jbra4kq at ../../../top/altera_merlin_router_1921/sim/top_altera_merlin_router_1921_jbra4kq.sv line 174
+# Stopped at ../../../top/altera_merlin_router_1921/sim/top_altera_merlin_router_1921_jbra4kq.sv line 174
+# End time: 07:36:18 on Apr 22,2026, Elapsed time: 5:53:00
+# Errors: 0, Warnings: 5

@@ -1,0 +1,19 @@
+bsp/CMakeFiles/hal2_bsp.dir/HAL/src/alt_busy_sleep.c.obj: \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/src/alt_busy_sleep.c \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/limits.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/newlib.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/picolibc.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/cdefs.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/machine/_default_types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/features.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stddef.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/syslimits.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/limits.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/./system.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/./linker.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/alt_types.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_timestamp.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/intel_niosv.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/alt_types.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/io.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/priv/alt_busy_sleep.h

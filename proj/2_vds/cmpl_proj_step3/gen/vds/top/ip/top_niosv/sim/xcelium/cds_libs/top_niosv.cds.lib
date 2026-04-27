@@ -1,0 +1,5 @@
+
+DEFINE                     work      ./../libraries/work/     
+DEFINE                     top_niosv ./../libraries/top_niosv/
+INCLUDE simulator.cds.lib                                     
+SOFTINCLUDE device.cds.lib                                    

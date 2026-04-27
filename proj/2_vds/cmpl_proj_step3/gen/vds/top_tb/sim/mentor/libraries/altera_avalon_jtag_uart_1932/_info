@@ -1,0 +1,167 @@
+m255
+K4
+z2
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top_tb/sim/mentor
+valtera_avalon_jtag_uart
+Z1 !s106 Intel
+2../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart.sv
+Z2 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z3 !s110 1776822196
+!i10b 1
+!s100 MT_;HkMoh`OX3@A1>`nU23
+I^jN?ob?7C[F3L7z?2=k^:0
+S1
+R0
+Z4 w1776819704
+8../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart.sv
+F../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart.sv
+!i122 0
+L0 22 266
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z7 !s108 1776822196.000000
+!s107 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart.sv|
+!s90 -sv|-suppress|13338|../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart.sv|-work|./libraries/altera_avalon_jtag_uart_1932|-statslog|./libraries/stats_log|-csession=incr|-csessiondir|./libraries/sessions|
+!i113 0
+Z8 o-suppress 13338 -sv -work ./libraries/altera_avalon_jtag_uart_1932 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 tCvgOpt 0
+valtera_avalon_jtag_uart_log_module
+R1
+2../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_log_module.sv
+R2
+R3
+!i10b 1
+!s100 17YdXC32mV[6McZ[[Xbzz3
+IDBWCFSF]U9jVBf=dkekk>2
+S1
+R0
+R4
+8../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_log_module.sv
+F../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_log_module.sv
+!i122 1
+L0 22 38
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_log_module.sv|
+!s90 -sv|-suppress|13338|../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_log_module.sv|-work|./libraries/altera_avalon_jtag_uart_1932|-statslog|./libraries/stats_log|-csession=incr|-csessiondir|./libraries/sessions|
+!i113 0
+R8
+R9
+valtera_avalon_jtag_uart_scfifo_r
+R1
+2../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_r.sv
+R2
+R3
+!i10b 1
+!s100 mk4GOGc3?S8W0Nc1XM_ie3
+IOA17U40Y@DhB9A_2D<Bi=2
+S1
+R0
+R4
+8../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_r.sv
+F../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_r.sv
+!i122 2
+L0 22 91
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_r.sv|
+!s90 -sv|-suppress|13338|../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_r.sv|-work|./libraries/altera_avalon_jtag_uart_1932|-statslog|./libraries/stats_log|-csession=incr|-csessiondir|./libraries/sessions|
+!i113 0
+R8
+R9
+valtera_avalon_jtag_uart_scfifo_w
+R1
+2../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_w.sv
+R2
+R3
+!i10b 1
+!s100 B2hPl>i5^RL=NXPeX=iC:3
+IiRl;9Yd10;HTjS?VM2APK2
+S1
+R0
+R4
+8../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_w.sv
+F../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_w.sv
+!i122 3
+L0 22 90
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_w.sv|
+!s90 -sv|-suppress|13338|../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_w.sv|-work|./libraries/altera_avalon_jtag_uart_1932|-statslog|./libraries/stats_log|-csession=incr|-csessiondir|./libraries/sessions|
+!i113 0
+R8
+R9
+valtera_avalon_jtag_uart_sim_scfifo_r
+R1
+2../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_r.sv
+R2
+Z10 !s110 1776822197
+!i10b 1
+!s100 M>A19TUho7Kf1OCTNfc[T3
+IP;_J2?CZdfR:UJccXSdc<0
+S1
+R0
+R4
+8../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_r.sv
+F../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_r.sv
+!i122 4
+L0 22 73
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_r.sv|
+!s90 -sv|-suppress|13338|../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_r.sv|-work|./libraries/altera_avalon_jtag_uart_1932|-statslog|./libraries/stats_log|-csession=incr|-csessiondir|./libraries/sessions|
+!i113 0
+R8
+R9
+valtera_avalon_jtag_uart_sim_scfifo_w
+R1
+2../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_w.sv
+R2
+R10
+!i10b 1
+!s100 eS^dRo^N7^nQB[kc]MF6b2
+IFZaee8X8Pd2Nfo=ailgJ63
+S1
+R0
+R4
+8../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_w.sv
+F../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_w.sv
+!i122 5
+L0 22 95
+R5
+R6
+r1
+!s85 0
+31
+!s108 1776822197.000000
+!s107 ../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_w.sv|
+!s90 -sv|-suppress|13338|../../../top/ip/top_juart/altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_w.sv|-work|./libraries/altera_avalon_jtag_uart_1932|-statslog|./libraries/stats_log|-csession=incr|-csessiondir|./libraries/sessions|
+!i113 0
+R8
+R9

@@ -1,0 +1,41 @@
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_TOOL_VERSION "26.1"
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_TOP_LEVEL_COMPONENT_NAME "altera_avalon_clock_source"
+set_global_assignment -library "top_inst_clk_bfm_ip" -name SOPCINFO_FILE [file join $::quartus(qip_path) "top_inst_clk_bfm_ip.sopcinfo"]
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name SLD_INFO "QSYS_NAME top_inst_clk_bfm_ip HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "top_inst_clk_bfm_ip" -name MISC_FILE [file join $::quartus(qip_path) "top_inst_clk_bfm_ip.cmp"]
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_TARGETED_DEVICE_FAMILY "Agilex 3"
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_GENERATED_DEVICE_FAMILY "{Agilex 3}"
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "top_inst_clk_bfm_ip" -name MISC_FILE [file join $::quartus(qip_path) "../top_inst_clk_bfm_ip.ip"]
+
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_COMPONENT_NAME "YWx0ZXJhX2F2YWxvbl9jbG9ja19zb3VyY2U="
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_COMPONENT_DISPLAY_NAME "Q2xvY2sgU291cmNlIEJGTSBJUA=="
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_COMPONENT_VERSION "MTkuMQ=="
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_COMPONENT_DESCRIPTION "Q2xvY2sgU291cmNlIEJGTQ=="
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_COMPONENT_GROUP "QmFzaWMgRnVuY3Rpb25zL1NpbXVsYXRpb247IERlYnVnIGFuZCBWZXJpZmljYXRpb24vU2ltdWxhdGlvbg=="
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly9kb2N1bWVudGF0aW9uLmFsdGVyYS5jb20vIy9saW5rL25pazE0MTI0NzE5MzI1ODEvbmlrMTQxMjQ3MTU5MjQzMw=="
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly9kb2N1bWVudGF0aW9uLmFsdGVyYS5jb20vIy9saW5rL2hjbzE0MTY4MzYxNDU1NTUvaGNvMTQxNjgzNjY1MzIyMQ=="
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_COMPONENT_NAME "dG9wX2luc3RfY2xrX2JmbV9pcA=="
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "top_inst_clk_bfm_ip" -library "top_inst_clk_bfm_ip" -name IP_COMPONENT_VERSION "MS4w"
+
+
+set_global_assignment -library "altera_avalon_clock_source_191" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "altera_avalon_clock_source_191/synth/verbosity_pkg.sv"]
+set_global_assignment -library "altera_avalon_clock_source_191" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "altera_avalon_clock_source_191/synth/altera_avalon_clock_source.sv"]
+set_global_assignment -library "top_inst_clk_bfm_ip" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/top_inst_clk_bfm_ip.v"]
+
+
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_TOOL_NAME "altera_avalon_clock_source"
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_TOOL_VERSION "19.1"
+set_global_assignment -entity "altera_avalon_clock_source" -library "altera_avalon_clock_source_191" -name IP_TOOL_ENV "QsysPrimePro"
+

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2026.04.22.02:01:54"
+ outputDirectory="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_clk/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex 3"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="A3CY100BM16AE7S"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_BOARD"
+     type="String"
+     defaultValue="default"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_IN_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_IN_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_IN_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk_in" kind="clock" start="0">
+   <property name="clockRate" value="50000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="in_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="clk_in_reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="clk" kind="clock" start="1">
+   <property name="associatedDirectClock" value="clk_in" />
+   <property name="clockRate" value="50000000" />
+   <property name="clockRateKnown" value="true" />
+   <property name="externallyDriven" value="true" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk_out" direction="output" role="clk" width="1" />
+  </interface>
+  <interface name="clk_reset" kind="reset" start="1">
+   <property name="associatedClock" value="" />
+   <property name="associatedDirectReset" value="clk_in_reset" />
+   <property name="associatedResetSinks" value="clk_in_reset" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_n_out" direction="output" role="reset_n" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="top_clk" version="1.0" name="top_clk">
+  <parameter name="AUTO_CLK_IN_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="A3CY100BM16AE7S" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 3" />
+  <parameter name="AUTO_BOARD" value="default" />
+  <parameter name="AUTO_CLK_IN_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLK_IN_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <generatedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_clk/synth/top_clk.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/gen/vds/top/ip/top_clk/synth/top_clk.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/altera_examples/altera_learn/proj/2_vds/cmpl_proj/src/vds/top/ip/top_clk.ip" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <messages>
+   <message level="Info" culprit="top_clk">"Generating: top_clk"</message>
+  </messages>
+ </entity>
+</deploy>

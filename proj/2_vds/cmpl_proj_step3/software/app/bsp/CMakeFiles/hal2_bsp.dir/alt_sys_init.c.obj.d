@@ -1,0 +1,27 @@
+bsp/CMakeFiles/hal2_bsp.dir/alt_sys_init.c.obj: \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/alt_sys_init.c \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/system.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/linker.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_irq.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/intel_niosv.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/alt_types.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/io.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/./system.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/alt_types.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_sys_init.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stddef.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/drivers/inc/altera_avalon_jtag_uart.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_alarm.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_llist.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/priv/alt_alarm.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_warning.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/os/alt_hooks.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/os/alt_sem.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/priv/alt_no_error.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/os/alt_flag.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/drivers/inc/altera_avalon_jtag_uart_fd.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_dev.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_llist.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/priv/alt_dev_llist.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/intel_niosv_c.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/intel_niosv.h
