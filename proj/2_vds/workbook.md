@@ -204,6 +204,7 @@ From `software` directory, in the niosv shell that you started above:
 - Return to Visual Designer Studio window
 - Inspect interconnect by using **Tools -> Preview System with Interconnect**
   - Expand the mm_interconnect block and look for pipeline stages
+- Inspect Interconnect by using **Tools -> Pipeline Editor**
 - Detach the Domains window
   ![domains](../../docs/images/vds_domains_detach.png)
 
@@ -211,5 +212,7 @@ From `software` directory, in the niosv shell that you started above:
 - Generate system again
 - Inspect interconnect by using **Tools -> Preview System with Interconnect**
   - Expand the mm_interconnect block and look for pipeline stages
+- Inspect Interconnect by using **Tools -> Pipeline Editor**
+  - Note the added pipeline stages: ![pipeline](../../docs/images/pipeline_stage.png)
 - Return to Quartus Prime Pro window again, run full compilation
 

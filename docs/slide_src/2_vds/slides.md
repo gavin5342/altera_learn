@@ -46,3 +46,30 @@
 
 ## Software integration
 
+- BSP editor `niosv-bsp` and application template editor `niosv-app` available as cmd line applications or GUI for BSP editor.
+  - Generates cmake based build files
+  - Optional RiscFree IDE available
+
+---
+
+## Tour of the tool
+
+::: notes
+
+Better to do this part live, but cover
+
+- IP catalog
+  - Same view as you see in the Quartus Prime Pro window
+- Canvas view - how to connect up
+  - We cover more in the lab
+- Connectivity Designer
+  - Alternate to the canvas - looks like SOPC Builder and Platform Designer to people who have used those before.
+- Address Map Viewer
+- Interrupt Editor
+- Subordinate Arbitration Editor
+- Netlist Navigator / Connections window
+- Property Windiw
+- Domains window
+  - Look at how interconnect constraints can be defined 
+
+:::
