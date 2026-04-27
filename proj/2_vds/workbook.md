@@ -30,6 +30,7 @@ Device settings from introduction lab are the starting point, available here:  [
 
   - type nios, double click Nios V/c
   - In parameterization leave all settings except **Cell name** unchanged.  **Cell name** = niosv
+    - **NB these instructions are adequate for Nios V/c compact processor.  More settings are required for the /g and /m versions of Nios V.**
   - Click **Finish**
     - A block appears on the canvas
   - Use ctrl+mouse wheel to zoom in or Fit in window / Fit selection in window ![zoom](../../docs/images/vds_size.png)
@@ -105,6 +106,17 @@ Device settings from introduction lab are the starting point, available here:  [
 
   - Click **OK**
 
+## Interconnect
+
+- Select **Preview System with interconnect** ![preview with interconnect](../../docs/images/vds_interconnect.png)
+
+- Expand mm_interconnect_0 to view the components generated in the interconnect
+  ![interconnect](../../docs/images/vds_interconnect_view.png)
+- Return to Visual Designer Studio, undock the **Domains** window
+  ![domains](../../docs/images/vds_domains.png)
+- Click on each option
+- We will return to this window to see the impact on performance later
+
 ## Software BSP generation
 
 The Nios V BSP generator can be run from VDS.  Go to **Tools -> BSP Eitor**
@@ -115,10 +127,61 @@ The Nios V BSP generator can be run from VDS.  Go to **Tools -> BSP Eitor**
   - Leave Operating system as Altera HAL (ie baremetal), note you could have FreeRTOS too
   - Press **Create**
 - The BSP editor allows you to select which Altera source files should be included 
+  - Navigate to Main -> hal
+    - tick enable-reduced_device_drivers
+
   - Press **Generate BSP** without making modifications
-- Start Ashling RiscFree IDE
-- Choose **File -> New -> C/C++ Project**
-- Choose **CMake Project**
+
+
+### CMD line
+
+**This is an alternative to the GUI based method above**
+
+- From project root, create software directory
+  - `mkdir software`
+  - `cd software`
+- Start a niosv shell: `$QUARTUS_ROOTDIR/../niosv/bin/niosv-shell`
+- Create BSP: `niosv-bsp -c -t=hal -p=../top.qpf -s=../src/vds/top/top.vds -b=bsp bsp/settings.bsp`
+- To regenerate a BSP with settings that you have already defined (maybe in the GUI)
+  `niosv-bsp -g -b=bsp ./bsp/settings.bsp`
+
+## Software Application template generation
+
+From `software` directory, in the niosv shell that you started above:
+
+- `mkdir app`
+
+- Write app/hello_world.c eg `vim app/hello_world.c`
+  ```
+  /* Hello World */
+  #include <sys/alt_stdio.h>
+  #include "system.h"
+  
+  int main(void) {
+  	alt_putstr("Hello World!\n");
+  	
+  	//loop
+  	for (;;) {}
+  }
+  ```
+
+- Generate cmake template: `niosv-app -a=app -b=bsp -s=app/main.c`
+
+- Nios V tools depend on riscv32-unknown-elf toolchain being in `$PATH`.
+
+  - `export PATH=<install>/riscfree/toolchain/riscv32-unknown-elf/bin/:$PATH`
+  - Other alternatives:
+    - Include full path in Advanced.hal.prefix section of BSP Editor
+    - Edit generated toolchain.cmake file _Beware of this one, niosv-bsp overwrites this_
+
+- Generate makefiles using cmake (UNIX makefiles is direct): `cmake -S app -B build`
+
+- `make -C build`
+
+- After these steps you should have a `app/build/ram.hex` file. 
+
+- Copy the generated hex file to replace the initialisation file for the **On Chip Memory II** component
+  `cp ram.hex ../../src/vds/top/ip`
 
 ## Simulation
 
@@ -127,7 +190,26 @@ The Nios V BSP generator can be run from VDS.  Go to **Tools -> BSP Eitor**
 - Navigate to `gen/vds/top_tb/sim/mentor` in your Quartus project directory
 - `do msim_setup.tcl`
 - `ld_debug`
-- 
+- `run 10us`
 
+## Synthesis results
 
+- Return to the main Quartus Prime Pro window
+- Run the complete compilation flow
+- Examine the Fmax summary in **Compilation Report -> Timing Analyzer -> Fmax Summary**
+  - Expect ~300MHz Fmax
+
+### Optimization experiment
+
+- Return to Visual Designer Studio window
+- Inspect interconnect by using **Tools -> Preview System with Interconnect**
+  - Expand the mm_interconnect block and look for pipeline stages
+- Detach the Domains window
+  ![domains](../../docs/images/vds_domains_detach.png)
+
+- Change `Limit interconnect pipeline stages to:` from `1` to `4`
+- Generate system again
+- Inspect interconnect by using **Tools -> Preview System with Interconnect**
+  - Expand the mm_interconnect block and look for pipeline stages
+- Return to Quartus Prime Pro window again, run full compilation
 
