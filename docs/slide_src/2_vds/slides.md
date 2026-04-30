@@ -79,7 +79,7 @@ graph TB
 
 ::: column
 
-![test](../../images/niosv_flow.png)
+![niosv development](../../images/niosv_flow.png)
 
 :::
 
@@ -103,7 +103,7 @@ Better to do this part live, but cover
 - Interrupt Editor
 - Subordinate Arbitration Editor
 - Netlist Navigator / Connections window
-- Property Windiw
+- Property Window
 - Domains window
   - Look at how interconnect constraints can be defined 
 
