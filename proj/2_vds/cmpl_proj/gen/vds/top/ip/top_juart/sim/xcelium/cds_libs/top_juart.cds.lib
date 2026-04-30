@@ -1,0 +1,5 @@
+
+DEFINE                     work      ./../libraries/work/     
+DEFINE                     top_juart ./../libraries/top_juart/
+INCLUDE simulator.cds.lib                                     
+SOFTINCLUDE device.cds.lib                                    

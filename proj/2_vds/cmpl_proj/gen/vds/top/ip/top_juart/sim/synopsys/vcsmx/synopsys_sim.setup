@@ -1,0 +1,7 @@
+
+WORK > DEFAULT
+DEFAULT:                          ./libraries/work/                        
+work:                             ./libraries/work/                        
+altera_avalon_jtag_uart_1932:     ./libraries/altera_avalon_jtag_uart_1932/
+top_juart:                        ./libraries/top_juart/                   
+OTHERS=_device_synopsys_sim.setup                                          

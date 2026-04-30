@@ -1,0 +1,9 @@
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/app/CMakeFiles/app.elf.dir
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/app/CMakeFiles/create-objdump.dir
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/app/CMakeFiles/niosv-stack-report.dir
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/app/CMakeFiles/create-hex.dir
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/app/CMakeFiles/edit_cache.dir
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/app/CMakeFiles/rebuild_cache.dir
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/app/bsp/CMakeFiles/hal2_bsp.dir
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/app/bsp/CMakeFiles/edit_cache.dir
+/altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/app/bsp/CMakeFiles/rebuild_cache.dir

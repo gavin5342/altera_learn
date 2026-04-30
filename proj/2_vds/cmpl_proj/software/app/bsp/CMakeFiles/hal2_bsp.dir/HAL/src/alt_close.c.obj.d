@@ -1,0 +1,37 @@
+bsp/CMakeFiles/hal2_bsp.dir/HAL/src/alt_close.c.obj: \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/src/alt_close.c \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/unistd.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/unistd.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/_ansi.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/newlib.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/picolibc.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/config.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/machine/ieeefp.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/features.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/float.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/cdefs.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/machine/_default_types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/lib/gcc/riscv32-unknown-elf/13.2.0/include/stddef.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/machine/_types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/_types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/_stdint.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/machine/endian.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/machine/_endian.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/machine/types.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/stdint.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/_intsup.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_errno.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/errno.h \
+ /opt/altera/qpro/riscfree/toolchain/riscv32-unknown-elf/picolibc/riscv32-unknown-elf/include/sys/errno.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_warning.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/priv/alt_file.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_dev.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/./system.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/./linker.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/sys/alt_llist.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/alt_types.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/priv/alt_dev_llist.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/os/alt_sem.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/priv/alt_no_error.h \
+ /altera_examples/altera_learn/proj/2_vds/cmpl_proj/software/bsp/HAL/inc/os/alt_syscall.h

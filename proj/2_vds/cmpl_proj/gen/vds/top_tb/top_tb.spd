@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/top_tb.v"
+   type="VERILOG"
+   library="top_tb"
+   hasInlineConfiguration="true" />
+ <topLevel name="top_tb.top_tb" />
+ <deviceFamily name="agilex3" />
+ <device name="A3CY100BM16AE7S" />
+ <modelMap controllerPath="top_tb.top_inst.ram" modelPath="top_tb.top_inst.ram" />
+</simPackage>

@@ -1,0 +1,172 @@
+<?xml version="1.0" ?>
+<!--Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.-->
+<ipxact:design xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
+  <ipxact:vendor>Altera Corporation</ipxact:vendor>
+  <ipxact:library>$${FILENAME}</ipxact:library>
+  <ipxact:name>$${FILENAME}</ipxact:name>
+  <ipxact:version>1.0</ipxact:version>
+  <ipxact:componentInstances></ipxact:componentInstances>
+  <ipxact:vendorExtensions>
+    <altera:catalog_card_info>
+      <altera:name>$${FILENAME}</altera:name>
+      <altera:displayName>$${FILENAME}</altera:displayName>
+      <altera:version>1.0</altera:version>
+      <altera:tags></altera:tags>
+      <altera:categories></altera:categories>
+      <altera:tool>VDS</altera:tool>
+    </altera:catalog_card_info>
+    <altera:altera_system_parameters>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="board" type="string">
+          <ipxact:name>board</ipxact:name>
+          <ipxact:displayName>Board</ipxact:displayName>
+          <ipxact:value>default</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="bonusData" type="string">
+          <ipxact:name>bonusData</ipxact:name>
+          <ipxact:displayName>bonusData</ipxact:displayName>
+          <ipxact:value>bonusData 
+{
+}
+</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="cpuInfo" type="string">
+          <ipxact:name>cpuInfo</ipxact:name>
+          <ipxact:displayName>cpuInfo</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="designId" type="string">
+          <ipxact:name>designId</ipxact:name>
+          <ipxact:displayName>designId</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="device" type="string">
+          <ipxact:name>device</ipxact:name>
+          <ipxact:displayName>Device</ipxact:displayName>
+          <ipxact:value>A3CY100BM16AE7S</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="deviceFamily" type="string">
+          <ipxact:name>deviceFamily</ipxact:name>
+          <ipxact:displayName>Device family</ipxact:displayName>
+          <ipxact:value>Agilex 3</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="deviceSpeedGrade" type="string">
+          <ipxact:name>deviceSpeedGrade</ipxact:name>
+          <ipxact:displayName>Device Speed Grade</ipxact:displayName>
+          <ipxact:value>7</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="dflBitArray" type="string">
+          <ipxact:name>dflBitArray</ipxact:name>
+          <ipxact:displayName>dflBitArray</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="fabricMode" type="string">
+          <ipxact:name>fabricMode</ipxact:name>
+          <ipxact:displayName>fabricMode</ipxact:displayName>
+          <ipxact:value>QSYS</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="generateLegacySim" type="bit">
+          <ipxact:name>generateLegacySim</ipxact:name>
+          <ipxact:displayName>generateLegacySim</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="generationId" type="int">
+          <ipxact:name>generationId</ipxact:name>
+          <ipxact:displayName>Generation Id</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="globalResetBus" type="bit">
+          <ipxact:name>globalResetBus</ipxact:name>
+          <ipxact:displayName>Global reset</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hdlLanguage" type="string">
+          <ipxact:name>hdlLanguage</ipxact:name>
+          <ipxact:displayName>hdlLanguage</ipxact:displayName>
+          <ipxact:value>VERILOG</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hideFromIPCatalog" type="bit">
+          <ipxact:name>hideFromIPCatalog</ipxact:name>
+          <ipxact:displayName>Hide from IP Catalog</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="lockedInterfaceDefinition" type="string">
+          <ipxact:name>lockedInterfaceDefinition</ipxact:name>
+          <ipxact:displayName>lockedInterfaceDefinition</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="sopcBorderPoints" type="bit">
+          <ipxact:name>sopcBorderPoints</ipxact:name>
+          <ipxact:displayName>Use SOPC Builder port naming</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="systemHash" type="longint">
+          <ipxact:name>systemHash</ipxact:name>
+          <ipxact:displayName>systemHash</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="systemInfos" type="string">
+          <ipxact:name>systemInfos</ipxact:name>
+          <ipxact:displayName>systemInfos</ipxact:displayName>
+          <ipxact:value>&lt;systemInfosDefinition&gt;
+    &lt;connPtSystemInfos/&gt;
+&lt;/systemInfosDefinition&gt;</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="systemScripts" type="string">
+          <ipxact:name>systemScripts</ipxact:name>
+          <ipxact:displayName>systemScripts</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="testBenchDutName" type="string">
+          <ipxact:name>testBenchDutName</ipxact:name>
+          <ipxact:displayName>Use Test Bench Naming Pattern</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="timeStamp" type="longint">
+          <ipxact:name>timeStamp</ipxact:name>
+          <ipxact:displayName>timeStamp</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="useTestBenchNamingPattern" type="bit">
+          <ipxact:name>useTestBenchNamingPattern</ipxact:name>
+          <ipxact:displayName>Use Test Bench Naming Pattern</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+    </altera:altera_system_parameters>
+    <altera:instance_parameters></altera:instance_parameters>
+    <altera:instance_script></altera:instance_script>
+    <altera:modules></altera:modules>
+    <altera:connections></altera:connections>
+    <altera:interconnect_requirements></altera:interconnect_requirements>
+    <altera:wire_level_connections></altera:wire_level_connections>
+    <altera:hdl_parameters></altera:hdl_parameters>
+    <altera:hdl_parameter_mappings></altera:hdl_parameter_mappings>
+    <altera:preserved_ports_for_debug></altera:preserved_ports_for_debug>
+    <altera:altera_group_hierarchy_contents></altera:altera_group_hierarchy_contents>
+    <altera:altera_interface_boundary></altera:altera_interface_boundary>
+    <ipxact:components>
+      <ipxact:component>
+        <ipxact:vendor>Intel Corporation</ipxact:vendor>
+        <ipxact:library>addressMap</ipxact:library>
+        <ipxact:name>addressMap</ipxact:name>
+        <ipxact:version>1.0</ipxact:version>
+        <ipxact:busInterfaces></ipxact:busInterfaces>
+        <ipxact:addressSpaces></ipxact:addressSpaces>
+        <ipxact:memoryMaps></ipxact:memoryMaps>
+      </ipxact:component>
+    </ipxact:components>
+    <altera:altera_has_warnings>false</altera:altera_has_warnings>
+    <altera:altera_has_errors>false</altera:altera_has_errors>
+  </ipxact:vendorExtensions>
+</ipxact:design>

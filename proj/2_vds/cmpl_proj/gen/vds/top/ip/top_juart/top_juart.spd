@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_avalon_jtag_uart_1932" />
+ <file
+   path="altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_log_module.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_avalon_jtag_uart_1932" />
+ <file
+   path="altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_r.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_avalon_jtag_uart_1932" />
+ <file
+   path="altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_scfifo_w.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_avalon_jtag_uart_1932" />
+ <file
+   path="altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_r.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_avalon_jtag_uart_1932" />
+ <file
+   path="altera_avalon_jtag_uart_1932/sim/altera_avalon_jtag_uart_sim_scfifo_w.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_avalon_jtag_uart_1932" />
+ <file
+   path="sim/top_juart.v"
+   type="VERILOG"
+   library="top_juart"
+   hasInlineConfiguration="true" />
+ <topLevel name="top_juart.top_juart" />
+ <deviceFamily name="agilex3" />
+ <device name="A3CY100BM16AE7S" />
+</simPackage>

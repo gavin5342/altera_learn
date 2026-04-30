@@ -1,0 +1,9 @@
+
+WORK > DEFAULT
+DEFAULT:                          ./libraries/work/                        
+work:                             ./libraries/work/                        
+altera_reset_controller_1924:     ./libraries/altera_reset_controller_1924/
+intel_niosv_c_unit_420:           ./libraries/intel_niosv_c_unit_420/      
+intel_niosv_c_420:                ./libraries/intel_niosv_c_420/           
+top_niosv:                        ./libraries/top_niosv/                   
+OTHERS=_device_synopsys_sim.setup                                          

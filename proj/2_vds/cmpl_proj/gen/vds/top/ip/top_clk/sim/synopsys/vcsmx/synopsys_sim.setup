@@ -1,0 +1,6 @@
+
+WORK > DEFAULT
+DEFAULT:                          ./libraries/work/   
+work:                             ./libraries/work/   
+top_clk:                          ./libraries/top_clk/
+OTHERS=_device_synopsys_sim.setup                     

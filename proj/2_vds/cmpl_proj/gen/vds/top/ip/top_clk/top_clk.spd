@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/top_clk.v"
+   type="VERILOG"
+   library="top_clk"
+   hasInlineConfiguration="true" />
+ <topLevel name="top_clk.top_clk" />
+ <deviceFamily name="agilex3" />
+ <device name="A3CY100BM16AE7S" />
+</simPackage>

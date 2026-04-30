@@ -1,0 +1,5 @@
+
+DEFINE                     work    ./../libraries/work/   
+DEFINE                     top_clk ./../libraries/top_clk/
+INCLUDE simulator.cds.lib                                 
+SOFTINCLUDE device.cds.lib                                
