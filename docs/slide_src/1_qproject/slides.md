@@ -184,3 +184,63 @@ The **File -> Programming File Generator** or `quartus_pfg` can be used to make 
 - `.jic` (JTAG indirect configuration) is a file used with Quartus programmer to program a QSPI flash using JTAG and a JTAG-QSPI bridge in the FPGA
 - `.pof` (Programmer object file) is used to program a flash when the pins are directly connected to the Altera programming file
 - `.hexout`[Intel HEX](https://developer.arm.com/documentation/101655/0961/OHX51-User-s-Guide/Intel-HEX-File-Format) format text file
+
+---
+
+## Debug tools
+
+- Configuration and JTAG chain debug ![icon](../../images/prog_icon.png)
+
+- FPGA JTAG based tools
+
+  - Signal Tap Logic Analyzer ![icon](../../images/stap_icon.png)
+  - In-System Memory Content Editor ![icon](../../images/isme_icon.png)
+  - System Console ![icon](../../images/system_console_icon.png)
+    - Transceiver toolkit
+    - External Memory Interface Toolkit
+
+  
+
+::: notes
+
+You need to have your FPGA correctly configured and to be able to use the JTAG port to be able to go any further, so we provide tools to check the JTAG electrical connections and to communicate with the Secure Device Manager which controls access, authentication and encryption.  It is possible to configure fuses so that the debug ports are irreversibly disabled and only signed images are accepted.
+
+There are a suite of tools that communicate through the JTAG port using the two USER registers available on the device.
+
+Signal Tap Logic analyzer is n logic analyzer constructed in the FPGA.
+
+System Console is used to (from the start splash):
+
+    * To read or write Avalon Memory-Mapped (Avalon-MM) slaves using special
+      masters
+    * To sample the Platform Designer system clock and system reset signal
+    * To run JTAG loopback tests to analyze board noise problems
+    * To shift arbitrary instruction register and data register values to
+      instantiated system level debug (SLD) nodes
+    * To source and probe signals connected to In-System Sources and Probes
+      (ISSP) nodes
+
+:::
+
+---
+
+## Signal Tap
+
+![screenshot](../../images/stap_setup.png)
+
+::: notes
+
+- Connection Configuration - Runtime only: similar to programmer and quartus_pgm - select programming cable, then device on the JTAG chain to use.  Optionally program a .sof
+- Signal configuration
+  - Clock: Only one clock is allowed for trigger and capture.  When sampling non-synchronous signals or just signals with tight timing requirements, it might make sense to set_false_path
+  - Data - configure depth and type of capture memory
+  - Storage qualifier - if you use one of these you can disable the qualifier at runtime to return to continuous capture
+  - Trigger - these are horizontal controls
+    - I don't normally use state based trigger - I find it easier to write my trigger in Verilog and connect it here
+    - You can have multiple triggers - but they each consume logic.
+  - Setup tab
+    - Lock mode trigger only restricts changes to runtime changes
+    - Double click whit space for Node Finder
+  - Data log - save run time results in the .stp file.  Tick the check box to save every trigger.  
+
+:::

@@ -1,0 +1,10 @@
+graph TB
+	hw[hardware arch defined in vds] --> bsp[bsp generate niosv_bsp]
+	bsp --> app[application cmake files niosv_app]
+	app --> cmake
+	cmake --> bin[elf, hex object files]
+	bin --> hw_c[update memory content for mem .ip]
+	hw_c --> rbf[FPGA programming file with Nios V program]
+	bin --> dbg[debug elf using gdb or riscfree]
+	rbf --[mif update]-->rbf2[rbf with preserved layout]
+	bin --> rbf2
