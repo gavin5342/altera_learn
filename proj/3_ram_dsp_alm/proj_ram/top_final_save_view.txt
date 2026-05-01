@@ -1,0 +1,429 @@
+# File saved with Nlview 7.9.1 2025-07-03 36fdeb9b55 VDI=45 GEI=38 GUI=QT:6.5.7
+#  -curmodule
+# non-default properties - (restore without -noprops)
+property -colorscheme classic
+property attrcolor #06476f
+property autobundle 129
+property backgroundcolor #ffffff
+property boxcolor0 #2d2d2d
+property boxhierpins 3
+property boxinstcolor #000000
+property boxpincolor #06476f
+property buscolor #2d2d2d
+property buswidthlimit 0
+property createnetattrdsp 1024
+property createvconn 65
+property decorate 1
+property elidetext 1
+property fillcolor1 #73acac
+property fillcolor2 #81bf5f
+property fillcolor3 #dce6dc
+property fillcolor4 #ffff00
+property fillcolor5 #c0c0c0
+property fillcolor6 #b3a9fe
+property fillcolor7 #f0b0d2
+property fillcolor8 #adadad
+property fillcolor9 #a9feff
+property fillcolor10 #e5ffff
+property instattrmax -1
+property netcolor #2d2d2d
+property netindicators 15
+property netindicatorsize 3
+property nohiernegpins 0
+property overlaycolor #2d2d2d
+property pbuscolor #0000ff
+property pbusnamecolor #000000
+property pinattrmax -1
+property portcolor #0000ff
+property portnamecolor #000000
+property ripattrmax -1
+property rippercolor #000000
+property rubberbandcolor #00aaff
+property selectionappearance 6
+property selectioncolor #aa1027
+property shadowstyle 1
+property sheetheight 34
+property sheetwidth 44
+property showpagenumbers 1
+property showripindex 1
+property showvconn 1
+#
+module new _1 {}
+load symbol rddata[0]~output_63 {} BOX pin I_65 input.left pin O_66 output.right fillcolor 6
+load symbol rddata[1]~output_68 {} BOX pin I_70 input.left pin O_71 output.right fillcolor 6
+load symbol rddata[2]~output_73 {} BOX pin I_75 input.left pin O_76 output.right fillcolor 6
+load symbol rddata[3]~output_78 {} BOX pin I_80 input.left pin O_81 output.right fillcolor 6
+load symbol rddata[4]~output_83 {} BOX pin I_85 input.left pin O_86 output.right fillcolor 6
+load symbol rddata[5]~output_88 {} BOX pin I_90 input.left pin O_91 output.right fillcolor 6
+load symbol rddata[6]~output_93 {} BOX pin I_95 input.left pin O_96 output.right fillcolor 6
+load symbol rddata[7]~output_98 {} BOX pin I_100 input.left pin O_101 output.right fillcolor 6
+load symbol wrdata[5]~input_103 {} BOX pin I_105 input.left pin O_106 output.right fillcolor 6
+load symbol wrdata[7]~input_108 {} BOX pin I_110 input.left pin O_111 output.right fillcolor 6
+load symbol wrdata[6]~input_113 {} BOX pin I_115 input.left pin O_116 output.right fillcolor 6
+load symbol wrdata[4]~input_118 {} BOX pin I_120 input.left pin O_121 output.right fillcolor 6
+load symbol wrdata[0]~input_123 {} BOX pin I_125 input.left pin O_126 output.right fillcolor 6
+load symbol wrdata[1]~input_128 {} BOX pin I_130 input.left pin O_131 output.right fillcolor 6
+load symbol wrdata[2]~input_133 {} BOX pin I_135 input.left pin O_136 output.right fillcolor 6
+load symbol wrdata[3]~input_138 {} BOX pin I_140 input.left pin O_141 output.right fillcolor 6
+load symbol rdclk~input_143 {} BOX pin I_145 input.left pin O_146 output.right fillcolor 6
+load symbol ~ALTERA_AS_DATA1~~obuf_149 {} BOX pin I_151 input.left pin OE_152 input.left pin O_153 output.right fillcolor 6
+load symbol ~ALTERA_AS_nCSO0,ALTERA_MSEL0~~obuf_156 {} BOX pin I_158 input.left pin O_159 output.right fillcolor 6
+load symbol ~ALTERA_AS_DATA2~~obuf_161 {} BOX pin I_163 input.left pin OE_164 input.left pin O_165 output.right fillcolor 6
+load symbol ~ALTERA_AS_DATA0~~obuf_168 {} BOX pin I_170 input.left pin OE_171 input.left pin O_172 output.right fillcolor 6
+load symbol ~ALTERA_AS_CLK~~obuf_175 {} BOX pin I_177 input.left pin O_178 output.right fillcolor 6
+load symbol ~ALTERA_AS_nCSO2,ALTERA_MSEL1~~obuf_180 {} BOX pin I_182 input.left pin O_183 output.right fillcolor 6
+load symbol ~CONF_DONE~~obuf_185 {} BOX pin I_187 input.left pin O_188 output.right fillcolor 6
+load symbol ~INIT_DONE~~obuf_190 {} BOX pin I_192 input.left pin O_193 output.right fillcolor 6
+load symbol ~ALTERA_AS_nCSO1,ALTERA_MSEL2~~obuf_195 {} BOX pin I_197 input.left pin O_198 output.right fillcolor 6
+load symbol ~ALTERA_AS_DATA3~~obuf_200 {} BOX pin I_202 input.left pin OE_203 input.left pin O_204 output.right fillcolor 6
+load symbol ~ALTERA_AS_nCSO3~~obuf_207 {} BOX pin I_209 input.left pin O_210 output.right fillcolor 6
+load symbol ~ALTERA_AS_nRST~~obuf_212 {} BOX pin I_214 input.left pin O_215 output.right fillcolor 6
+load symbol Mux_0~0xsyn_216 {} BOX pin DATAA_167 input.left pin DATAB_168 input.left pin DATAC_169 input.left pin DATAD_170 input.left pin DATAE_171 input.left pin DATAF_172 input.left pin DATAG_173 input.left pin DATAH_174 input.left pin COMBOUT_151 output.right fillcolor 6
+load symbol rddata[0]~reg0_24 {} GEN pin CLK_9 input.clk.left pin D_10 input.left pin Q_15 output.right fillcolor 7
+load symbol ~GND_34 {} BOX fillcolor 1
+load symbol wrclk~input_35 {} BOX pin I_11 input.left fillcolor 1
+load symbol wrclk~pad_36 {} BOX pin SIMIN_12 input.left pin PADOUT_25 output.right fillcolor 1
+load symbol rst~input_37 {} BOX pin I_13 input.left fillcolor 1
+load symbol rst~pad_38 {} BOX pin SIMIN_14 input.left pin PADOUT_26 output.right fillcolor 1
+load symbol rdaddr[0]~input_39 {} BOX pin I_15 input.left fillcolor 1
+load symbol rdaddr(0)~pad_40 {} BOX pin SIMIN_16 input.left pin PADOUT_27 output.right fillcolor 1
+load symbol rdaddr[1]~input_41 {} BOX pin I_17 input.left fillcolor 1
+load symbol rdaddr(1)~pad_42 {} BOX pin SIMIN_18 input.left pin PADOUT_28 output.right fillcolor 1
+load symbol rdaddr[2]~input_43 {} BOX pin I_19 input.left fillcolor 1
+load symbol rdaddr(2)~pad_44 {} BOX pin SIMIN_20 input.left pin PADOUT_29 output.right fillcolor 1
+load symbol rdaddr[3]~input_45 {} BOX pin I_21 input.left fillcolor 1
+load symbol rdaddr(3)~pad_46 {} BOX pin SIMIN_22 input.left pin PADOUT_30 output.right fillcolor 1
+load symbol rdaddr[4]~input_47 {} BOX pin I_23 input.left fillcolor 1
+load symbol rdaddr(4)~pad_48 {} BOX pin SIMIN_24 input.left pin PADOUT_31 output.right fillcolor 1
+load symbol rdaddr[5]~input_49 {} BOX pin I_25 input.left fillcolor 1
+load symbol rdaddr(5)~pad_50 {} BOX pin SIMIN_26 input.left pin PADOUT_32 output.right fillcolor 1
+load symbol wraddr[0]~input_51 {} BOX pin I_27 input.left fillcolor 1
+load symbol wraddr(0)~pad_52 {} BOX pin SIMIN_28 input.left pin PADOUT_33 output.right fillcolor 1
+load symbol wraddr[1]~input_53 {} BOX pin I_29 input.left fillcolor 1
+load symbol wraddr(1)~pad_54 {} BOX pin SIMIN_30 input.left pin PADOUT_34 output.right fillcolor 1
+load symbol wraddr[2]~input_55 {} BOX pin I_31 input.left fillcolor 1
+load symbol wraddr(2)~pad_56 {} BOX pin SIMIN_32 input.left pin PADOUT_35 output.right fillcolor 1
+load symbol wraddr[3]~input_57 {} BOX pin I_33 input.left fillcolor 1
+load symbol wraddr(3)~pad_58 {} BOX pin SIMIN_34 input.left pin PADOUT_36 output.right fillcolor 1
+load symbol wraddr[4]~input_59 {} BOX pin I_35 input.left fillcolor 1
+load symbol wraddr(4)~pad_60 {} BOX pin SIMIN_36 input.left pin PADOUT_37 output.right fillcolor 1
+load symbol wraddr[5]~input_61 {} BOX pin I_37 input.left fillcolor 1
+load symbol wraddr(5)~pad_62 {} BOX pin SIMIN_38 input.left pin PADOUT_38 output.right fillcolor 1
+load symbol rddata(0)~pad_67 {} BOX pin PADIN_42 input.left pin SIMOUT_42 output.right fillcolor 1
+load symbol rddata(1)~pad_72 {} BOX pin PADIN_46 input.left pin SIMOUT_46 output.right fillcolor 1
+load symbol rddata(2)~pad_77 {} BOX pin PADIN_50 input.left pin SIMOUT_50 output.right fillcolor 1
+load symbol rddata(3)~pad_82 {} BOX pin PADIN_54 input.left pin SIMOUT_54 output.right fillcolor 1
+load symbol rddata(4)~pad_87 {} BOX pin PADIN_58 input.left pin SIMOUT_58 output.right fillcolor 1
+load symbol rddata(5)~pad_92 {} BOX pin PADIN_62 input.left pin SIMOUT_62 output.right fillcolor 1
+load symbol rddata(6)~pad_97 {} BOX pin PADIN_66 input.left pin SIMOUT_66 output.right fillcolor 1
+load symbol rddata(7)~pad_102 {} BOX pin PADIN_70 input.left pin SIMOUT_70 output.right fillcolor 1
+load symbol wrdata(5)~pad_107 {} BOX pin SIMIN_74 input.left pin PADOUT_74 output.right fillcolor 1
+load symbol wrdata(7)~pad_112 {} BOX pin SIMIN_78 input.left pin PADOUT_78 output.right fillcolor 1
+load symbol wrdata(6)~pad_117 {} BOX pin SIMIN_82 input.left pin PADOUT_82 output.right fillcolor 1
+load symbol wrdata(4)~pad_122 {} BOX pin SIMIN_86 input.left pin PADOUT_86 output.right fillcolor 1
+load symbol wrdata(0)~pad_127 {} BOX pin SIMIN_90 input.left pin PADOUT_90 output.right fillcolor 1
+load symbol wrdata(1)~pad_132 {} BOX pin SIMIN_94 input.left pin PADOUT_94 output.right fillcolor 1
+load symbol wrdata(2)~pad_137 {} BOX pin SIMIN_98 input.left pin PADOUT_98 output.right fillcolor 1
+load symbol wrdata(3)~pad_142 {} BOX pin SIMIN_102 input.left pin PADOUT_102 output.right fillcolor 1
+load symbol rdclk~pad_147 {} BOX pin SIMIN_106 input.left pin PADOUT_106 output.right fillcolor 1
+load symbol ~ALTERA_AS_DATA1~_148 {} BOX pin PADIN_107 input.left pin PADOUT_107 output.right fillcolor 1
+load symbol ~ALTERA_AS_DATA1~~ibuf_154 {} BOX pin I_113 input.left fillcolor 1
+load symbol ~ALTERA_AS_DATA2~_160 {} BOX pin PADIN_118 input.left pin PADOUT_115 output.right fillcolor 1
+load symbol ~ALTERA_AS_DATA2~~ibuf_166 {} BOX pin I_124 input.left fillcolor 1
+load symbol ~ALTERA_AS_DATA0~_167 {} BOX pin PADIN_125 input.left pin PADOUT_120 output.right fillcolor 1
+load symbol ~ALTERA_AS_DATA0~~ibuf_173 {} BOX pin I_131 input.left fillcolor 1
+load symbol ~ALTERA_AS_DATA3~_199 {} BOX pin PADIN_152 input.left pin PADOUT_140 output.right fillcolor 1
+load symbol ~ALTERA_AS_DATA3~~ibuf_205 {} BOX pin I_158 input.left fillcolor 1
+load port rdclk_33 input -attr @name rdclk -pg 1 -lvl 0 -x 0 -y 390
+load port rst_3 input -attr @name rst -pg 1 -lvl 0 -x 0 -y 930
+load port wrclk_2 input -attr @name wrclk -pg 1 -lvl 0 -x 0 -y 1350
+load port ~ALTERA_AS_CLK~_174 output -attr @name ~ALTERA_AS_CLK~ -pg 1 -lvl 7 -x 1220 -y 880
+load port ~ALTERA_AS_nCSO0,ALTERA_MSEL0~_155 output -attr @name ~ALTERA_AS_nCSO0,ALTERA_MSEL0~ -pg 1 -lvl 7 -x 1220 -y 1220
+load port ~ALTERA_AS_nCSO1,ALTERA_MSEL2~_194 output -attr @name ~ALTERA_AS_nCSO1,ALTERA_MSEL2~ -pg 1 -lvl 7 -x 1220 -y 1160
+load port ~ALTERA_AS_nCSO2,ALTERA_MSEL1~_179 output -attr @name ~ALTERA_AS_nCSO2,ALTERA_MSEL1~ -pg 1 -lvl 7 -x 1220 -y 1340
+load port ~ALTERA_AS_nCSO3~_206 output -attr @name ~ALTERA_AS_nCSO3~ -pg 1 -lvl 7 -x 1220 -y 1400
+load port ~ALTERA_AS_nRST~_211 output -attr @name ~ALTERA_AS_nRST~ -pg 1 -lvl 7 -x 1220 -y 1460
+load port ~CONF_DONE~_184 output -attr @name ~CONF_DONE~ -pg 1 -lvl 7 -x 1220 -y 1520
+load port ~INIT_DONE~_189 output -attr @name ~INIT_DONE~ -pg 1 -lvl 7 -x 1220 -y 1580
+load portBus rdaddr[0..5]_217 input 6 rdaddr[0]_4 rdaddr[1]_5 rdaddr[2]_6 rdaddr[3]_7 rdaddr[4]_8 rdaddr[5]_9 -attr @name rdaddr[0..5] -portAttr rdaddr[0]_4 @name rdaddr[0] -portAttr rdaddr[1]_5 @name rdaddr[1] -portAttr rdaddr[2]_6 @name rdaddr[2] -portAttr rdaddr[3]_7 @name rdaddr[3] -portAttr rdaddr[4]_8 @name rdaddr[4] -portAttr rdaddr[5]_9 @name rdaddr[5] -pg 1 -lvl 0 -x 0 -y 30
+load portBus rddata[0..7]_218 output 8 rddata[0]_16 rddata[1]_17 rddata[2]_18 rddata[3]_19 rddata[4]_20 rddata[5]_21 rddata[6]_22 rddata[7]_23 -attr @name rddata[0..7] -portAttr rddata[0]_16 @name rddata[0] -portAttr rddata[1]_17 @name rddata[1] -portAttr rddata[2]_18 @name rddata[2] -portAttr rddata[3]_19 @name rddata[3] -portAttr rddata[4]_20 @name rddata[4] -portAttr rddata[5]_21 @name rddata[5] -portAttr rddata[6]_22 @name rddata[6] -portAttr rddata[7]_23 @name rddata[7] -pg 1 -lvl 7 -x 1220 -y 400
+load portBus wraddr[0..5]_219 input 6 wraddr[0]_10 wraddr[1]_11 wraddr[2]_12 wraddr[3]_13 wraddr[4]_14 wraddr[5]_15 -attr @name wraddr[0..5] -portAttr wraddr[0]_10 @name wraddr[0] -portAttr wraddr[1]_11 @name wraddr[1] -portAttr wraddr[2]_12 @name wraddr[2] -portAttr wraddr[3]_13 @name wraddr[3] -portAttr wraddr[4]_14 @name wraddr[4] -portAttr wraddr[5]_15 @name wraddr[5] -pg 1 -lvl 0 -x 0 -y 990
+load portBus wrdata[0..7]_220 input 8 wrdata[0]_29 wrdata[1]_30 wrdata[2]_31 wrdata[3]_32 wrdata[4]_28 wrdata[5]_25 wrdata[6]_27 wrdata[7]_26 -attr @name wrdata[0..7] -portAttr wrdata[0]_29 @name wrdata[0] -portAttr wrdata[1]_30 @name wrdata[1] -portAttr wrdata[2]_31 @name wrdata[2] -portAttr wrdata[3]_32 @name wrdata[3] -portAttr wrdata[4]_28 @name wrdata[4] -portAttr wrdata[5]_25 @name wrdata[5] -portAttr wrdata[6]_27 @name wrdata[6] -portAttr wrdata[7]_26 @name wrdata[7] -pg 1 -lvl 0 -x 0 -y 450
+load inst rddata[0]~output_63 rddata[0]~output_63 {} -attr @name rddata[0]~output -attr @cell IO_OBUF -pinAttr I_65 @name I -pinAttr O_66 @name O -pg 1 -lvl 5 -x 790 -y 390
+load inst rddata[1]~output_68 rddata[1]~output_68 {} -attr @name rddata[1]~output -attr @cell IO_OBUF -pinAttr I_70 @name I -pinAttr I_70 @vconn 1'h0 -pinAttr O_71 @name O -pg 1 -lvl 5 -x 790 -y 450
+load inst rddata[2]~output_73 rddata[2]~output_73 {} -attr @name rddata[2]~output -attr @cell IO_OBUF -pinAttr I_75 @name I -pinAttr I_75 @vconn 1'h0 -pinAttr O_76 @name O -pg 1 -lvl 5 -x 790 -y 510
+load inst rddata[3]~output_78 rddata[3]~output_78 {} -attr @name rddata[3]~output -attr @cell IO_OBUF -pinAttr I_80 @name I -pinAttr I_80 @vconn 1'h0 -pinAttr O_81 @name O -pg 1 -lvl 5 -x 790 -y 570
+load inst rddata[4]~output_83 rddata[4]~output_83 {} -attr @name rddata[4]~output -attr @cell IO_OBUF -pinAttr I_85 @name I -pinAttr I_85 @vconn 1'h0 -pinAttr O_86 @name O -pg 1 -lvl 5 -x 790 -y 630
+load inst rddata[5]~output_88 rddata[5]~output_88 {} -attr @name rddata[5]~output -attr @cell IO_OBUF -pinAttr I_90 @name I -pinAttr I_90 @vconn 1'h0 -pinAttr O_91 @name O -pg 1 -lvl 5 -x 790 -y 690
+load inst rddata[6]~output_93 rddata[6]~output_93 {} -attr @name rddata[6]~output -attr @cell IO_OBUF -pinAttr I_95 @name I -pinAttr I_95 @vconn 1'h0 -pinAttr O_96 @name O -pg 1 -lvl 5 -x 790 -y 750
+load inst rddata[7]~output_98 rddata[7]~output_98 {} -attr @name rddata[7]~output -attr @cell IO_OBUF -pinAttr I_100 @name I -pinAttr I_100 @vconn 1'h0 -pinAttr O_101 @name O -pg 1 -lvl 5 -x 790 -y 810
+load inst wrdata[5]~input_103 wrdata[5]~input_103 {} -attr @name wrdata[5]~input -attr @cell IO_IBUF -pinAttr I_105 @name I -pinAttr O_106 @name O -pg 1 -lvl 2 -x 190 -y 440
+load inst wrdata[7]~input_108 wrdata[7]~input_108 {} -attr @name wrdata[7]~input -attr @cell IO_IBUF -pinAttr I_110 @name I -pinAttr O_111 @name O -pg 1 -lvl 2 -x 190 -y 680
+load inst wrdata[6]~input_113 wrdata[6]~input_113 {} -attr @name wrdata[6]~input -attr @cell IO_IBUF -pinAttr I_115 @name I -pinAttr O_116 @name O -pg 1 -lvl 2 -x 190 -y 860
+load inst wrdata[4]~input_118 wrdata[4]~input_118 {} -attr @name wrdata[4]~input -attr @cell IO_IBUF -pinAttr I_120 @name I -pinAttr O_121 @name O -pg 1 -lvl 2 -x 190 -y 500
+load inst wrdata[0]~input_123 wrdata[0]~input_123 {} -attr @name wrdata[0]~input -attr @cell IO_IBUF -pinAttr I_125 @name I -pinAttr O_126 @name O -pg 1 -lvl 2 -x 190 -y 800
+load inst wrdata[1]~input_128 wrdata[1]~input_128 {} -attr @name wrdata[1]~input -attr @cell IO_IBUF -pinAttr I_130 @name I -pinAttr O_131 @name O -pg 1 -lvl 2 -x 190 -y 740
+load inst wrdata[2]~input_133 wrdata[2]~input_133 {} -attr @name wrdata[2]~input -attr @cell IO_IBUF -pinAttr I_135 @name I -pinAttr O_136 @name O -pg 1 -lvl 2 -x 190 -y 560
+load inst wrdata[3]~input_138 wrdata[3]~input_138 {} -attr @name wrdata[3]~input -attr @cell IO_IBUF -pinAttr I_140 @name I -pinAttr O_141 @name O -pg 1 -lvl 2 -x 190 -y 620
+load inst rdclk~input_143 rdclk~input_143 {} -attr @name rdclk~input -attr @cell IO_IBUF -pinAttr I_145 @name I -pinAttr O_146 @name O -pg 1 -lvl 3 -x 400 -y 380
+load inst ~ALTERA_AS_DATA1~~obuf_149 ~ALTERA_AS_DATA1~~obuf_149 {} -attr @name ~ALTERA_AS_DATA1~~obuf -attr @cell IO_OBUF -pinAttr I_151 @name I -pinAttr I_151 @vconn 1'h0 -pinAttr OE_152 @name OE -pinAttr OE_152 @vconn 1'h1 -pinAttr O_153 @name O -pg 1 -lvl 4 -x 620 -y 1010
+load inst ~ALTERA_AS_nCSO0,ALTERA_MSEL0~~obuf_156 ~ALTERA_AS_nCSO0,ALTERA_MSEL0~~obuf_156 {} -attr @name ~ALTERA_AS_nCSO0,ALTERA_MSEL0~~obuf -attr @cell IO_OBUF -pinAttr I_158 @name I -pinAttr I_158 @vconn 1'h0 -pinAttr O_159 @name O -pg 1 -lvl 6 -x 1020 -y 1210
+load inst ~ALTERA_AS_DATA2~~obuf_161 ~ALTERA_AS_DATA2~~obuf_161 {} -attr @name ~ALTERA_AS_DATA2~~obuf -attr @cell IO_OBUF -pinAttr I_163 @name I -pinAttr I_163 @vconn 1'h0 -pinAttr OE_164 @name OE -pinAttr OE_164 @vconn 1'h1 -pinAttr O_165 @name O -pg 1 -lvl 4 -x 620 -y 1090
+load inst ~ALTERA_AS_DATA0~~obuf_168 ~ALTERA_AS_DATA0~~obuf_168 {} -attr @name ~ALTERA_AS_DATA0~~obuf -attr @cell IO_OBUF -pinAttr I_170 @name I -pinAttr I_170 @vconn 1'h0 -pinAttr OE_171 @name OE -pinAttr OE_171 @vconn 1'h1 -pinAttr O_172 @name O -pg 1 -lvl 4 -x 620 -y 930
+load inst ~ALTERA_AS_CLK~~obuf_175 ~ALTERA_AS_CLK~~obuf_175 {} -attr @name ~ALTERA_AS_CLK~~obuf -attr @cell IO_OBUF -pinAttr I_177 @name I -pinAttr I_177 @vconn 1'h0 -pinAttr O_178 @name O -pg 1 -lvl 6 -x 1020 -y 870
+load inst ~ALTERA_AS_nCSO2,ALTERA_MSEL1~~obuf_180 ~ALTERA_AS_nCSO2,ALTERA_MSEL1~~obuf_180 {} -attr @name ~ALTERA_AS_nCSO2,ALTERA_MSEL1~~obuf -attr @cell IO_OBUF -pinAttr I_182 @name I -pinAttr I_182 @vconn 1'h0 -pinAttr O_183 @name O -pg 1 -lvl 6 -x 1020 -y 1330
+load inst ~CONF_DONE~~obuf_185 ~CONF_DONE~~obuf_185 {} -attr @name ~CONF_DONE~~obuf -attr @cell IO_OBUF -pinAttr I_187 @name I -pinAttr I_187 @vconn 1'h0 -pinAttr O_188 @name O -pg 1 -lvl 6 -x 1020 -y 1510
+load inst ~INIT_DONE~~obuf_190 ~INIT_DONE~~obuf_190 {} -attr @name ~INIT_DONE~~obuf -attr @cell IO_OBUF -pinAttr I_192 @name I -pinAttr I_192 @vconn 1'h0 -pinAttr O_193 @name O -pg 1 -lvl 6 -x 1020 -y 1570
+load inst ~ALTERA_AS_nCSO1,ALTERA_MSEL2~~obuf_195 ~ALTERA_AS_nCSO1,ALTERA_MSEL2~~obuf_195 {} -attr @name ~ALTERA_AS_nCSO1,ALTERA_MSEL2~~obuf -attr @cell IO_OBUF -pinAttr I_197 @name I -pinAttr I_197 @vconn 1'h0 -pinAttr O_198 @name O -pg 1 -lvl 6 -x 1020 -y 1150
+load inst ~ALTERA_AS_DATA3~~obuf_200 ~ALTERA_AS_DATA3~~obuf_200 {} -attr @name ~ALTERA_AS_DATA3~~obuf -attr @cell IO_OBUF -pinAttr I_202 @name I -pinAttr I_202 @vconn 1'h0 -pinAttr OE_203 @name OE -pinAttr OE_203 @vconn 1'h1 -pinAttr O_204 @name O -pg 1 -lvl 4 -x 620 -y 1270
+load inst ~ALTERA_AS_nCSO3~~obuf_207 ~ALTERA_AS_nCSO3~~obuf_207 {} -attr @name ~ALTERA_AS_nCSO3~~obuf -attr @cell IO_OBUF -pinAttr I_209 @name I -pinAttr I_209 @vconn 1'h0 -pinAttr O_210 @name O -pg 1 -lvl 6 -x 1020 -y 1390
+load inst ~ALTERA_AS_nRST~~obuf_212 ~ALTERA_AS_nRST~~obuf_212 {} -attr @name ~ALTERA_AS_nRST~~obuf -attr @cell IO_OBUF -pinAttr I_214 @name I -pinAttr I_214 @vconn 1'h0 -pinAttr O_215 @name O -pg 1 -lvl 6 -x 1020 -y 1450
+load inst Mux_0~0xsyn_216 Mux_0~0xsyn_216 {} -attr @name Mux_0~0xsyn -attr @cell {} -pinAttr DATAA_167 @name DATAA -pinAttr DATAB_168 @name DATAB -pinAttr DATAC_169 @name DATAC -pinAttr DATAD_170 @name DATAD -pinAttr DATAE_171 @name DATAE -pinAttr DATAF_172 @name DATAF -pinAttr DATAG_173 @name DATAG -pinAttr DATAH_174 @name DATAH -pinAttr COMBOUT_151 @name COMBOUT -pg 1 -lvl 3 -x 400 -y 560
+load inst rddata[0]~reg0_24 rddata[0]~reg0_24 {} -attr @name rddata[0]~reg0 -attr @cell {} -pinAttr CLK_9 @name CLK -pinAttr D_10 @name D -pinAttr Q_15 @name Q -pg 1 -lvl 4 -x 620 -y 400
+load inst ~GND_34 ~GND_34 {} -attr @name ~GND -attr @cell {} -pg 1 -lvl 3 -x 400 -y 750
+load inst wrclk~input_35 wrclk~input_35 {} -attr @name wrclk~input -attr @cell IO_IBUF -pinAttr I_11 @name I -pg 1 -lvl 2 -x 190 -y 1340
+load inst wrclk~pad_36 wrclk~pad_36 {} -attr @name wrclk~pad -attr @cell INPUT -pinAttr SIMIN_12 @name SIMIN -pinAttr PADOUT_25 @name PADOUT -pg 1 -lvl 1 -x 50 -y 1340
+load inst rst~input_37 rst~input_37 {} -attr @name rst~input -attr @cell IO_IBUF -pinAttr I_13 @name I -pg 1 -lvl 2 -x 190 -y 920
+load inst rst~pad_38 rst~pad_38 {} -attr @name rst~pad -attr @cell INPUT -pinAttr SIMIN_14 @name SIMIN -pinAttr PADOUT_26 @name PADOUT -pg 1 -lvl 1 -x 50 -y 920
+load inst rdaddr[0]~input_39 rdaddr[0]~input_39 {} -attr @name rdaddr[0]~input -attr @cell IO_IBUF -pinAttr I_15 @name I -pg 1 -lvl 2 -x 190 -y 20
+load inst rdaddr(0)~pad_40 rdaddr(0)~pad_40 {} -attr @name rdaddr(0)~pad -attr @cell INPUT -pinAttr SIMIN_16 @name SIMIN -pinAttr PADOUT_27 @name PADOUT -pg 1 -lvl 1 -x 50 -y 20
+load inst rdaddr[1]~input_41 rdaddr[1]~input_41 {} -attr @name rdaddr[1]~input -attr @cell IO_IBUF -pinAttr I_17 @name I -pg 1 -lvl 2 -x 190 -y 80
+load inst rdaddr(1)~pad_42 rdaddr(1)~pad_42 {} -attr @name rdaddr(1)~pad -attr @cell INPUT -pinAttr SIMIN_18 @name SIMIN -pinAttr PADOUT_28 @name PADOUT -pg 1 -lvl 1 -x 50 -y 80
+load inst rdaddr[2]~input_43 rdaddr[2]~input_43 {} -attr @name rdaddr[2]~input -attr @cell IO_IBUF -pinAttr I_19 @name I -pg 1 -lvl 2 -x 190 -y 140
+load inst rdaddr(2)~pad_44 rdaddr(2)~pad_44 {} -attr @name rdaddr(2)~pad -attr @cell INPUT -pinAttr SIMIN_20 @name SIMIN -pinAttr PADOUT_29 @name PADOUT -pg 1 -lvl 1 -x 50 -y 140
+load inst rdaddr[3]~input_45 rdaddr[3]~input_45 {} -attr @name rdaddr[3]~input -attr @cell IO_IBUF -pinAttr I_21 @name I -pg 1 -lvl 2 -x 190 -y 200
+load inst rdaddr(3)~pad_46 rdaddr(3)~pad_46 {} -attr @name rdaddr(3)~pad -attr @cell INPUT -pinAttr SIMIN_22 @name SIMIN -pinAttr PADOUT_30 @name PADOUT -pg 1 -lvl 1 -x 50 -y 200
+load inst rdaddr[4]~input_47 rdaddr[4]~input_47 {} -attr @name rdaddr[4]~input -attr @cell IO_IBUF -pinAttr I_23 @name I -pg 1 -lvl 2 -x 190 -y 260
+load inst rdaddr(4)~pad_48 rdaddr(4)~pad_48 {} -attr @name rdaddr(4)~pad -attr @cell INPUT -pinAttr SIMIN_24 @name SIMIN -pinAttr PADOUT_31 @name PADOUT -pg 1 -lvl 1 -x 50 -y 260
+load inst rdaddr[5]~input_49 rdaddr[5]~input_49 {} -attr @name rdaddr[5]~input -attr @cell IO_IBUF -pinAttr I_25 @name I -pg 1 -lvl 2 -x 190 -y 320
+load inst rdaddr(5)~pad_50 rdaddr(5)~pad_50 {} -attr @name rdaddr(5)~pad -attr @cell INPUT -pinAttr SIMIN_26 @name SIMIN -pinAttr PADOUT_32 @name PADOUT -pg 1 -lvl 1 -x 50 -y 320
+load inst wraddr[0]~input_51 wraddr[0]~input_51 {} -attr @name wraddr[0]~input -attr @cell IO_IBUF -pinAttr I_27 @name I -pg 1 -lvl 2 -x 190 -y 1040
+load inst wraddr(0)~pad_52 wraddr(0)~pad_52 {} -attr @name wraddr(0)~pad -attr @cell INPUT -pinAttr SIMIN_28 @name SIMIN -pinAttr PADOUT_33 @name PADOUT -pg 1 -lvl 1 -x 50 -y 1040
+load inst wraddr[1]~input_53 wraddr[1]~input_53 {} -attr @name wraddr[1]~input -attr @cell IO_IBUF -pinAttr I_29 @name I -pg 1 -lvl 2 -x 190 -y 980
+load inst wraddr(1)~pad_54 wraddr(1)~pad_54 {} -attr @name wraddr(1)~pad -attr @cell INPUT -pinAttr SIMIN_30 @name SIMIN -pinAttr PADOUT_34 @name PADOUT -pg 1 -lvl 1 -x 50 -y 980
+load inst wraddr[2]~input_55 wraddr[2]~input_55 {} -attr @name wraddr[2]~input -attr @cell IO_IBUF -pinAttr I_31 @name I -pg 1 -lvl 2 -x 190 -y 1100
+load inst wraddr(2)~pad_56 wraddr(2)~pad_56 {} -attr @name wraddr(2)~pad -attr @cell INPUT -pinAttr SIMIN_32 @name SIMIN -pinAttr PADOUT_35 @name PADOUT -pg 1 -lvl 1 -x 50 -y 1100
+load inst wraddr[3]~input_57 wraddr[3]~input_57 {} -attr @name wraddr[3]~input -attr @cell IO_IBUF -pinAttr I_33 @name I -pg 1 -lvl 2 -x 190 -y 1160
+load inst wraddr(3)~pad_58 wraddr(3)~pad_58 {} -attr @name wraddr(3)~pad -attr @cell INPUT -pinAttr SIMIN_34 @name SIMIN -pinAttr PADOUT_36 @name PADOUT -pg 1 -lvl 1 -x 50 -y 1160
+load inst wraddr[4]~input_59 wraddr[4]~input_59 {} -attr @name wraddr[4]~input -attr @cell IO_IBUF -pinAttr I_35 @name I -pg 1 -lvl 2 -x 190 -y 1220
+load inst wraddr(4)~pad_60 wraddr(4)~pad_60 {} -attr @name wraddr(4)~pad -attr @cell INPUT -pinAttr SIMIN_36 @name SIMIN -pinAttr PADOUT_37 @name PADOUT -pg 1 -lvl 1 -x 50 -y 1220
+load inst wraddr[5]~input_61 wraddr[5]~input_61 {} -attr @name wraddr[5]~input -attr @cell IO_IBUF -pinAttr I_37 @name I -pg 1 -lvl 2 -x 190 -y 1280
+load inst wraddr(5)~pad_62 wraddr(5)~pad_62 {} -attr @name wraddr(5)~pad -attr @cell INPUT -pinAttr SIMIN_38 @name SIMIN -pinAttr PADOUT_38 @name PADOUT -pg 1 -lvl 1 -x 50 -y 1280
+load inst rddata(0)~pad_67 rddata(0)~pad_67 {} -attr @name rddata(0)~pad -attr @cell OUTPUT -pinAttr PADIN_42 @name PADIN -pinAttr SIMOUT_42 @name SIMOUT -pg 1 -lvl 6 -x 1020 -y 390
+load inst rddata(1)~pad_72 rddata(1)~pad_72 {} -attr @name rddata(1)~pad -attr @cell OUTPUT -pinAttr PADIN_46 @name PADIN -pinAttr SIMOUT_46 @name SIMOUT -pg 1 -lvl 6 -x 1020 -y 450
+load inst rddata(2)~pad_77 rddata(2)~pad_77 {} -attr @name rddata(2)~pad -attr @cell OUTPUT -pinAttr PADIN_50 @name PADIN -pinAttr SIMOUT_50 @name SIMOUT -pg 1 -lvl 6 -x 1020 -y 510
+load inst rddata(3)~pad_82 rddata(3)~pad_82 {} -attr @name rddata(3)~pad -attr @cell OUTPUT -pinAttr PADIN_54 @name PADIN -pinAttr SIMOUT_54 @name SIMOUT -pg 1 -lvl 6 -x 1020 -y 570
+load inst rddata(4)~pad_87 rddata(4)~pad_87 {} -attr @name rddata(4)~pad -attr @cell OUTPUT -pinAttr PADIN_58 @name PADIN -pinAttr SIMOUT_58 @name SIMOUT -pg 1 -lvl 6 -x 1020 -y 630
+load inst rddata(5)~pad_92 rddata(5)~pad_92 {} -attr @name rddata(5)~pad -attr @cell OUTPUT -pinAttr PADIN_62 @name PADIN -pinAttr SIMOUT_62 @name SIMOUT -pg 1 -lvl 6 -x 1020 -y 690
+load inst rddata(6)~pad_97 rddata(6)~pad_97 {} -attr @name rddata(6)~pad -attr @cell OUTPUT -pinAttr PADIN_66 @name PADIN -pinAttr SIMOUT_66 @name SIMOUT -pg 1 -lvl 6 -x 1020 -y 750
+load inst rddata(7)~pad_102 rddata(7)~pad_102 {} -attr @name rddata(7)~pad -attr @cell OUTPUT -pinAttr PADIN_70 @name PADIN -pinAttr SIMOUT_70 @name SIMOUT -pg 1 -lvl 6 -x 1020 -y 810
+load inst wrdata(5)~pad_107 wrdata(5)~pad_107 {} -attr @name wrdata(5)~pad -attr @cell INPUT -pinAttr SIMIN_74 @name SIMIN -pinAttr PADOUT_74 @name PADOUT -pg 1 -lvl 1 -x 50 -y 440
+load inst wrdata(7)~pad_112 wrdata(7)~pad_112 {} -attr @name wrdata(7)~pad -attr @cell INPUT -pinAttr SIMIN_78 @name SIMIN -pinAttr PADOUT_78 @name PADOUT -pg 1 -lvl 1 -x 50 -y 680
+load inst wrdata(6)~pad_117 wrdata(6)~pad_117 {} -attr @name wrdata(6)~pad -attr @cell INPUT -pinAttr SIMIN_82 @name SIMIN -pinAttr PADOUT_82 @name PADOUT -pg 1 -lvl 1 -x 50 -y 860
+load inst wrdata(4)~pad_122 wrdata(4)~pad_122 {} -attr @name wrdata(4)~pad -attr @cell INPUT -pinAttr SIMIN_86 @name SIMIN -pinAttr PADOUT_86 @name PADOUT -pg 1 -lvl 1 -x 50 -y 500
+load inst wrdata(0)~pad_127 wrdata(0)~pad_127 {} -attr @name wrdata(0)~pad -attr @cell INPUT -pinAttr SIMIN_90 @name SIMIN -pinAttr PADOUT_90 @name PADOUT -pg 1 -lvl 1 -x 50 -y 800
+load inst wrdata(1)~pad_132 wrdata(1)~pad_132 {} -attr @name wrdata(1)~pad -attr @cell INPUT -pinAttr SIMIN_94 @name SIMIN -pinAttr PADOUT_94 @name PADOUT -pg 1 -lvl 1 -x 50 -y 740
+load inst wrdata(2)~pad_137 wrdata(2)~pad_137 {} -attr @name wrdata(2)~pad -attr @cell INPUT -pinAttr SIMIN_98 @name SIMIN -pinAttr PADOUT_98 @name PADOUT -pg 1 -lvl 1 -x 50 -y 560
+load inst wrdata(3)~pad_142 wrdata(3)~pad_142 {} -attr @name wrdata(3)~pad -attr @cell INPUT -pinAttr SIMIN_102 @name SIMIN -pinAttr PADOUT_102 @name PADOUT -pg 1 -lvl 1 -x 50 -y 620
+load inst rdclk~pad_147 rdclk~pad_147 {} -attr @name rdclk~pad -attr @cell INPUT -pinAttr SIMIN_106 @name SIMIN -pinAttr PADOUT_106 @name PADOUT -pg 1 -lvl 2 -x 190 -y 380
+load inst ~ALTERA_AS_DATA1~_148 ~ALTERA_AS_DATA1~_148 {} -attr @name ~ALTERA_AS_DATA1~ -attr @cell BIDIR -pinAttr PADIN_107 @name PADIN -pinAttr PADOUT_107 @name PADOUT -pg 1 -lvl 5 -x 790 -y 1010
+load inst ~ALTERA_AS_DATA1~~ibuf_154 ~ALTERA_AS_DATA1~~ibuf_154 {} -attr @name ~ALTERA_AS_DATA1~~ibuf -attr @cell IO_IBUF -pinAttr I_113 @name I -pg 1 -lvl 6 -x 1020 -y 1010
+load inst ~ALTERA_AS_DATA2~_160 ~ALTERA_AS_DATA2~_160 {} -attr @name ~ALTERA_AS_DATA2~ -attr @cell BIDIR -pinAttr PADIN_118 @name PADIN -pinAttr PADOUT_115 @name PADOUT -pg 1 -lvl 5 -x 790 -y 1090
+load inst ~ALTERA_AS_DATA2~~ibuf_166 ~ALTERA_AS_DATA2~~ibuf_166 {} -attr @name ~ALTERA_AS_DATA2~~ibuf -attr @cell IO_IBUF -pinAttr I_124 @name I -pg 1 -lvl 6 -x 1020 -y 1090
+load inst ~ALTERA_AS_DATA0~_167 ~ALTERA_AS_DATA0~_167 {} -attr @name ~ALTERA_AS_DATA0~ -attr @cell BIDIR -pinAttr PADIN_125 @name PADIN -pinAttr PADOUT_120 @name PADOUT -pg 1 -lvl 5 -x 790 -y 930
+load inst ~ALTERA_AS_DATA0~~ibuf_173 ~ALTERA_AS_DATA0~~ibuf_173 {} -attr @name ~ALTERA_AS_DATA0~~ibuf -attr @cell IO_IBUF -pinAttr I_131 @name I -pg 1 -lvl 6 -x 1020 -y 930
+load inst ~ALTERA_AS_DATA3~_199 ~ALTERA_AS_DATA3~_199 {} -attr @name ~ALTERA_AS_DATA3~ -attr @cell BIDIR -pinAttr PADIN_152 @name PADIN -pinAttr PADOUT_140 @name PADOUT -pg 1 -lvl 5 -x 790 -y 1270
+load inst ~ALTERA_AS_DATA3~~ibuf_205 ~ALTERA_AS_DATA3~~ibuf_205 {} -attr @name ~ALTERA_AS_DATA3~~ibuf -attr @cell IO_IBUF -pinAttr I_158 @name I -pg 1 -lvl 6 -x 1020 -y 1270
+load net I_3 -ground -attr @name {} -pin rddata[1]~output_68 I_70
+load net I_6 -ground -attr @name {} -pin rddata[2]~output_73 I_75
+load net I_9 -ground -attr @name {} -pin rddata[3]~output_78 I_80
+load net I_12 -ground -attr @name {} -pin rddata[4]~output_83 I_85
+load net I_15 -ground -attr @name {} -pin rddata[5]~output_88 I_90
+load net I_18 -ground -attr @name {} -pin rddata[6]~output_93 I_95
+load net I_21 -ground -attr @name {} -pin rddata[7]~output_98 I_100
+load net I_42 -ground -attr @name {} -pin ~ALTERA_AS_DATA1~~obuf_149 I_151
+load net OE_43 -power -attr @name {} -pin ~ALTERA_AS_DATA1~~obuf_149 OE_152
+load net I_47 -ground -attr @name {} -pin ~ALTERA_AS_nCSO0,ALTERA_MSEL0~~obuf_156 I_158
+load net I_50 -ground -attr @name {} -pin ~ALTERA_AS_DATA2~~obuf_161 I_163
+load net OE_51 -power -attr @name {} -pin ~ALTERA_AS_DATA2~~obuf_161 OE_164
+load net I_55 -ground -attr @name {} -pin ~ALTERA_AS_DATA0~~obuf_168 I_170
+load net OE_56 -power -attr @name {} -pin ~ALTERA_AS_DATA0~~obuf_168 OE_171
+load net I_60 -ground -attr @name {} -pin ~ALTERA_AS_CLK~~obuf_175 I_177
+load net I_63 -ground -attr @name {} -pin ~ALTERA_AS_nCSO2,ALTERA_MSEL1~~obuf_180 I_182
+load net I_66 -ground -attr @name {} -pin ~CONF_DONE~~obuf_185 I_187
+load net I_69 -ground -attr @name {} -pin ~INIT_DONE~~obuf_190 I_192
+load net I_72 -ground -attr @name {} -pin ~ALTERA_AS_nCSO1,ALTERA_MSEL2~~obuf_195 I_197
+load net I_75 -ground -attr @name {} -pin ~ALTERA_AS_DATA3~~obuf_200 I_202
+load net OE_76 -power -attr @name {} -pin ~ALTERA_AS_DATA3~~obuf_200 OE_203
+load net I_80 -ground -attr @name {} -pin ~ALTERA_AS_nCSO3~~obuf_207 I_209
+load net I_83 -ground -attr @name {} -pin ~ALTERA_AS_nRST~~obuf_212 I_214
+load net OUTPUT_86 -attr @name wrclk -port wrclk_2 -pin wrclk~pad_36 SIMIN_12
+netloc OUTPUT_86 1 0 1 NJ 1350
+load net OUTPUT_87 -attr @name rst -port rst_3 -pin rst~pad_38 SIMIN_14
+netloc OUTPUT_87 1 0 1 NJ 930
+load net Q_100 -attr @name rddata[0]~reg0:Q -pin rddata[0]~output_63 I_65 -pin rddata[0]~reg0_24 Q_15
+netloc Q_100 1 4 1 NJ 400
+load net OUTPUT_109 -attr @name rdclk -port rdclk_33 -pin rdclk~pad_147 SIMIN_106
+netloc OUTPUT_109 1 0 2 NJ 390 NJ
+load net PADOUT_110 -attr @name wrclk~pad:PADOUT -pin wrclk~input_35 I_11 -pin wrclk~pad_36 PADOUT_25
+netloc PADOUT_110 1 1 1 NJ 1350
+load net PADOUT_111 -attr @name rst~pad:PADOUT -pin rst~input_37 I_13 -pin rst~pad_38 PADOUT_26
+netloc PADOUT_111 1 1 1 NJ 930
+load net PADOUT_112 -attr @name rdaddr(0)~pad:PADOUT -pin rdaddr(0)~pad_40 PADOUT_27 -pin rdaddr[0]~input_39 I_15
+netloc PADOUT_112 1 1 1 NJ 30
+load net PADOUT_113 -attr @name rdaddr(1)~pad:PADOUT -pin rdaddr(1)~pad_42 PADOUT_28 -pin rdaddr[1]~input_41 I_17
+netloc PADOUT_113 1 1 1 NJ 90
+load net PADOUT_114 -attr @name rdaddr(2)~pad:PADOUT -pin rdaddr(2)~pad_44 PADOUT_29 -pin rdaddr[2]~input_43 I_19
+netloc PADOUT_114 1 1 1 NJ 150
+load net PADOUT_115 -attr @name rdaddr(3)~pad:PADOUT -pin rdaddr(3)~pad_46 PADOUT_30 -pin rdaddr[3]~input_45 I_21
+netloc PADOUT_115 1 1 1 NJ 210
+load net PADOUT_116 -attr @name rdaddr(4)~pad:PADOUT -pin rdaddr(4)~pad_48 PADOUT_31 -pin rdaddr[4]~input_47 I_23
+netloc PADOUT_116 1 1 1 NJ 270
+load net PADOUT_117 -attr @name rdaddr(5)~pad:PADOUT -pin rdaddr(5)~pad_50 PADOUT_32 -pin rdaddr[5]~input_49 I_25
+netloc PADOUT_117 1 1 1 NJ 330
+load net PADOUT_118 -attr @name wraddr(0)~pad:PADOUT -pin wraddr(0)~pad_52 PADOUT_33 -pin wraddr[0]~input_51 I_27
+netloc PADOUT_118 1 1 1 NJ 1050
+load net PADOUT_119 -attr @name wraddr(1)~pad:PADOUT -pin wraddr(1)~pad_54 PADOUT_34 -pin wraddr[1]~input_53 I_29
+netloc PADOUT_119 1 1 1 NJ 990
+load net PADOUT_120 -attr @name wraddr(2)~pad:PADOUT -pin wraddr(2)~pad_56 PADOUT_35 -pin wraddr[2]~input_55 I_31
+netloc PADOUT_120 1 1 1 NJ 1110
+load net PADOUT_121 -attr @name wraddr(3)~pad:PADOUT -pin wraddr(3)~pad_58 PADOUT_36 -pin wraddr[3]~input_57 I_33
+netloc PADOUT_121 1 1 1 NJ 1170
+load net PADOUT_122 -attr @name wraddr(4)~pad:PADOUT -pin wraddr(4)~pad_60 PADOUT_37 -pin wraddr[4]~input_59 I_35
+netloc PADOUT_122 1 1 1 NJ 1230
+load net PADOUT_123 -attr @name wraddr(5)~pad:PADOUT -pin wraddr(5)~pad_62 PADOUT_38 -pin wraddr[5]~input_61 I_37
+netloc PADOUT_123 1 1 1 NJ 1290
+load net O_124 -attr @name rddata[0]~output:O -pin rddata(0)~pad_67 PADIN_42 -pin rddata[0]~output_63 O_66
+netloc O_124 1 5 1 NJ 400
+load net SIMOUT_125 -attr @name rddata(0)~pad:SIMOUT -pin rddata(0)~pad_67 SIMOUT_42 -port rddata[0]_16
+load net O_126 -attr @name rddata[1]~output:O -pin rddata(1)~pad_72 PADIN_46 -pin rddata[1]~output_68 O_71
+netloc O_126 1 5 1 NJ 460
+load net SIMOUT_127 -attr @name rddata(1)~pad:SIMOUT -pin rddata(1)~pad_72 SIMOUT_46 -port rddata[1]_17
+load net O_128 -attr @name rddata[2]~output:O -pin rddata(2)~pad_77 PADIN_50 -pin rddata[2]~output_73 O_76
+netloc O_128 1 5 1 NJ 520
+load net SIMOUT_129 -attr @name rddata(2)~pad:SIMOUT -pin rddata(2)~pad_77 SIMOUT_50 -port rddata[2]_18
+load net O_130 -attr @name rddata[3]~output:O -pin rddata(3)~pad_82 PADIN_54 -pin rddata[3]~output_78 O_81
+netloc O_130 1 5 1 NJ 580
+load net SIMOUT_131 -attr @name rddata(3)~pad:SIMOUT -pin rddata(3)~pad_82 SIMOUT_54 -port rddata[3]_19
+load net O_132 -attr @name rddata[4]~output:O -pin rddata(4)~pad_87 PADIN_58 -pin rddata[4]~output_83 O_86
+netloc O_132 1 5 1 NJ 640
+load net SIMOUT_133 -attr @name rddata(4)~pad:SIMOUT -pin rddata(4)~pad_87 SIMOUT_58 -port rddata[4]_20
+load net O_134 -attr @name rddata[5]~output:O -pin rddata(5)~pad_92 PADIN_62 -pin rddata[5]~output_88 O_91
+netloc O_134 1 5 1 NJ 700
+load net SIMOUT_135 -attr @name rddata(5)~pad:SIMOUT -pin rddata(5)~pad_92 SIMOUT_62 -port rddata[5]_21
+load net O_136 -attr @name rddata[6]~output:O -pin rddata(6)~pad_97 PADIN_66 -pin rddata[6]~output_93 O_96
+netloc O_136 1 5 1 NJ 760
+load net SIMOUT_137 -attr @name rddata(6)~pad:SIMOUT -pin rddata(6)~pad_97 SIMOUT_66 -port rddata[6]_22
+load net O_138 -attr @name rddata[7]~output:O -pin rddata(7)~pad_102 PADIN_70 -pin rddata[7]~output_98 O_101
+netloc O_138 1 5 1 NJ 820
+load net SIMOUT_139 -attr @name rddata(7)~pad:SIMOUT -pin rddata(7)~pad_102 SIMOUT_70 -port rddata[7]_23
+load net O_140 -attr @name wrdata[5]~input:O -pin Mux_0~0xsyn_216 DATAA_167 -pin wrdata[5]~input_103 O_106
+netloc O_140 1 2 1 350J 450n
+load net PADOUT_141 -attr @name wrdata(5)~pad:PADOUT -pin wrdata(5)~pad_107 PADOUT_74 -pin wrdata[5]~input_103 I_105
+netloc PADOUT_141 1 1 1 NJ 450
+load net O_142 -attr @name wrdata[7]~input:O -pin Mux_0~0xsyn_216 DATAE_171 -pin wrdata[7]~input_108 O_111
+netloc O_142 1 2 1 310J 650n
+load net PADOUT_143 -attr @name wrdata(7)~pad:PADOUT -pin wrdata(7)~pad_112 PADOUT_78 -pin wrdata[7]~input_108 I_110
+netloc PADOUT_143 1 1 1 NJ 690
+load net O_144 -attr @name wrdata[6]~input:O -pin Mux_0~0xsyn_216 DATAH_174 -pin wrdata[6]~input_113 O_116
+netloc O_144 1 2 1 370J 710n
+load net PADOUT_145 -attr @name wrdata(6)~pad:PADOUT -pin wrdata(6)~pad_117 PADOUT_82 -pin wrdata[6]~input_113 I_115
+netloc PADOUT_145 1 1 1 NJ 870
+load net O_146 -attr @name wrdata[4]~input:O -pin Mux_0~0xsyn_216 DATAB_168 -pin wrdata[4]~input_118 O_121
+netloc O_146 1 2 1 330J 510n
+load net PADOUT_147 -attr @name wrdata(4)~pad:PADOUT -pin wrdata(4)~pad_122 PADOUT_86 -pin wrdata[4]~input_118 I_120
+netloc PADOUT_147 1 1 1 NJ 510
+load net O_148 -attr @name wrdata[0]~input:O -pin Mux_0~0xsyn_216 DATAG_173 -pin wrdata[0]~input_123 O_126
+netloc O_148 1 2 1 350J 690n
+load net PADOUT_149 -attr @name wrdata(0)~pad:PADOUT -pin wrdata(0)~pad_127 PADOUT_90 -pin wrdata[0]~input_123 I_125
+netloc PADOUT_149 1 1 1 NJ 810
+load net O_150 -attr @name wrdata[1]~input:O -pin Mux_0~0xsyn_216 DATAF_172 -pin wrdata[1]~input_128 O_131
+netloc O_150 1 2 1 330J 670n
+load net PADOUT_151 -attr @name wrdata(1)~pad:PADOUT -pin wrdata(1)~pad_132 PADOUT_94 -pin wrdata[1]~input_128 I_130
+netloc PADOUT_151 1 1 1 NJ 750
+load net O_152 -attr @name wrdata[2]~input:O -pin Mux_0~0xsyn_216 DATAC_169 -pin wrdata[2]~input_133 O_136
+netloc O_152 1 2 1 310J 570n
+load net PADOUT_153 -attr @name wrdata(2)~pad:PADOUT -pin wrdata(2)~pad_137 PADOUT_98 -pin wrdata[2]~input_133 I_135
+netloc PADOUT_153 1 1 1 NJ 570
+load net O_154 -attr @name wrdata[3]~input:O -pin Mux_0~0xsyn_216 DATAD_170 -pin wrdata[3]~input_138 O_141
+netloc O_154 1 2 1 NJ 630
+load net PADOUT_155 -attr @name wrdata(3)~pad:PADOUT -pin wrdata(3)~pad_142 PADOUT_102 -pin wrdata[3]~input_138 I_140
+netloc PADOUT_155 1 1 1 NJ 630
+load net O_156 -attr @name rdclk~input:O -pin rdclk~input_143 O_146 -pin rddata[0]~reg0_24 CLK_9
+netloc O_156 1 3 1 NJ 390
+load net PADOUT_157 -attr @name rdclk~pad:PADOUT -pin rdclk~input_143 I_145 -pin rdclk~pad_147 PADOUT_106
+netloc PADOUT_157 1 2 1 NJ 390
+load net PADOUT_158 -attr @name ~ALTERA_AS_DATA1~:PADOUT -pin ~ALTERA_AS_DATA1~_148 PADOUT_107 -pin ~ALTERA_AS_DATA1~~ibuf_154 I_113
+netloc PADOUT_158 1 5 1 NJ 1020
+load net O_159 -attr @name ~ALTERA_AS_DATA1~~obuf:O -pin ~ALTERA_AS_DATA1~_148 PADIN_107 -pin ~ALTERA_AS_DATA1~~obuf_149 O_153
+netloc O_159 1 4 1 NJ 1020
+load net O_160 -attr @name ~ALTERA_AS_nCSO0,ALTERA_MSEL0~~obuf:O -port ~ALTERA_AS_nCSO0,ALTERA_MSEL0~_155 -pin ~ALTERA_AS_nCSO0,ALTERA_MSEL0~~obuf_156 O_159
+netloc O_160 1 6 1 NJ 1220
+load net PADOUT_161 -attr @name ~ALTERA_AS_DATA2~:PADOUT -pin ~ALTERA_AS_DATA2~_160 PADOUT_115 -pin ~ALTERA_AS_DATA2~~ibuf_166 I_124
+netloc PADOUT_161 1 5 1 NJ 1100
+load net O_162 -attr @name ~ALTERA_AS_DATA2~~obuf:O -pin ~ALTERA_AS_DATA2~_160 PADIN_118 -pin ~ALTERA_AS_DATA2~~obuf_161 O_165
+netloc O_162 1 4 1 NJ 1100
+load net PADOUT_163 -attr @name ~ALTERA_AS_DATA0~:PADOUT -pin ~ALTERA_AS_DATA0~_167 PADOUT_120 -pin ~ALTERA_AS_DATA0~~ibuf_173 I_131
+netloc PADOUT_163 1 5 1 NJ 940
+load net O_164 -attr @name ~ALTERA_AS_DATA0~~obuf:O -pin ~ALTERA_AS_DATA0~_167 PADIN_125 -pin ~ALTERA_AS_DATA0~~obuf_168 O_172
+netloc O_164 1 4 1 NJ 940
+load net O_165 -attr @name ~ALTERA_AS_CLK~~obuf:O -port ~ALTERA_AS_CLK~_174 -pin ~ALTERA_AS_CLK~~obuf_175 O_178
+netloc O_165 1 6 1 NJ 880
+load net O_166 -attr @name ~ALTERA_AS_nCSO2,ALTERA_MSEL1~~obuf:O -port ~ALTERA_AS_nCSO2,ALTERA_MSEL1~_179 -pin ~ALTERA_AS_nCSO2,ALTERA_MSEL1~~obuf_180 O_183
+netloc O_166 1 6 1 NJ 1340
+load net O_167 -attr @name ~CONF_DONE~~obuf:O -port ~CONF_DONE~_184 -pin ~CONF_DONE~~obuf_185 O_188
+netloc O_167 1 6 1 NJ 1520
+load net O_168 -attr @name ~INIT_DONE~~obuf:O -port ~INIT_DONE~_189 -pin ~INIT_DONE~~obuf_190 O_193
+netloc O_168 1 6 1 NJ 1580
+load net O_169 -attr @name ~ALTERA_AS_nCSO1,ALTERA_MSEL2~~obuf:O -port ~ALTERA_AS_nCSO1,ALTERA_MSEL2~_194 -pin ~ALTERA_AS_nCSO1,ALTERA_MSEL2~~obuf_195 O_198
+netloc O_169 1 6 1 NJ 1160
+load net PADOUT_170 -attr @name ~ALTERA_AS_DATA3~:PADOUT -pin ~ALTERA_AS_DATA3~_199 PADOUT_140 -pin ~ALTERA_AS_DATA3~~ibuf_205 I_158
+netloc PADOUT_170 1 5 1 NJ 1280
+load net O_171 -attr @name ~ALTERA_AS_DATA3~~obuf:O -pin ~ALTERA_AS_DATA3~_199 PADIN_152 -pin ~ALTERA_AS_DATA3~~obuf_200 O_204
+netloc O_171 1 4 1 NJ 1280
+load net O_172 -attr @name ~ALTERA_AS_nCSO3~~obuf:O -port ~ALTERA_AS_nCSO3~_206 -pin ~ALTERA_AS_nCSO3~~obuf_207 O_210
+netloc O_172 1 6 1 NJ 1400
+load net O_173 -attr @name ~ALTERA_AS_nRST~~obuf:O -port ~ALTERA_AS_nRST~_211 -pin ~ALTERA_AS_nRST~~obuf_212 O_215
+netloc O_173 1 6 1 NJ 1460
+load net COMBOUT_174 -attr @name Mux_0~0xsyn:COMBOUT -pin Mux_0~0xsyn_216 COMBOUT_151 -pin rddata[0]~reg0_24 D_10
+netloc COMBOUT_174 1 3 1 540 410n
+load net OUTPUT_88 -attr @name rdaddr[0] -attr @rip 0 -pin rdaddr(0)~pad_40 SIMIN_16 -port rdaddr[0]_4
+load net OUTPUT_89 -attr @name rdaddr[1] -attr @rip 1 -pin rdaddr(1)~pad_42 SIMIN_18 -port rdaddr[1]_5
+load net OUTPUT_90 -attr @name rdaddr[2] -attr @rip 2 -pin rdaddr(2)~pad_44 SIMIN_20 -port rdaddr[2]_6
+load net OUTPUT_91 -attr @name rdaddr[3] -attr @rip 3 -pin rdaddr(3)~pad_46 SIMIN_22 -port rdaddr[3]_7
+load net OUTPUT_92 -attr @name rdaddr[4] -attr @rip 4 -pin rdaddr(4)~pad_48 SIMIN_24 -port rdaddr[4]_8
+load net OUTPUT_93 -attr @name rdaddr[5] -attr @rip 5 -pin rdaddr(5)~pad_50 SIMIN_26 -port rdaddr[5]_9
+load net OUTPUT_94 -attr @name wraddr[0] -attr @rip 0 -pin wraddr(0)~pad_52 SIMIN_28 -port wraddr[0]_10
+load net OUTPUT_95 -attr @name wraddr[1] -attr @rip 1 -pin wraddr(1)~pad_54 SIMIN_30 -port wraddr[1]_11
+load net OUTPUT_96 -attr @name wraddr[2] -attr @rip 2 -pin wraddr(2)~pad_56 SIMIN_32 -port wraddr[2]_12
+load net OUTPUT_97 -attr @name wraddr[3] -attr @rip 3 -pin wraddr(3)~pad_58 SIMIN_34 -port wraddr[3]_13
+load net OUTPUT_98 -attr @name wraddr[4] -attr @rip 4 -pin wraddr(4)~pad_60 SIMIN_36 -port wraddr[4]_14
+load net OUTPUT_99 -attr @name wraddr[5] -attr @rip 5 -pin wraddr(5)~pad_62 SIMIN_38 -port wraddr[5]_15
+load net OUTPUT_105 -attr @name wrdata[0] -attr @rip 0 -pin wrdata(0)~pad_127 SIMIN_90 -port wrdata[0]_29
+load net OUTPUT_106 -attr @name wrdata[1] -attr @rip 1 -pin wrdata(1)~pad_132 SIMIN_94 -port wrdata[1]_30
+load net OUTPUT_107 -attr @name wrdata[2] -attr @rip 2 -pin wrdata(2)~pad_137 SIMIN_98 -port wrdata[2]_31
+load net OUTPUT_108 -attr @name wrdata[3] -attr @rip 3 -pin wrdata(3)~pad_142 SIMIN_102 -port wrdata[3]_32
+load net OUTPUT_104 -attr @name wrdata[4] -attr @rip 4 -pin wrdata(4)~pad_122 SIMIN_86 -port wrdata[4]_28
+load net OUTPUT_101 -attr @name wrdata[5] -attr @rip 5 -pin wrdata(5)~pad_107 SIMIN_74 -port wrdata[5]_25
+load net OUTPUT_103 -attr @name wrdata[6] -attr @rip 6 -pin wrdata(6)~pad_117 SIMIN_82 -port wrdata[6]_27
+load net OUTPUT_102 -attr @name wrdata[7] -attr @rip 7 -pin wrdata(7)~pad_112 SIMIN_78 -port wrdata[7]_26
+load netBundle OUTPUT_175 6 OUTPUT_88 OUTPUT_89 OUTPUT_90 OUTPUT_91 OUTPUT_92 OUTPUT_93 -attr @name rdaddr[0..5]
+netbloc OUTPUT_175 1 0 1 20 30n
+load netBundle OUTPUT_176 6 OUTPUT_94 OUTPUT_95 OUTPUT_96 OUTPUT_97 OUTPUT_98 OUTPUT_99 -attr @name wraddr[0..5]
+netbloc OUTPUT_176 1 0 1 20 990n
+load netBundle OUTPUT_177 8 OUTPUT_105 OUTPUT_106 OUTPUT_107 OUTPUT_108 OUTPUT_104 OUTPUT_101 OUTPUT_103 OUTPUT_102 -attr @name wrdata[0..7]
+netbloc OUTPUT_177 1 0 1 20 450n
+load netBundle @SIMOUT_ 8 SIMOUT_125 SIMOUT_127 SIMOUT_129 SIMOUT_131 SIMOUT_133 SIMOUT_135 SIMOUT_137 SIMOUT_139 -autobundled
+netbloc @SIMOUT_ 1 6 1 1200 400n
+levelinfo -pg 1 0 50 190 400 620 790 1020 1220
+pagesize -pg 1 -db -bbox -sgen -110 0 1490 1620
+show
+zoom 0.920869
+scrollpos 36 -63
+#
+# initialize ictrl to current module _1 {}
+ictrl init {} |
+ictrl property autohide 1
+ictrl property addSubpinInfo 1
+ictrl property addSubportInfo 1
+ictrl property addFillcolor12 0
