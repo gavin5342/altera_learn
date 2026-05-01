@@ -100,6 +100,248 @@ module ram_be #(
 	
 endmodule : ram_be
 
+module dc_sdp_ram_be #(
+	parameter int ADDRW = 6,
+	parameter int BYTEW = 8,
+	parameter int NUMBYTES = 4,
+	parameter bit MLAB = 1
+)(
+	input		wire			rdclk,	
+	input		wire			wrclk,	
+	input		wire			we,	
+	input		wire [ADDRW-1:0]	rdaddr,
+	input		wire [ADDRW-1:0]	wraddr,
+	input		wire  [NUMBYTES-1:0] be,
+	output	logic [NUMBYTES-1:0][BYTEW-1:0]	rddata,
+	input 	wire [NUMBYTES-1:0][BYTEW-1:0]	wrdata	
+	);
+	
+	localparam int WORDS = 1 << ADDRW ;	
+	localparam int IN_LAT = 2;
+	localparam int OUT_LAT = 2;
+	
+	(* ramstyle = "MLAB" *) logic [NUMBYTES-1:0][BYTEW-1:0] the_mem_mlab [WORDS];
+	(* ramstyle = "M20K" *) logic [NUMBYTES-1:0][BYTEW-1:0] the_mem_m20k [WORDS];
+	logic [NUMBYTES-1:0][BYTEW-1:0] rddata_int;
+	logic [NUMBYTES-1:0][BYTEW-1:0] wrdata_int;
+	logic [NUMBYTES-1:0] be_int;
+	logic [ADDRW-1:0] wraddr_int;
+	logic [ADDRW-1:0] rdaddr_int;
+	logic we_int;
+	
+	// Quartus Prime SystemVerilog Template
+	//
+	// Hyper-Pipelining Module Instantiation
+
+	hyperpipe # (
+			.CYCLES         ( OUT_LAT),
+			.PACKED_WIDTH   (NUMBYTES*BYTEW)
+		) hp_rddata (
+			.clk      (rdclk),
+			.din      (rddata_int ),
+			.dout     (rddata)
+		);
+
+	hyperpipe # (
+			.CYCLES         ( IN_LAT),
+			.PACKED_WIDTH   (NUMBYTES)
+		) hp_be (
+			.clk      (wrclk),
+			.din      (be ),
+			.dout     (be_int)
+		);		
+		
+	hyperpipe # (
+			.CYCLES         ( IN_LAT),
+			.PACKED_WIDTH   (1)
+		) hp_we (
+			.clk      (wrclk),
+			.din      (we ),
+			.dout     (we_int)
+		);				
+		
+	hyperpipe # (
+			.CYCLES         ( IN_LAT),
+			.PACKED_WIDTH   (NUMBYTES*BYTEW)
+		) hp_wrdata (
+			.clk      (wrclk),
+			.din      (wrdata),
+			.dout     (wrdata_int)
+		);		
+		
+	hyperpipe # (
+			.CYCLES         ( IN_LAT),
+			.PACKED_WIDTH   (ADDRW)
+		) hp_wraddr (
+			.clk      (wrclk),
+			.din      (wraddr),
+			.dout     (wraddr_int)
+		);	
+		
+	hyperpipe # (
+			.CYCLES         ( IN_LAT),
+			.PACKED_WIDTH   (ADDRW)
+		) hp_rdaddr (
+			.clk      (rdclk),
+			.din      (rdaddr),
+			.dout     (rdaddr_int)
+		);	
+	
+	generate
+	if (MLAB) begin
+		always_ff @(posedge wrclk) begin
+			if(we_int) begin
+				for (int i = 0; i < NUMBYTES; i++) begin
+					if (be_int[i]) begin
+						the_mem_mlab[wraddr_int][i] <= wrdata_int[i];
+					end
+				end
+			end
+		end
+		
+		always_ff @(posedge rdclk) begin
+			rddata_int <= the_mem_mlab[rdaddr_int];
+		end
+	end else begin
+		always_ff@(posedge wrclk) begin
+			if(we_int) begin
+				for (int i = 0; i < NUMBYTES; i++) begin
+					if (be_int[i]) begin
+						the_mem_m20k[wraddr_int][i] <= wrdata_int[i];
+					end
+				end
+			end
+		end
+		
+		always_ff @(posedge rdclk) begin
+			rddata_int <= the_mem_m20k[rdaddr_int];
+		end
+	end
+	endgenerate
+	
+endmodule : dc_sdp_ram_be
+
+module dc_sdp_ram_be_mixed #(
+	parameter int ADDRW = 6,
+	parameter int BYTEW = 8,
+	parameter int NUMBYTES = 4,
+	parameter bit MLAB = 1
+)(
+	input		wire			rdclk,	
+	input		wire			wrclk,	
+	input		wire			we,	
+	input		wire [ADDRW-1:0]	rdaddr,
+	input		wire [ADDRW-1:0]	wraddr,
+	input		wire  [NUMBYTES-1:0] be,
+	output	logic [NUMBYTES-1:0][BYTEW-1:0]	rddata,
+	input 	wire [NUMBYTES-1:0][BYTEW-1:0]	wrdata	
+	);
+	
+	localparam int WORDS = 1 << ADDRW ;	
+	localparam int IN_LAT = 2;
+	localparam int OUT_LAT = 2;
+	
+	(* ramstyle = "MLAB" *) logic [NUMBYTES-1:0][BYTEW-1:0] the_mem_mlab [WORDS];
+	(* ramstyle = "M20K" *) logic [NUMBYTES-1:0][BYTEW-1:0] the_mem_m20k [WORDS];
+	logic [NUMBYTES-1:0][BYTEW-1:0] rddata_int;
+	logic [NUMBYTES-1:0][BYTEW-1:0] wrdata_int;
+	logic [NUMBYTES-1:0] be_int;
+	logic [ADDRW-1:0] wraddr_int;
+	logic [ADDRW-1:0] rdaddr_int;
+	logic we_int;
+	
+	// Quartus Prime SystemVerilog Template
+	//
+	// Hyper-Pipelining Module Instantiation
+
+	hyperpipe # (
+			.CYCLES         ( OUT_LAT),
+			.PACKED_WIDTH   (NUMBYTES*BYTEW)
+		) hp_rddata (
+			.clk      (rdclk),
+			.din      (rddata_int ),
+			.dout     (rddata)
+		);
+
+	hyperpipe # (
+			.CYCLES         ( IN_LAT),
+			.PACKED_WIDTH   (NUMBYTES)
+		) hp_be (
+			.clk      (wrclk),
+			.din      (be ),
+			.dout     (be_int)
+		);		
+		
+	hyperpipe # (
+			.CYCLES         ( IN_LAT),
+			.PACKED_WIDTH   (1)
+		) hp_we (
+			.clk      (wrclk),
+			.din      (we ),
+			.dout     (we_int)
+		);				
+		
+	hyperpipe # (
+			.CYCLES         ( IN_LAT),
+			.PACKED_WIDTH   (NUMBYTES*BYTEW)
+		) hp_wrdata (
+			.clk      (wrclk),
+			.din      (wrdata),
+			.dout     (wrdata_int)
+		);		
+		
+	hyperpipe # (
+			.CYCLES         ( IN_LAT),
+			.PACKED_WIDTH   (ADDRW)
+		) hp_wraddr (
+			.clk      (wrclk),
+			.din      (wraddr),
+			.dout     (wraddr_int)
+		);	
+		
+	hyperpipe # (
+			.CYCLES         ( IN_LAT),
+			.PACKED_WIDTH   (ADDRW)
+		) hp_rdaddr (
+			.clk      (rdclk),
+			.din      (rdaddr),
+			.dout     (rdaddr_int)
+		);	
+	
+	generate
+	if (MLAB) begin
+		always_ff @(posedge wrclk) begin
+			if(we_int) begin
+				for (int i = 0; i < NUMBYTES; i++) begin
+					if (be_int[i]) begin
+						the_mem_mlab[wraddr_int][i] <= wrdata_int[i];
+					end
+				end
+			end
+		end
+		
+		always_ff @(posedge rdclk) begin
+			rddata_int <= the_mem_mlab[rdaddr_int];
+		end
+	end else begin
+		always_ff@(posedge wrclk) begin
+			if(we_int) begin
+				for (int i = 0; i < NUMBYTES; i++) begin
+					if (be_int[i]) begin
+						the_mem_m20k[wraddr_int][i] <= wrdata_int[i];
+					end
+				end
+			end
+		end
+		
+		always_ff @(posedge rdclk) begin
+			rddata_int <= the_mem_m20k[rdaddr_int];
+		end
+	end
+	endgenerate
+	
+endmodule : dc_sdp_ram_be_mixed
+
 
 module top (
 	input		wire			rdclk,
@@ -108,25 +350,55 @@ module top (
 	input		wire [5:0]	rdaddr,
 	input		wire [5:0]	wraddr,
 	input		wire [3:0]	be,
-	output	logic [31:0]	rddata,
-	input 	wire [31:0]	wrdata,
+	output	logic [31:0]	rddata_sp,
+	input 	wire [31:0]	wrdata_sp,
+	output	logic [31:0]	rddata_dp,
+	input 	wire [31:0]	wrdata_dp,	
 	output	wire	[3:0]		test_out
 	);
+	
+	parameter bit MLAB=0;
+	
+	logic [5:0] rdaddr_reg;
+	
+	always_ff @(posedge rdclk or posedge rst) begin
+		if (rst) begin
+			rdaddr_reg <= 6'h0;
+		end else begin
+			rdaddr_reg <= rdaddr;
+		end
+	end		
 	
 	ram_be #(
 		.ADDRW(6),
 		.BYTEW(8),
 		.NUMBYTES(4),
-		.MLAB(1)
+		.MLAB(MLAB)
 	) ram_be_inst (
 		.clk(rdclk),
 		.we(1'b1),
 		.be(be),
-		.rdaddr(rdaddr),
+		.rdaddr(rdaddr_reg),
 		.wraddr(wraddr),
-		.rddata(rddata),
-		.wrdata(wrdata)
+		.rddata(rddata_sp),
+		.wrdata(wrdata_sp)
 	);
+	
+	dc_sdp_ram_be #(
+		.ADDRW(6),
+		.BYTEW(8),
+		.NUMBYTES(4),
+		.MLAB(MLAB)
+	) dc_sdp_ram_be_inst (
+		.rdclk(rdclk),
+		.wrclk(wrclk),
+		.we(1'b1),
+		.be(be),
+		.rdaddr(rdaddr_reg),
+		.wraddr(wraddr),
+		.rddata(rddata_dp),
+		.wrdata(wrdata_dp)
+	);		
 	
 endmodule
 

@@ -39,3 +39,8 @@ set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2012
 set_global_assignment -name SYSTEMVERILOG_FILE top.sv
 set_instance_assignment -name VIRTUAL_PIN ON -to * -entity top
 set_global_assignment -name SDC_FILE top.sdc
+set_global_assignment -name FLOW_ENABLE_HYPER_RETIMER_FAST_FORWARD ON
+set_global_assignment -name MAX_RAM_BLOCKS_M4K 10
+set_global_assignment -name MAX_LABS 10
+set_global_assignment -name POWER_APPLY_THERMAL_MARGIN ADDITIONAL
+set_global_assignment -name FLOW_ENABLE_EARLY_TIMING_ANALYSIS ON
