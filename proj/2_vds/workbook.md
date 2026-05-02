@@ -1,4 +1,4 @@
-# Visual Designer Studion
+# Visual Designer Studio
 
 ## Background
 
