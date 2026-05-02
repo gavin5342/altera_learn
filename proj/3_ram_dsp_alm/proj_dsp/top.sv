@@ -63,16 +63,14 @@ module mult27 #(
 		);
 
 	
-	always_ff @(posedge clk) begin
-		ax_reg <= ax;
-		ay_reg <= ay;
-		result_int <= ax_reg * ay_reg;
+	always_comb begin
+		result_int <= ax * ay;
 	end
 
 endmodule
 
 module top #(
-    parameter LATENCY = 5,
+    parameter LATENCY = 2,
     parameter AX_WIDTH = 27,
     parameter AY_WIDTH = 27,
     parameter RESULT_A_WIDTH = 54
@@ -87,7 +85,7 @@ module top #(
 		.AX_WIDTH(AX_WIDTH),
 		.AY_WIDTH(AY_WIDTH),
 		.RESULT_A_WIDTH(RESULT_A_WIDTH)
-	)(
+	) mult27_inst (
 		.clk(clk),
 		.ax(ax),
 		.ay(ay),
