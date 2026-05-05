@@ -1,0 +1,278 @@
+{
+	"key" : {
+		"is_input_hold_crit" : "0",
+		"is_oterm_ext_bitfield" : 1024,
+		"is_subloc_used_bitfield" : 2,
+		"is_7_LUT" : 0,
+		"is_logic_module" : 0,
+		"is_shared_arith" : 0,
+		"bitfields" : 1,
+		"is_ale_early_illegal" : false,
+		"inputs_of_bles" : [
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 24,
+				"ale_net_id" : 13
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 24,
+				"ale_net_id" : 18
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			},
+			{
+				"driver_key" : 0,
+				"ale_net_id" : 0
+			}
+		]
+	},
+	"status" : "KEY_FOUND__LEGAL",
+	"value" : {
+		"inputs" : [
+			{
+				"subloc" : 1,
+				"order" : 0,
+				"leim_idx" : 255
+			},
+			{
+				"subloc" : 1,
+				"order" : 1,
+				"leim_idx" : 0
+			}
+		],
+		"outputs" : [
+			{
+				"subloc" : 1,
+				"order" : 0
+			}
+		],
+		"dedicated" : [],
+		"lut_mode" : 5,
+		"legal" : true
+	}
+}
