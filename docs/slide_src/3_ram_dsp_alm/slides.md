@@ -213,11 +213,8 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 
 ## RAM inference common mistakes
 
-::: columns
-
-::: column
-
-
+ - Accidental (or previously purposeful) true dual-port inference, when simple dual port would serve the functionality
+ - packed / unpacked dimension confusion
 
 ---
 

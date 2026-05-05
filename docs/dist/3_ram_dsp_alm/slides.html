@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>slides</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../../slides.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="agilex-hardware-optimization" class="slide level1">
+<h1>Agilex hardware + optimization</h1>
+<figure>
+<img data-src="../../images/agilex-product-badge-blue-3000.png"
+alt="badge" />
+<figcaption aria-hidden="true">badge</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="terminology">Terminology</h2>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 63%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr>
+<th>Term</th>
+<th>detail</th>
+<th>equivalent in other FPGAs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>core</td>
+<td>logic, RAM and DSP</td>
+<td>Logic resources, fabric</td>
+</tr>
+<tr>
+<td>periphery</td>
+<td>IO, transceiver, PLL</td>
+<td></td>
+</tr>
+<tr>
+<td>ALM</td>
+<td>variable input LUT + registers</td>
+<td>SLICE, LE, PFU</td>
+</tr>
+<tr>
+<td>ALUT</td>
+<td>LUT part of ALM</td>
+<td>LUT</td>
+</tr>
+<tr>
+<td>LAB</td>
+<td>collection of ALMs + routing</td>
+<td>CLB</td>
+</tr>
+<tr>
+<td>M20K</td>
+<td>block RAM</td>
+<td>BRAM / URAM, EBR</td>
+</tr>
+<tr>
+<td>MLAB</td>
+<td>small RAM made from a LAB</td>
+<td>SLICEM</td>
+</tr>
+<tr>
+<td>DSP block</td>
+<td>hard block for fixed/floating point/complex multiplication</td>
+<td>DSP48</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level1">
+
+<h2 id="alm">ALM</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>configurable LUT
+<ul>
+<li>combinations of 8 input signals to 4+4; 5+3; 5+4; 5+5; single 6
+input LUT</li>
+<li>8 input LUT extended mode - not all functions are supported.
+Multiplexers preferred.</li>
+<li>Adder with LUT combinations above</li>
+</ul></li>
+<li>4 registers</li>
+<li>Differences/implications from other families
+<ul>
+<li>Can pack 4-wide input functions per reg or pair of reg (Logic
+Element like)</li>
+<li>If everything were 6-input LUT optimised, ALUT vs reg resource usage
+may not follow</li>
+</ul></li>
+</ul>
+</div><div class="column">
+<figure>
+<img data-src="../../images/alm_pic.png" alt="alm" />
+<figcaption aria-hidden="true">alm</figcaption>
+</figure>
+</div>
+</div>
+<aside class="notes">
+<p>The nuances of LUT widths and equations matters for logic that you
+<em>really</em> want to optimise. If you are in this mode of working,
+you probably want to check at regular intervals using the technology map
+viewer + resource property editor that your synthesis results match your
+intent.</p>
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="lab">LAB</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>block of 10 ALMs</li>
+<li>LAB wide ctrl signals
+<ul>
+<li>2x clk</li>
+<li>2x clk_ph (delayed clocks)</li>
+<li>2x clr (async)</li>
+<li>2x clkena</li>
+<li>1x synclr</li>
+</ul></li>
+<li>May be reconfigured as MLAB = 640b arranged as 32x20</li>
+</ul>
+</div><div class="column">
+<figure>
+<img data-src="../../images/lab_pic.png" alt="lab" />
+<figcaption aria-hidden="true">lab</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="routing">Routing</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>local interconnect connects to different length wires (with
+different delays)</li>
+<li>Only really a consideration for tightly packed designs</li>
+<li>Evaluate usage with chip planner</li>
+</ul>
+</div><div class="column">
+<figure>
+<img data-src="../../images/routing_pic.png" alt="routing" />
+<figcaption aria-hidden="true">routing</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="hyperflex-registers">Hyperflex registers</h2>
+<ul>
+<li>Simple D type flops are distributed through the routing for Agilex
+7.</li>
+<li>These have CLK, D, Q only - remove resets where feasible.
+<ul>
+<li>I recommend you start with a no-reset mindset and add sync resets
+and async resets <em>only</em> where needed to guarantee startup
+behaviour</li>
+</ul></li>
+<li>The Quartus Prime Pro software has an excellent retimer and
+diagnosis tools to push registers back.</li>
+<li>I recommend including a variable latency register back at the output
+of a module to allow you to easily increase latency and allow the fitter
+to push the registers back into your design</li>
+<li>The Technology Map viewer identifies the hyperflex registers by
+labelling them <code>HYPER</code></li>
+<li>Turn on fast-forward in Synthesis settings or using
+<code>set_global_assignment -name FLOW_ENABLE_HYPER_RETIMER_FAST_FORWARD ON</code>
+for recommendations on how to reduce critical paths, and what the fmax
+<em>could</em> be.</li>
+</ul>
+<figure>
+<img data-src="../../images/hyper_reg.png" alt="hyper" />
+<figcaption aria-hidden="true">hyper</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<h2 id="ram-basics">RAM Basics</h2>
+<ul>
+<li>Packed vs unpacked in verilog
+<ul>
+<li>LRM describes intent, but use packed for memory word width and
+unpacked for addresses.<br />
+</li>
+<li>If you accidentally define your RAM with packed address dimensions,
+you will see a large increase in reg usage</li>
+</ul></li>
+<li>byte enables
+<ul>
+<li>8 wide for 16, 32 bit data width</li>
+<li>5 wide for 10 bit data width</li>
+<li>10 wide for 20, 40 bit data width</li>
+</ul></li>
+<li>Mixed port combinations may be realised (eg write 32 bit wide, read
+8 bit wide)
+<ul>
+<li>use 2 packed dimensions for this purpose eg
+<code>logic [3:0][7:0] the_mem [256]</code></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="ram-dual-port">RAM dual port</h2>
+<ul>
+<li><p>Dual port vs single port</p>
+<ul>
+<li>Single port - one clock, read port and write port use the same
+clock.</li>
+<li>Simple dual port - two clocks but still one read port, one write
+port.</li>
+<li>True dual port - two clocks, read and write ports for each clock.
+<strong>Agilex devices do not have native support for TDP RAMs,
+including them may impact your performance</strong> eg for -6S speed
+grade; simple dual-port = 415MHz, true-dual-port = 335MHz - check <a
+href="https://docs.altera.com/r/docs/848370/current/agilextm-3-fpgas-and-socs-device-data-sheet">datasheet</a></li>
+</ul></li>
+<li><p>Read during write</p>
+<ul>
+<li><p>MLAB = undefined</p></li>
+<li><p>M20K = old data</p></li>
+<li><p>By default, the software will ignore read during write behaviour.
+You can use
+<code>set_global_assignment -name STRICT_RAM_RECOGNITION ON</code>
+to</p></li>
+<li><p>Inferring new data behaviour can lead to extra bypass logic
+insertion</p></li>
+<li><p>even with defined rdw behaviour, the
+<code>(* ramstyle = "no_rw_check" *)</code> attribute will remove extra
+passthrough logic. <em>Recommend an assertion that read during write
+doesn’t occur if <code>no_rw_check</code> is in use</em></p></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="inference-recommendations-for-ramrom">Inference recommendations
+for RAM/ROM</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Right click on Quartus text editor and select Inset Template to get
+examples of inference patters that work</li>
+<li>Use examples from the classic <a
+href="https://github.com/thomasrussellmurphy/stx_cookbook">Advanced
+Synthesis Cookbook</a></li>
+<li>verify your low level building books map to hardware as you expect
+<em>before</em> reusing them</li>
+<li>Assert on read during write in simulation and stay with Quartus
+Prime can infer RAM with don’t-care rdw behaviour</li>
+</ul>
+</div><div class="column">
+<figure>
+<img data-src="../../images/qedit_template.png" alt="template" />
+<figcaption aria-hidden="true">template</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="netlist-viewers">Netlist viewers</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Netlist viewers are available for multiple stages of
+compilation</li>
+<li>Elaborated = language extraction</li>
+<li>Swept = redundant logic removal</li>
+<li>Look at the <strong>Compilation Dashboard</strong> to see all
+available snapshots and netlist views</li>
+</ul>
+</div><div class="column">
+<p><img data-src="../../images/elaborated_netlist_view.png"
+alt="elaborated" /> <img
+data-src="../../images/elaborated_netlist_view_and7.png"
+alt="elab and7" /></p>
+<p><img data-src="../../images/swept_netlist_view.png" alt="swept" />
+<img data-src="../../images/" alt="swept and7" /></p>
+<figure>
+<img data-src="../../images/tech_map_and7.png" alt="tech map" />
+<figcaption aria-hidden="true">tech map</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="ram-inference-common-mistakes">RAM inference common
+mistakes</h2>
+<ul>
+<li>Accidental (or previously purposeful) true dual-port inference, when
+simple dual port would serve the functionality</li>
+<li>packed / unpacked dimension confusion</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="performance-estimation">Performance estimation</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>What’s possible on real-life designs
+<ul>
+<li><a href="https://arxiv.org/abs/2504.07538">Agilex 7 SIMT soft
+processor</a> - 950MHz</li>
+<li><a
+href="https://docs.altera.com/api/khub/documents/QoDW7U8GgDJ15JLXgHKuKA/content?download=true&amp;locationValue=search">Agilex
+7 FIR, FFT</a> - 560MHz FFT, 900MHz FIR</li>
+<li><a
+href="https://docs.altera.com/api/khub/documents/6wX2x6ZLq0X_Sx_Cetu8Xw/content?download=true&amp;locationValue=search">Agilex
+7 opencores</a> - 380 - 800MHz</li>
+<li><a
+href="https://go.altera.com/altera-agilex3-certus-white-paper">Agilex 3
+opencores</a> - 250MHz - 350MHz</li>
+<li>NB the opencores evaluations are performed on unmodified code - no
+optimization</li>
+</ul></li>
+<li>Check datasheets for upper limit</li>
+</ul>
+</div><div class="column">
+<figure>
+<img data-src="../../images/ag7_mem_datasheet.png" alt="agilex 7" />
+<figcaption aria-hidden="true">agilex 7</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="module-level-optimization">Module level optimization</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Use assignments to reduce available resources to the fitter
+<ul>
+<li><code>set_instance_assignment -name MAX_LABS</code> can be used to
+control number of LABS (=ALM*10)</li>
+<li><code>set_instance_assignment -name MAX_RAM_BLOCKS_M4K</code> can be
+used to control number of M20K BRAMs</li>
+<li><code>set_instance_assignment -name MAX_BALANCING_DSP_BLOCKS</code>
+can be used to control number of DSP blocks</li>
+<li>The assignments may be applied to a module instance using
+<code>set_instance_assignment</code> or to the whole design using
+<code>set_global_assignment</code></li>
+</ul></li>
+<li>Use LogicLock to restrict usage to an area of the FPGA
+<ul>
+<li><strong>Assignments -&gt; Logic Lock Regions Window</strong> for
+text based coordinate entry</li>
+<li><strong>Tools -&gt; Chip Planner</strong> to draw regions <img
+data-src="../../images/logiclock_icon.png" alt="logiclock" /></li>
+<li>Draw rectangles. Multiple rectangles may be merged for other shapes
+<ul>
+<li>select logic lock regions to manipulate in Logic Lock Regions
+Window</li>
+<li><strong>View -&gt; Logic Lock Regions -&gt; Merge Logic Lock
+Region</strong></li>
+</ul></li>
+<li>Assign logic my design entry hierarchy or Design Partition</li>
+</ul></li>
+</ul>
+</div><div class="column">
+<figure>
+<img data-src="../../images/logiclock_merge.png" alt="merged region" />
+<figcaption aria-hidden="true">merged region</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@5/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@5/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

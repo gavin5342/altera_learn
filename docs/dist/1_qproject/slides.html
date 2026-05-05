@@ -13,6 +13,9 @@
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
     }
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -97,19 +100,19 @@ software</h2>
 <ul>
 <li>Version control <img
 data-src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.svg"
-alt="git" /></li>
+style="width:20.0%" alt="git" /></li>
 <li>CI/CD services (cloud or on-prem)
 <ul>
-<li><a href="https://github.com/">github</a> <img
-data-src="../../images/GitHub_Invertocat_Black.svg" alt="github" /></li>
-<li><a href="https://gitlab.com/">gitlab</a> <img
+<li><a href="https://github.com/" width="10%">github</a> <img
+data-src="../../images/GitHub_Invertocat_Black.svg" alt="github" /> <a
+href="https://gitlab.com/" width="10%">gitlab</a> <img
 data-src="../../images/gitlab-logo-500-rgb.svg" alt="gitlab" /></li>
 </ul></li>
 <li>CI/CD
 <ul>
 <li><a href="https://www.jenkins.io/">jenkins</a> <img
 data-src="https://ftp.halifax.rwth-aachen.de/jenkins/art/jenkins-logo/96x96/logo.png"
-alt="jenkins" /></li>
+style="width:10.0%" alt="jenkins" /></li>
 </ul></li>
 <li>Others
 <ul>
@@ -121,7 +124,7 @@ href="https://fusesoc.readthedocs.io/en/stable/index.html">FuseSoc</a></li>
 <p>The Software does not provide any integration with version control or
 CI/CD functions, though does not preclude their use. I will cover some
 good ways to work to make separation of source and artifacts easier for
-CI/CD / .gitignore files</p>
+CI/CD / .gitignore files through the day</p>
 </aside>
 </section>
 <section class="slide level1">
@@ -142,17 +145,33 @@ alt="select" /></li>
 <li>Quartus Prime Installer allow the files required to be configured
 prior to download and installation</li>
 </ul></li>
+</ul>
+<div class="columns">
+<div class="column">
+<ul>
 <li>Installation
 <ul>
 <li>cmd line only available - especially suitable for headless and
-Dockerfile. An example that builds a docker image is provided <a
-href="https://github.com/gavin5342/altera_example/blob/main/questa_docker/README.md">here</a></li>
-<li>GUI shows you which components are available. It’s easy to update
-your installation later if you need to add families or features <img
-data-src="../../images/installer_gui.png" style="width:40.0%"
-alt="installer" /></li>
+Dockerfile.<br />
+</li>
+<li>GUI shows you which components are available.<br />
+</li>
+<li>Installation may be updated later - don’t worry about missing
+components</li>
 </ul></li>
 </ul>
+</div><div class="column">
+<figure>
+<img data-src="../../images/installer_gui.png" style="width:80.0%"
+alt="installer" />
+<figcaption aria-hidden="true">installer</figcaption>
+</figure>
+</div>
+</div>
+<aside class="notes">
+<p>An example that builds a docker image is provided <a
+href="https://github.com/gavin5342/altera_example/blob/main/questa_docker/README.md">here</a></p>
+</aside>
 </section>
 <section id="exploring-the-software-through-the-gui"
 class="slide level1">
@@ -188,39 +207,39 @@ alt="window" /></p>
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Quartus file extension</th>
 <th>usage</th>
 <th>other tools equivalent</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>.qpf</td>
 <td>Project file</td>
 <td>.ldf .xpr</td>
 </tr>
-<tr class="even">
+<tr>
 <td>.qsf</td>
 <td>Settings file</td>
 <td>.lpf .xdc</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>.qip</td>
 <td>Quartus IP file - a group of source files</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td>.ip</td>
 <td>Quartus IP file (IP-XACT)</td>
 <td>.xml</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>.stp</td>
 <td>SignalTap (logic analyser) file</td>
 <td>.rvl .ltx</td>
 </tr>
-<tr class="even">
+<tr>
 <td>.qsys</td>
 <td></td>
 <td></td>
@@ -239,14 +258,14 @@ alt="window" /></p>
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Quartus setting</th>
 <th>usage</th>
 <th>other tools equivalent</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Fitter Initial Placement Seed</td>
 <td>Affects randomized initial placement</td>
 <td>cost table</td>

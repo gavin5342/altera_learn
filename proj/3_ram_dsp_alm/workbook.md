@@ -61,5 +61,6 @@ Open the `3_ram_dsp_alm/proj_dsp/top.qpf` project
   - Compare technology map viewer (Synthesis) and (Final) chekcpoints
     - Note that the retimer has moved the bank of 5 registers back into the DSP block to switch on all available registers (input, output, 2xpipeline registers)
 - Reduce `LATENCY` parameter from 5 to 1
-  - Check timing report to see 
+  - Check timing report to see change in fmax
+  - Experiment with different latency values to see how fmax varies as the DSP block registers are enabled.
 

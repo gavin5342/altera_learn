@@ -57,18 +57,17 @@ Quartus Prime Pro software provides
 
 ## Outside Quartus Prime Pro software
 
-- Version control ![git](https://git-scm.com/images/logos/downloads/Git-Logo-2Color.svg)
+- Version control ![git](https://git-scm.com/images/logos/downloads/Git-Logo-2Color.svg){width=20%}
 - CI/CD services (cloud or on-prem)
-  - [github](https://github.com/) ![github](../../images/GitHub_Invertocat_Black.svg)
-  - [gitlab ](https://gitlab.com/) ![gitlab](../../images/gitlab-logo-500-rgb.svg)
+  - [github](https://github.com/){width=10%} ![github](../../images/GitHub_Invertocat_Black.svg) [gitlab ](https://gitlab.com/){width=10%} ![gitlab](../../images/gitlab-logo-500-rgb.svg)
 - CI/CD 
-  - [jenkins](https://www.jenkins.io/) ![jenkins](https://ftp.halifax.rwth-aachen.de/jenkins/art/jenkins-logo/96x96/logo.png)
+  - [jenkins](https://www.jenkins.io/) ![jenkins](https://ftp.halifax.rwth-aachen.de/jenkins/art/jenkins-logo/96x96/logo.png){width=10%}
 - Others
   - [FuseSoc](https://fusesoc.readthedocs.io/en/stable/index.html)
 
 ::: notes
 
-The Software does not provide any integration with version control or CI/CD functions, though does not preclude their use.  I will cover some good ways to work to make separation of source and artifacts easier for CI/CD / .gitignore files
+The Software does not provide any integration with version control or CI/CD functions, though does not preclude their use.  I will cover some good ways to work to make separation of source and artifacts easier for CI/CD / .gitignore files through the day
 
 :::
 
@@ -80,10 +79,33 @@ The Software does not provide any integration with version control or CI/CD func
 - Download installer from [download page](https://www.altera.com/downloads/fpga-development-tools/quartus-prime-pro-edition-design-software-version-26-1-windows)
   - Version and operating system can be selcted using drop down menus: ![select](C:\Users\gavin.lofts\AppData\Roaming\Typora\typora-user-images\image-20260421125756433.png)
   - Quartus Prime Installer allow the files required to be configured prior to download and installation
+
+::: columns
+
+::: column
+
 - Installation
-  - cmd line only available - especially suitable for headless and Dockerfile.  An example that builds a docker image is provided [here](https://github.com/gavin5342/altera_example/blob/main/questa_docker/README.md)
-  - GUI shows you which components are available.  It's easy to update your installation later if you need to add families or features
-    ![installer](../../images/installer_gui.png){width=40%}
+  - cmd line only available - especially suitable for headless and Dockerfile.  
+  - GUI shows you which components are available.  
+  - Installation may be updated later - don't worry about missing components
+
+  
+
+:::
+
+::: column
+
+![installer](../../images/installer_gui.png){width=80%}
+
+:::
+
+:::
+
+::: notes
+
+An example that builds a docker image is provided [here](https://github.com/gavin5342/altera_example/blob/main/questa_docker/README.md)
+
+:::
 
 ---
 
