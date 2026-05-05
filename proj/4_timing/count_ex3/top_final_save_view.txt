@@ -1,0 +1,86 @@
+# File saved with Nlview 7.9.1 2025-07-03 36fdeb9b55 VDI=45 GEI=38 GUI=QT:6.5.7
+#  -curmodule
+# non-default properties - (restore without -noprops)
+property -colorscheme classic
+property attrcolor #06476f
+property autobundle 129
+property backgroundcolor #ffffff
+property boxcolor0 #2d2d2d
+property boxhierpins 3
+property boxinstcolor #000000
+property boxpincolor #06476f
+property buscolor #2d2d2d
+property buswidthlimit 0
+property createnetattrdsp 1024
+property createvconn 65
+property decorate 1
+property elidetext 1
+property fillcolor1 #73acac
+property fillcolor2 #81bf5f
+property fillcolor3 #dce6dc
+property fillcolor4 #ffff00
+property fillcolor5 #c0c0c0
+property fillcolor6 #b3a9fe
+property fillcolor7 #f0b0d2
+property fillcolor8 #adadad
+property fillcolor9 #a9feff
+property fillcolor10 #e5ffff
+property instattrmax -1
+property netcolor #2d2d2d
+property netindicators 15
+property netindicatorsize 3
+property nohiernegpins 0
+property overlaycolor #2d2d2d
+property pbuscolor #0000ff
+property pbusnamecolor #000000
+property pinattrmax -1
+property portcolor #0000ff
+property portnamecolor #000000
+property ripattrmax -1
+property rippercolor #000000
+property rubberbandcolor #00aaff
+property selectionappearance 6
+property selectioncolor #aa1027
+property shadowstyle 1
+property sheetheight 0
+property sheetwidth 0
+property showpagenumbers 1
+property showripindex 1
+property showvconn 1
+#
+module new _1 filter_view
+load symbol count[21]~reg0_29 {} GEN pin CLK_64 input.clk.left pin D_65 input.left pin SCLR_66 input.left pin Q_23 output.right fillcolor 7
+load symbol add_0~106_53 {} BOX pin CIN_116 input.left pin DATAC_115 input.left pin COUT_69 output.right pin SUMOUT_68 output.right fillcolor 6
+load symbol add_0~111_54 {} BOX pin CIN_118 input.left pin DATAD_117 input.left pin COUT_71 output.right pin SUMOUT_70 output.right fillcolor 6
+load symbol add_0~116_55 {} BOX pin CIN_120 input.left pin DATAD_119 input.left pin SUMOUT_72 output.right fillcolor 6
+load symbol count[23]~reg0_31 {} GEN pin CLK_70 input.clk.left pin D_71 input.left pin SCLR_72 input.left pin Q_25 output.right fillcolor 7
+load port clk_81 input -attr @name clk -pg 1 -lvl 0 -x 0 -y 20
+load inst count[21]~reg0_29 count[21]~reg0_29 {} -attr @name count[21]~reg0 -attr @cell {} -pinAttr CLK_64 @name CLK -pinAttr D_65 @name D -pinAttr SCLR_66 @name SCLR -pinAttr Q_23 @name Q -pg 1 -lvl 3 -x 400 -y 190
+load inst add_0~106_53 add_0~106_53 {} -attr @name add_0~106 -attr @cell {} -pinAttr CIN_116 @name CIN -pinAttr DATAC_115 @name DATAC -pinAttr COUT_69 @name COUT -pinAttr SUMOUT_68 @name SUMOUT -pg 1 -lvl 1 -x 40 -y 160
+load inst add_0~111_54 add_0~111_54 {} -attr @name add_0~111 -attr @cell {} -pinAttr CIN_118 @name CIN -pinAttr DATAD_117 @name DATAD -pinAttr COUT_71 @name COUT -pinAttr SUMOUT_70 @name SUMOUT -pg 1 -lvl 2 -x 230 -y 40
+load inst add_0~116_55 add_0~116_55 {} -attr @name add_0~116 -attr @cell {} -pinAttr CIN_120 @name CIN -pinAttr DATAD_119 @name DATAD -pinAttr SUMOUT_72 @name SUMOUT -pg 1 -lvl 3 -x 400 -y 40
+load inst count[23]~reg0_31 count[23]~reg0_31 {} -attr @name count[23]~reg0 -attr @cell {} -pinAttr CLK_70 @name CLK -pinAttr D_71 @name D -pinAttr SCLR_72 @name SCLR -pinAttr Q_25 @name Q -pg 1 -lvl 2 -x 230 -y 140
+load net OUTPUT_183 -attr @name clk -attr @style dashed -port clk_81
+netloc OUTPUT_183 1 0 1 N 20
+load net SUMOUT_171 -attr @name add_0~106:SUMOUT -attr @style dashed -pin add_0~106_53 SUMOUT_68 -pin count[21]~reg0_29 D_65
+netloc SUMOUT_171 1 1 2 NJ 190 NJ
+load net COUT_172 -attr @name add_0~106:COUT -pin add_0~106_53 COUT_69 -pin add_0~111_54 CIN_118
+netloc COUT_172 1 1 1 170 50n
+load net COUT_174 -attr @name add_0~111:COUT -pin add_0~111_54 COUT_71 -pin add_0~116_55 CIN_120
+netloc COUT_174 1 2 1 NJ 50
+load net Q_128 -attr @name count[23]~reg0:Q -pin add_0~116_55 DATAD_119 -pin count[23]~reg0_31 Q_25
+netloc Q_128 1 2 1 360J 70n
+load net SUMOUT_175 -attr @name add_0~116:SUMOUT -attr @style dashed -pin add_0~116_55 SUMOUT_72 -pin count[23]~reg0_31 D_71
+netloc SUMOUT_175 1 1 3 190 10 NJ 10 510
+levelinfo -pg 1 0 40 230 400 530
+pagesize -pg 1 -db -bbox -sgen -60 0 530 240
+show
+zoom 2.75874
+scrollpos -143 -162
+#
+# initialize ictrl to current module _1 filter_view
+ictrl init _1 |
+ictrl property autohide 1
+ictrl property addSubpinInfo 1
+ictrl property addSubportInfo 1
+ictrl property addFillcolor12 0

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<internal_error>
+	<sub_system>ERR</sub_system>
+	<callstack>	0x7c0b45901d8a: legality_lblk + 0x45d8a (_ZN16LBLK_ALE_CHECKER5applyER14LBLK_ALE_STATER16LBLK_TX_ON_ATOMS.cold + 0x21d6)
+	0x7c0b4597c0f7: legality_lblk + 0xc00f7 (_ZN12LBLK_BUILDER5applyER14LBLK_ALE_STATER16LBLK_TX_ON_ATOMS9LBLK_OPTS + 0x97)
+	0x7c0b459a81b9: legality_lblk + 0xec1b9 (_ZN12_GLOBAL__N_128l_process_atoms_wo_locationsERKSt6vectorIP13CDB_ATOM_NODESaIS2_EERSt3setIS2_St4lessIS2_ES3_ERS0_IbSaIbEERSt3mapIi8LBLK_ALES8_IiESaISt4pairIKiSG_EEEibbR16LBLK_TX_ON_ATOMSR14LBLK_LAB_STATE9LBLK_OPTS.constprop.0 + 0x469)
+	0x7c0b4597d28d: legality_lblk + 0xc128d (_ZN12LBLK_BUILDER5applyER14LBLK_LAB_STATER16LBLK_TX_ON_ATOMS9LBLK_OPTS + 0x114d)
+	0x7c0b4598fc8a: legality_lblk + 0xd3c8a (_ZN14LBLK_LAB_STATE5applyER16LBLK_TX_ON_ATOMS9LBLK_OPTS + 0x4a)
+	0x7c0b4596cf6c: legality_lblk + 0xb0f6c (_ZN8LBLK_LAB5applyER16LBLK_TX_ON_ATOMS9LBLK_OPTS + 0x2c)
+	0x7c0b05c8b230: fitter_vpr20kmain + 0x88b230 (_ZN13LLC_INTERFACE20legalizeNodesWithLLCEP13APL_INTERFACER8LBLK_LABRKSt6vectorIPK8APL_NODESaIS7_EEbbbbb + 0x6e0)
+	0x7c0b05c8b87e: fitter_vpr20kmain + 0x88b87e (_ZNK3PCL7LSC_APL15LegalityChecker15dumpIllegalInfoERKSt6vectorIPK8APL_NODESaIS5_EEPPNS0_13LegalLabStateERSoNS_3LLC7CheckerIS3_SA_E18LEGALIZATION_LEVELE + 0xfe)
+	0x7c0b05cc19a4: fitter_vpr20kmain + 0x8c19a4 (_ZN3PCL7LSC_APL10APLHandler22createCoresFromNetlistEPNS1_8LSCBCRunEPNS1_6BFCRunEPK8APL_NODEmtPNS_3LSC12ClusterGraphIS6_NS0_13LegalLabStateENS_7CLUSTER7ClusterIS6_SB_EEEEb + 0x1784)
+	0x7c0b05cc1bc0: fitter_vpr20kmain + 0x8c1bc0 (_ZN3PCL7LSC_APL10APLHandler22createGraphFromAPLNodeEPNS1_8LSCBCRunEPK8APL_NODERK16APL_DISTRIBUTIONIS6_EPNS0_15LegalityCheckerEPNS1_16PCLRunPropertiesE + 0xa0)
+	0x7c0b05cc3c2b: fitter_vpr20kmain + 0x8c3c2b (_ZN3PCL7LSC_APL10APLHandler9setPCLRunEmPNS1_6LSCRunE + 0x76b)
+	0x7c0b05cc6995: fitter_vpr20kmain + 0x8c6995 (_ZN3PCL7LSC_APL10APLHandler7clusterEv + 0xc5)
+	0x7c0b05cc7ef3: fitter_vpr20kmain + 0x8c7ef3 (_ZN3APL7clusterERN3FIT5STATEE + 0xc3)
+	0x7c0b059264eb: fitter_vpr20kmain + 0x5264eb (_Z33do_analytical_placement_phase_lscRN3FIT5STATEE10VPR_MACROS + 0x6eb)
+	0x7c0b0599ce24: fitter_vpr20kmain + 0x59ce24 (_Z17cl_standalone_lscRN3FIT5STATEE + 0x8f4)
+	0x7c0b055c3ca5: fitter_vpr20kmain + 0x1c3ca5 (_ZN13VPR_QI_FACADE9place_lscERN3FIT5STATEE + 0xb5)
+	0x7c0b4315bb48: fitter_fdrgn + 0x15bb48 (_ZN12FDRGN_EXPERT14run_place_flowEv + 0xfa8)
+	0x7c0b4315f5bc: fitter_fdrgn + 0x15f5bc (_ZN12FDRGN_EXPERT9run_placeEv + 0x2ac)
+	0x7c0b431699b5: fitter_fdrgn + 0x1699b5 (_ZN12FDRGN_EXPERT5placeEv + 0x285)
+	0x7c0b4379caf9: comp_fit2 + 0x48af9 (fit2_fit_place_auto + 0xd6)
+	0x7c0b716a8b47: tcl8.6 + 0x4bb47 (TclNRRunCallbacks + 0x67)
+	0x7c0b43782281: comp_fit2 + 0x2e281 (fit2_fit_place + 0x306)
+	0x7c0b716a8b47: tcl8.6 + 0x4bb47 (TclNRRunCallbacks + 0x67)
+	0x7c0b716a9f29: tcl8.6 + 0x4cf29 (TclEvalEx + 0x599)
+	0x7c0b717510de: tcl8.6 + 0xf40de (Tcl_FSEvalFileEx + 0x21e)
+	0x7c0b71751226: tcl8.6 + 0xf4226 (Tcl_EvalFile + 0x26)
+	0x7c0b72b8aa6b: comp_qexe + 0x2ba6b (_Z24qexe_evaluate_tcl_scriptRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE + 0x3b8)
+	0x7c0b72b8d17c: comp_qexe + 0x2e17c (_ZL11qexe_do_tclP14QEXE_FRAMEWORKRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_RKNS1_4listIS6_SaIS6_EEEbb + 0x7bb)
+	0x7c0b72b8e4db: comp_qexe + 0x2f4db (_Z19qexe_run_tcl_optionP14QEXE_FRAMEWORKPKcPNSt7__cxx114listINS3_12basic_stringIcSt11char_traitsIcESaIcEEESaIS9_EEEb + 0xa38)
+	0x7c0b72a7fdfc: comp_qcu + 0x8edfc (_ZN3QCU6DETAIL26intialise_qhd_and_run_qexeER13QCU_FRAMEWORKRK8FIO_PATHRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESD_PKcPNS6_4listISB_SaISB_EEEb + 0x99)
+	0x7c0b72a80143: comp_qcu + 0x8f143 (_Z18qcu_run_tcl_optionP13QCU_FRAMEWORKPKcPNSt7__cxx114listINS3_12basic_stringIcSt11char_traitsIcESaIcEEESaIS9_EEEb + 0x2c5)
+	0x7c0b72b94b92: comp_qexe + 0x35b92 (_Z18qexe_standard_mainP14QEXE_FRAMEWORKPPK22QEXE_OPTION_DEFINITIONiPPKc + 0x1589)
+	   0x40bf79: quartus_fit + 0x40bf79 (_Z10qfit2_mainiPPKc + 0x99)
+	0x7c0b724e3e4c: ccl_msg + 0x44e4c (_Z15msg_main_threadPv + 0x10)
+	0x7c0b724e58f9: ccl_msg + 0x468f9 (_Z18msg_thread_wrapperPFPvS_ES_ + 0x8c)
+	0x7c0b729b475d: ccl_mem + 0x1375d (_Z18mem_thread_wrapperPFPvS_ES_ + 0x9d)
+	0x7c0b5bb222c8: ccl_err + 0xe2c8 (_Z18err_thread_wrapperPFPvS_ES_ + 0x1e)
+	0x7c0b724e4646: ccl_msg + 0x45646 (_Z12msg_exe_mainiPPKcPFiiS1_E + 0xc2)
+	0x7c0b6c62a1ca: c + 0x2a1ca
+	0x7c0b6c62a28b: c + 0x2a28b (__libc_start_main + 0x8b)
+	   0x404e1a: quartus_fit + 0x404e1a (_start + 0x2a)
+</callstack>
+	<error>*** Fatal Error: result</error>
+	<date>Tue May  5 19:46:53 2026
+</date>
+	<version>Version 26.1.0 Build 110 03/26/2026 SC Pro Edition</version>
+</internal_error>
