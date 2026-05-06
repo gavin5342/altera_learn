@@ -104,7 +104,7 @@ The placement constraints in this example are contrived, but we illustrate the p
 
 In this example we use the Quartus Prime Pro tools to identify a design flaw, what Quartus can fix with physical synthesis and where help is required.
 
-- Open [pipe_ex2](./pipe_ex2)
+- Open [count_ex3](./count_ex3)
 - Run full compilation
 - Review Timing Analyzer report **Compilation Report -> Timing Analyzer**
   - Note the setup report
