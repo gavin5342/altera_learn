@@ -10,6 +10,7 @@
   - Visualize physical placement and routing
 - Technology map viewer / RTL viewer
   - schematic diagram of logic at each stage in the compilation flow
+- browsing the [settings manual](https://docs.altera.com/r/docs/683296/25.3/quartus-prime-pro-edition-settings-file-reference-manual/quartus-prime-pro-edition-settings-file-reference-manual) can be useful
 
 ---
 
@@ -47,6 +48,10 @@
       set_max_delay -from ${my_src_regs} -to ${my_dst_regs} 1ns
     }
     ```
+
+- If using a separate file add the `-read_during_post_syn_and_not_post_fit_timing_analysis` in your .qsf file
+  `set_global_assignment -name SDC_ENTITY_FILE <file>.sdc 
+     -entity <name> -read_during_post_syn_and_not_post_fit_timing_analysis`
 
 ---
 
@@ -144,4 +149,24 @@ See the corresponding assignment in assignment editor
 - By default, Quartus implements safe machines
   - The `set_global_assignment -name SAFE_STATE_MACHINE` can be set to `AUTO | ALWAYS | NEVER`
   - The `SAFE_STATE_MACHINE` assignment is still overridden by rtl attributes
+
+---
+
+## Shift register conversion
+
+- By default, the software will convert shift register structures to a RAM structure (utilizing MLAB)
+
+  - Called **altshift_taps**
+
+- Can be disabled globally or on a per instance basis
+  ```
+  set_global_assignment -name auto_shift_register_recognition off
+  set_instance_assignment -name auto_shift_register_recognition off -to foo
+  ```
+
+- Can constrain performance
+  - Experience from the SIMT Soft Processor study showed fmax reduced to 850MHz
+- Conversion reduces logic utilization
+
+---
 

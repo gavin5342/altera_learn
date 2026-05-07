@@ -105,7 +105,7 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 
 ## Hyperflex registers
 
-- Simple D type flops are distributed through the routing for Agilex 7.
+- Simple D type flops are distributed through the routing for Agilex devices.
 - These have CLK, D, Q only - remove resets where feasible.
   - I recommend you start with a no-reset mindset and add sync resets and async resets _only_ where needed to guarantee startup behaviour
 - The Quartus Prime Pro software has an excellent retimer and diagnosis tools to push registers back.
@@ -199,7 +199,7 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 
 ![elaborated](../../images/elaborated_netlist_view.png) ![elab and7](../../images/elaborated_netlist_view_and7.png)
 
-![swept](../../images/swept_netlist_view.png) ![swept and7](../../images/)
+![swept](../../images/swept_netlist_view.png) ![swept and7](../../images/swept_netlist_view_and7.png)
 
 ![tech map](../../images/tech_map_and7.png)
 
@@ -215,8 +215,43 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 
  - Accidental (or previously purposeful) true dual-port inference, when simple dual port would serve the functionality
  - packed / unpacked dimension confusion
+ - unexpected read during write behaviour
 
 ---
+
+## DSP / multiplier inference
+
+::: columns
+
+::: column
+
+- latency
+  - DSP blocks have input, output, 2xpipeline registers
+    - 4 cycles latency when all registers are enabled
+  - Not populating all registers impacts fmax
+  - Retimer can retime registers through DSP blocks
+- Data type
+  - DSP blocks have native floating point support 
+  - Using floating point types reduces fmax by ~18% 
+    - Agilex 7 -1V: 750MHz fmax floating point, 900MHz fixed
+- tensor mode
+  - Agilex 5 introduces tensor mode - sum of products
+    - FP16 and INT8 supported
+- Inference
+  - some modes have complex inference models
+  - Use **Insert template -> ... -> Arithmetic** as starting point
+
+
+
+:::
+
+::: column
+
+![dsp block](../../images/dsp_block.png)
+
+:::
+
+:::
 
 ## Performance estimation
 

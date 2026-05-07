@@ -195,7 +195,7 @@ different delays)</li>
 <h2 id="hyperflex-registers">Hyperflex registers</h2>
 <ul>
 <li>Simple D type flops are distributed through the routing for Agilex
-7.</li>
+devices.</li>
 <li>These have CLK, D, Q only - remove resets where feasible.
 <ul>
 <li>I recommend you start with a no-reset mindset and add sync resets
@@ -322,7 +322,8 @@ alt="elaborated" /> <img
 data-src="../../images/elaborated_netlist_view_and7.png"
 alt="elab and7" /></p>
 <p><img data-src="../../images/swept_netlist_view.png" alt="swept" />
-<img data-src="../../images/" alt="swept and7" /></p>
+<img data-src="../../images/swept_netlist_view_and7.png"
+alt="swept and7" /></p>
 <figure>
 <img data-src="../../images/tech_map_and7.png" alt="tech map" />
 <figcaption aria-hidden="true">tech map</figcaption>
@@ -338,10 +339,53 @@ mistakes</h2>
 <li>Accidental (or previously purposeful) true dual-port inference, when
 simple dual port would serve the functionality</li>
 <li>packed / unpacked dimension confusion</li>
+<li>unexpected read during write behaviour</li>
 </ul>
 </section>
 <section class="slide level1">
 
+<h2 id="dsp-multiplier-inference">DSP / multiplier inference</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>latency
+<ul>
+<li>DSP blocks have input, output, 2xpipeline registers
+<ul>
+<li>4 cycles latency when all registers are enabled</li>
+</ul></li>
+<li>Not populating all registers impacts fmax</li>
+<li>Retimer can retime registers through DSP blocks</li>
+</ul></li>
+<li>Data type
+<ul>
+<li>DSP blocks have native floating point support</li>
+<li>Using floating point types reduces fmax by ~18%
+<ul>
+<li>Agilex 7 -1V: 750MHz fmax floating point, 900MHz fixed</li>
+</ul></li>
+</ul></li>
+<li>tensor mode
+<ul>
+<li>Agilex 5 introduces tensor mode - sum of products
+<ul>
+<li>FP16 and INT8 supported</li>
+</ul></li>
+</ul></li>
+<li>Inference
+<ul>
+<li>some modes have complex inference models</li>
+<li>Use <strong>Insert template -&gt; … -&gt; Arithmetic</strong> as
+starting point</li>
+</ul></li>
+</ul>
+</div><div class="column">
+<figure>
+<img data-src="../../images/dsp_block.png" alt="dsp block" />
+<figcaption aria-hidden="true">dsp block</figcaption>
+</figure>
+</div>
+</div>
 <h2 id="performance-estimation">Performance estimation</h2>
 <div class="columns">
 <div class="column">
