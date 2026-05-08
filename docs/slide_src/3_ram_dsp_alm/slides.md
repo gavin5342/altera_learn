@@ -71,7 +71,7 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 
 ::: column
 
-![lab](../../images/lab_pic.png)
+![lab](../../images/lab_pic.png){width=50%}
 
 :::
 
@@ -113,7 +113,7 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 - The Technology Map viewer identifies the hyperflex registers by labelling them `HYPER`
 - Turn on fast-forward in Synthesis settings or using `set_global_assignment -name FLOW_ENABLE_HYPER_RETIMER_FAST_FORWARD ON` for recommendations on how to reduce critical paths, and what the fmax _could_ be.
 
-![hyper](../../images/hyper_reg.png)
+![hyper](../../images/hyper_reg.png){width=75%}
 
 
 
@@ -136,13 +136,21 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 
 ## RAM dual port
 
-- Dual port vs single port
+::: columns
 
+::: column
+
+- Dual port vs single port
   - Single port - one clock, read port and write port use the same clock.
   - Simple dual port - two clocks but still one read port, one write port.
   - True dual port - two clocks, read and write ports for each clock.
     **Agilex devices do not have native support for TDP RAMs, including them may impact your performance**
     eg for -6S speed grade; simple dual-port = 415MHz, true-dual-port = 335MHz - check [datasheet](https://docs.altera.com/r/docs/848370/current/agilextm-3-fpgas-and-socs-device-data-sheet)
+
+
+:::
+
+::: column
 
 - Read during write
 
@@ -153,9 +161,14 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
   - By default, the software will ignore read during write behaviour.  You can use `set_global_assignment -name STRICT_RAM_RECOGNITION ON` to 
 
   - Inferring new data behaviour can lead to extra bypass logic insertion
-  
+
   - even with defined rdw behaviour, the `(* ramstyle = "no_rw_check" *)` attribute will remove extra passthrough logic.
     _Recommend an assertion that read during write doesn't occur if `no_rw_check` is in use_
+    
+
+:::
+
+:::
 
 ---
 
@@ -197,11 +210,11 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 
 ::: column
 
-![elaborated](../../images/elaborated_netlist_view.png) ![elab and7](../../images/elaborated_netlist_view_and7.png)
+![elaborated](../../images/elaborated_netlist_view.png){width=30%} ![elab and7](../../images/elaborated_netlist_view_and7.png)
 
-![swept](../../images/swept_netlist_view.png) ![swept and7](../../images/swept_netlist_view_and7.png)
+![swept](../../images/swept_netlist_view.png){width=30%} ![swept and7](../../images/swept_netlist_view_and7.png)
 
-![tech map](../../images/tech_map_and7.png)
+![tech map](../../images/tech_map_and7.png){width=30%}
 
 :::
 
@@ -233,13 +246,10 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 - Data type
   - DSP blocks have native floating point support 
   - Using floating point types reduces fmax by ~18% 
-    - Agilex 7 -1V: 750MHz fmax floating point, 900MHz fixed
+
 - tensor mode
   - Agilex 5 introduces tensor mode - sum of products
     - FP16 and INT8 supported
-- Inference
-  - some modes have complex inference models
-  - Use **Insert template -> ... -> Arithmetic** as starting point
 
 
 
@@ -248,6 +258,10 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 ::: column
 
 ![dsp block](../../images/dsp_block.png)
+
+- Inference
+  - some modes have complex inference models
+  - Use **Insert template -> ... -> Arithmetic** as starting point
 
 :::
 
@@ -285,32 +299,31 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 
 ::: columns
 
-::: column
+::: {.column width=50%}
 
 - Use assignments to reduce available resources to the fitter
   - `set_instance_assignment -name MAX_LABS` can be used to control number of LABS (=ALM*10)
   - `set_instance_assignment -name MAX_RAM_BLOCKS_M4K` can be used to control number of M20K BRAMs
   - `set_instance_assignment -name MAX_BALANCING_DSP_BLOCKS` can be used to control number of DSP blocks
   - The assignments may be applied to a module instance using `set_instance_assignment` or to the whole design using `set_global_assignment`
-- Use LogicLock to restrict usage to an area of the FPGA
-  - **Assignments -> Logic Lock Regions Window** for text based coordinate entry
-  - **Tools -> Chip Planner** to draw regions ![logiclock](../../images/logiclock_icon.png)
-  - Draw rectangles.  Multiple rectangles may be merged for other shapes
-    - select logic lock regions to manipulate in Logic Lock Regions Window
-    - **View -> Logic Lock Regions -> Merge Logic Lock Region**
-  - Assign logic my design entry hierarchy or Design Partition
-
-
 
 :::
 
-::: column
+::: {.column width=50%}
 
 
 
 ![merged region](../../images/logiclock_merge.png)
 
+::: {.smaller}
 
+- Use LogicLock to restrict usage to an area of the FPGA
+
+  - **Assignments -> Logic Lock Regions Window** or **Tools -> Chip Planner** to draw regions ![logiclock](../../images/logiclock_icon.png)
+
+  - Assign logic by design entry hierarchy or Design Partition
+
+:::
 
 :::
 

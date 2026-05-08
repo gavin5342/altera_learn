@@ -165,7 +165,8 @@ intent.</p>
 </ul>
 </div><div class="column">
 <figure>
-<img data-src="../../images/lab_pic.png" alt="lab" />
+<img data-src="../../images/lab_pic.png" style="width:50.0%"
+alt="lab" />
 <figcaption aria-hidden="true">lab</figcaption>
 </figure>
 </div>
@@ -215,7 +216,8 @@ for recommendations on how to reduce critical paths, and what the fmax
 <em>could</em> be.</li>
 </ul>
 <figure>
-<img data-src="../../images/hyper_reg.png" alt="hyper" />
+<img data-src="../../images/hyper_reg.png" style="width:75.0%"
+alt="hyper" />
 <figcaption aria-hidden="true">hyper</figcaption>
 </figure>
 </section>
@@ -248,8 +250,10 @@ you will see a large increase in reg usage</li>
 <section class="slide level1">
 
 <h2 id="ram-dual-port">RAM dual port</h2>
+<div class="columns">
+<div class="column">
 <ul>
-<li><p>Dual port vs single port</p>
+<li>Dual port vs single port
 <ul>
 <li>Single port - one clock, read port and write port use the same
 clock.</li>
@@ -261,6 +265,9 @@ including them may impact your performance</strong> eg for -6S speed
 grade; simple dual-port = 415MHz, true-dual-port = 335MHz - check <a
 href="https://docs.altera.com/r/docs/848370/current/agilextm-3-fpgas-and-socs-device-data-sheet">datasheet</a></li>
 </ul></li>
+</ul>
+</div><div class="column">
+<ul>
 <li><p>Read during write</p>
 <ul>
 <li><p>MLAB = undefined</p></li>
@@ -277,6 +284,8 @@ passthrough logic. <em>Recommend an assertion that read during write
 doesn’t occur if <code>no_rw_check</code> is in use</em></p></li>
 </ul></li>
 </ul>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
@@ -318,14 +327,16 @@ available snapshots and netlist views</li>
 </ul>
 </div><div class="column">
 <p><img data-src="../../images/elaborated_netlist_view.png"
-alt="elaborated" /> <img
+style="width:30.0%" alt="elaborated" /> <img
 data-src="../../images/elaborated_netlist_view_and7.png"
 alt="elab and7" /></p>
-<p><img data-src="../../images/swept_netlist_view.png" alt="swept" />
-<img data-src="../../images/swept_netlist_view_and7.png"
+<p><img data-src="../../images/swept_netlist_view.png"
+style="width:30.0%" alt="swept" /> <img
+data-src="../../images/swept_netlist_view_and7.png"
 alt="swept and7" /></p>
 <figure>
-<img data-src="../../images/tech_map_and7.png" alt="tech map" />
+<img data-src="../../images/tech_map_and7.png" style="width:30.0%"
+alt="tech map" />
 <figcaption aria-hidden="true">tech map</figcaption>
 </figure>
 </div>
@@ -360,10 +371,7 @@ simple dual port would serve the functionality</li>
 <li>Data type
 <ul>
 <li>DSP blocks have native floating point support</li>
-<li>Using floating point types reduces fmax by ~18%
-<ul>
-<li>Agilex 7 -1V: 750MHz fmax floating point, 900MHz fixed</li>
-</ul></li>
+<li>Using floating point types reduces fmax by ~18%</li>
 </ul></li>
 <li>tensor mode
 <ul>
@@ -372,6 +380,13 @@ simple dual port would serve the functionality</li>
 <li>FP16 and INT8 supported</li>
 </ul></li>
 </ul></li>
+</ul>
+</div><div class="column">
+<figure>
+<img data-src="../../images/dsp_block.png" alt="dsp block" />
+<figcaption aria-hidden="true">dsp block</figcaption>
+</figure>
+<ul>
 <li>Inference
 <ul>
 <li>some modes have complex inference models</li>
@@ -379,11 +394,6 @@ simple dual port would serve the functionality</li>
 starting point</li>
 </ul></li>
 </ul>
-</div><div class="column">
-<figure>
-<img data-src="../../images/dsp_block.png" alt="dsp block" />
-<figcaption aria-hidden="true">dsp block</figcaption>
-</figure>
 </div>
 </div>
 <h2 id="performance-estimation">Performance estimation</h2>
@@ -420,7 +430,7 @@ optimization</li>
 
 <h2 id="module-level-optimization">Module level optimization</h2>
 <div class="columns">
-<div class="column">
+<div class="column" style="width:50%;">
 <ul>
 <li>Use assignments to reduce available resources to the fitter
 <ul>
@@ -434,27 +444,24 @@ can be used to control number of DSP blocks</li>
 <code>set_instance_assignment</code> or to the whole design using
 <code>set_global_assignment</code></li>
 </ul></li>
-<li>Use LogicLock to restrict usage to an area of the FPGA
-<ul>
-<li><strong>Assignments -&gt; Logic Lock Regions Window</strong> for
-text based coordinate entry</li>
-<li><strong>Tools -&gt; Chip Planner</strong> to draw regions <img
-data-src="../../images/logiclock_icon.png" alt="logiclock" /></li>
-<li>Draw rectangles. Multiple rectangles may be merged for other shapes
-<ul>
-<li>select logic lock regions to manipulate in Logic Lock Regions
-Window</li>
-<li><strong>View -&gt; Logic Lock Regions -&gt; Merge Logic Lock
-Region</strong></li>
-</ul></li>
-<li>Assign logic my design entry hierarchy or Design Partition</li>
-</ul></li>
 </ul>
-</div><div class="column">
+</div><div class="column" style="width:50%;">
 <figure>
 <img data-src="../../images/logiclock_merge.png" alt="merged region" />
 <figcaption aria-hidden="true">merged region</figcaption>
 </figure>
+<div class="smaller">
+<ul>
+<li><p>Use LogicLock to restrict usage to an area of the FPGA</p>
+<ul>
+<li><p><strong>Assignments -&gt; Logic Lock Regions Window</strong> or
+<strong>Tools -&gt; Chip Planner</strong> to draw regions <img
+data-src="../../images/logiclock_icon.png" alt="logiclock" /></p></li>
+<li><p>Assign logic by design entry hierarchy or Design
+Partition</p></li>
+</ul></li>
+</ul>
+</div>
 </div>
 </div>
 </section>

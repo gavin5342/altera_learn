@@ -6,6 +6,10 @@
 
 # Supported interfaces
 
+::: columns
+
+::: column
+
 - Altera [Avalon](https://docs.altera.com/r/docs/683091/current) (AXI like)
   - Memory mapped
   - streaming
@@ -16,6 +20,11 @@
   - AXI4Stream
   - AXI4NoC
   - AXI5
+
+:::
+
+::: column
+
 - Conduit
   - directly exported, no interaction with connectivity
 - Clock
@@ -25,6 +34,10 @@
   - has associated clock
   - AXI and Avalon interfaces have associated reset (used to introduce reset synchronisation where required)
 - Interrupt
+
+:::
+
+:::
 
 ---
 

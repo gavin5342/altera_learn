@@ -144,7 +144,7 @@ Cover each part of ![window](../../images/quartus_window.png)
 | .qip                   | Quartus IP file - a group of source files |                        |
 | .ip                    | Quartus IP file (IP-XACT)                 | .xml                   |
 | .stp                   | SignalTap (logic analyser) file           | .rvl .ltx              |
-| .qsys                  |                                           |                        |
+| .vds                   | Visual Designer Studio system (IP-XACT)   | .xml                   |
 
 ### Setting names
 
@@ -193,7 +193,10 @@ Cover each part of ![window](../../images/quartus_window.png)
 - Design Partitions and LogicLock regions are the foundation of Partial Reconfiguration where part of a design may be reconfigured (eg change protocol for attached HSSI transceiver)
 - Design partitions may be exported as `.qdb` files.  A `.qdb` can be included in a project as a source file
 - Initial content of RAM may be modified without changing fitter placement and routing by using **Update Memory Initialization File** option
-- 
+
+---
+
+
 
 ## Programming files
 

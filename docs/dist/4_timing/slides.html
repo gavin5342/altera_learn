@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>slides</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../../slides.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="timing-analysis-and-optimization" class="slide level1">
+<h1>Timing analysis and optimization</h1>
+<ul>
+<li>Quartus provides tools to perform timing analysis and analyse
+critical paths</li>
+<li>Snapshots allow timing analysis and design visualization through the
+flow
+<ul>
+<li>Most easily accessed through the Compilation Dashboard</li>
+</ul></li>
+<li>Timing Analyzer
+<ul>
+<li>report on paths by clock and by path node</li>
+<li>Visualize constraint waveform</li>
+</ul></li>
+<li>Chip Planner
+<ul>
+<li>Visualize physical placement and routing</li>
+</ul></li>
+<li>Technology map viewer / RTL viewer
+<ul>
+<li>schematic diagram of logic at each stage in the compilation
+flow</li>
+</ul></li>
+<li>browsing the <a
+href="https://docs.altera.com/r/docs/683296/25.3/quartus-prime-pro-edition-settings-file-reference-manual/quartus-prime-pro-edition-settings-file-reference-manual">settings
+manual</a> can be useful</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="writing-constraints">Writing constraints</h2>
+<ul>
+<li>The Quartus Prime Pro text editor includes an sdc constraint editor
+<img data-src="../../images/insert_constraint.png"
+alt="insert constraint" /></li>
+<li>includes node finder to filter on names in your design</li>
+<li>If constraining to an internal node, remember to use
+<code>preserve</code>, <code>noprune</code> or <code>keep</code> to
+ensure a named node that you are attaching a constraint to is
+retained</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="synthesis-only-over-constrain">Synthesis only
+over-constrain</h2>
+<ul>
+<li><p>As the fitter works on heuristics, a decision at placement may
+not be optimal and we may be able to see how to improve results on the
+finalised design.</p></li>
+<li><p>Old way (before Stratix 10 / Agilex)Use
+<code>$::TimingAnalyzerInfo(nameofexecutable)</code> to define
+constraints that are <em>not</em> evaluated for sign-off</p>
+<ul>
+<li><p><code>set_max_delay</code> to encourage the fitter to place
+registers near to each other</p></li>
+<li><pre><code># Example Fitter overconstraint targeting specific nodes
+if { $::TimingAnalyzerInfo(nameofexecutable) eq &quot;quartus_fit&quot;} {
+  set_max_delay -from ${my_src_regs} -to ${my_dst_regs} 1ns
+}</code></pre></li>
+</ul></li>
+<li><p>For hyperflex devices (Agilex, Stratix 10)</p>
+<ul>
+<li><p>use <code>[is_post_route]</code> to affect placement but
+<em>not</em> retiming.</p></li>
+<li><pre><code># Example Fitter overconstraint targeting specific nodes (allows for post-route retiming)
+if { ! [is_post_route]} {
+  set_max_delay -from ${my_src_regs} -to ${my_dst_regs} 1ns
+}</code></pre></li>
+</ul></li>
+<li><p>If using a separate file add the
+<code>-read_during_post_syn_and_not_post_fit_timing_analysis</code> in
+your .qsf file
+<code>set_global_assignment -name SDC_ENTITY_FILE &lt;file&gt;.sdc     -entity &lt;name&gt; -read_during_post_syn_and_not_post_fit_timing_analysis</code></p></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="constraint-principles">Constraint principles</h2>
+<ul>
+<li>A reminder on knowledge already familiar to people who have used sdc
+constraints</li>
+<li>Constraints do <em>not</em> have any knowledge of your design,
+unless you use a multicycle exception, setup analysis is always on the
+destination latch edge following a launch edge and hold is on the
+destination latch edge preceding the one used for setup.</li>
+<li>Situations where you likely want to use
+<code>set_multicycle_path</code>
+<ul>
+<li>a PLL introduces a small positive offset in destination clock - by
+default the setup window may be vanishingly small</li>
+<li>fast to slow or slow to fast transitions</li>
+</ul></li>
+<li>For clocks where all transfers are protected with some sort of
+metastable safe transfer <code>set_clock_groups</code> may be used to
+remove analysis between defined groups of clocks - but beware to check
+that all transfers really are protected.</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="constraint-workflow">Constraint workflow</h2>
+<ol type="1">
+<li>Define clocks with the maximum frequency that you require
+<ol type="1">
+<li>Compile design (only need to compile to stage
+<code>dni_synthesize</code>)</li>
+<li>Use Timing Analyzer to <code>Report Clocks</code>,
+<code>Report SDC</code></li>
+</ol></li>
+<li>Define IO constraints using <code>set_input_delay</code> and
+<code>set_output_delay</code>
+<ol type="1">
+<li>Compile design (only need to compile to stage
+<code>dni_synthesize</code>)</li>
+<li>Use Timing Analyzer to <code>Report Unconstrained Paths</code></li>
+</ol></li>
+<li>Define exceptions</li>
+</ol>
+</section>
+<section class="slide level1">
+
+<h2 id="design-walkthrough">Design walkthrough</h2>
+<ul>
+<li>switch to Quartus Prime Pro software</li>
+</ul>
+<aside class="notes">
+<p>Open pre-compiled design</p>
+<p>Show compilation dashboard</p>
+<p>Open Timing Analyzer from dashboard</p>
+<p>Show how to Reset Design -&gt; Create Timing Netlist -&gt; read
+SDC</p>
+<p>open an sdc file, create some constraints, show wild cards, node
+finder</p>
+<p>Run a setup report</p>
+<p>Report Timing - click the buttons but then do a hand edit to the
+generated command right before pressing OK</p>
+<p>Explain -show_routing and different detail levels</p>
+<p>Locate path in tech map viewer, chip planner.</p>
+<p>Make a location assignment in Chip Planner</p>
+<p>See the corresponding assignment in assignment editor</p>
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="dual-clock-fifo-constraints">dual clock FIFO constraints</h2>
+<ul>
+<li>A FIFO comprises a simple dual port memory, counters for read side
+and write side and comparison logic to calculate fill level and
+optionally disable writes or reads to prevent overflow</li>
+<li>If there are different read and write clocks, then the counters need
+to be transferred from one domain to the other.</li>
+<li>use gray coded counters + double register transfer
+<ul>
+<li>only one bit changes at a time so the value is either current - 1
+clock or 2 clocks.</li>
+</ul></li>
+<li>old constraint methodology
+<ul>
+<li>use <code>set_false_path</code> as the transfer is double
+registered</li>
+<li>but what if the skew across the vector is &gt; one clock cycle?</li>
+<li>On high utilization designs, these registers could be spread out
+<em>because</em> the timing constraint has been removed</li>
+<li>We have already seen that delays of &gt;3ns are feasible even on a
+small device</li>
+</ul></li>
+<li>new constraint methodology
+<ul>
+<li><code>set_max_skew</code> to ensure skew is &lt; clk period</li>
+<li><code>set_max_delay</code> and <code>set_min_delay</code> to large
+values to effectively make skew the only constraint</li>
+<li>Generate <strong>IP Catalog -&gt; FIFO IP</strong> to see an example
+sdc</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="metastability">Metastability</h2>
+<ul>
+<li>Enable auto identification of register chains and metastability
+analysis in <strong>Assignments -&gt; Settings -&gt; Timing
+Analyzer</strong></li>
+<li>Define minimum MTBF per register chain in settings - the default is
+10^9 years which is very conservative, you should probably change to
+something more realistic for your application</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="fsm-processing">FSM processing</h2>
+<ul>
+<li>Using <code>enum</code> types for state machines can separate intent
+from implementation and subsequently make changing encoding style
+easier</li>
+<li>You can use the <code>syn_encoding</code> attribute to control
+encoding as control how the FSM is encoded in hardware
+<ul>
+<li><code>sequential</code> - binary</li>
+<li><code>safe</code> - one-hot with protection logic - use if your
+state machine may enter invalid states (eg async reset)</li>
+<li><code>one-hot</code> - each state represented by one bit (two
+changes between any state)</li>
+<li><code>gray</code> - adjacent states differ by one bit, can represent
+2^M states</li>
+<li><code>compact</code> - least bits to represent state</li>
+<li><code>johnson</code> - adjacent states differ by one bit, can
+represent 2*M states, less logic than gray</li>
+</ul></li>
+<li>The <strong>Synthesis &gt; State Machines</strong> report is useful
+for checking implementation</li>
+<li>By default, Quartus implements safe machines
+<ul>
+<li>The <code>set_global_assignment -name SAFE_STATE_MACHINE</code> can
+be set to <code>AUTO | ALWAYS | NEVER</code></li>
+<li>The <code>SAFE_STATE_MACHINE</code> assignment is still overridden
+by rtl attributes</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="shift-register-conversion">Shift register conversion</h2>
+<ul>
+<li><p>By default, the software will convert shift register structures
+to a RAM structure (utilizing MLAB)</p>
+<ul>
+<li>Called <strong>altshift_taps</strong></li>
+</ul></li>
+<li><p>Can be disabled globally or on a per instance basis</p>
+<pre><code>set_global_assignment -name auto_shift_register_recognition off
+set_instance_assignment -name auto_shift_register_recognition off -to foo</code></pre></li>
+<li><p>Can constrain performance</p>
+<ul>
+<li>Experience from the SIMT Soft Processor study showed fmax reduced to
+850MHz</li>
+</ul></li>
+<li><p>Conversion reduces logic utilization</p></li>
+</ul>
+</section>
+<section class="slide level1">
+
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@5/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@5/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
