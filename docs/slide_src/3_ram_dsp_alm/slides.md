@@ -210,9 +210,9 @@ The nuances of LUT widths and equations matters for logic that you _really_ want
 
 ::: column
 
-![elaborated](../../images/elaborated_netlist_view.png){width=30%} ![elab and7](../../images/elaborated_netlist_view_and7.png)
+![elaborated](../../images/elaborated_netlist_view.png){width=30%} ![elab and7](../../images/elaborated_netlist_view_and7.png){width=30%}
 
-![swept](../../images/swept_netlist_view.png){width=30%} ![swept and7](../../images/swept_netlist_view_and7.png)
+![swept](../../images/swept_netlist_view.png){width=30%} ![swept and7](../../images/swept_netlist_view_and7.png){width=30%}
 
 ![tech map](../../images/tech_map_and7.png){width=30%}
 
